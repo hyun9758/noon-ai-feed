@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-10T08:38:16.137Z",
+  "generatedAt": "2026-10-11T09:01:47.894Z",
   "source": "Hugging Face Daily Papers API",
   "window": {
-    "from": "2026-09-27",
-    "to": "2026-10-10",
+    "from": "2026-09-28",
+    "to": "2026-10-11",
     "days": 14
   },
   "note": "추천 수(upvotes) 내림차순. 초록은 원문 그대로이므로 요약의 근거로 쓸 것.",
@@ -14,7 +14,7 @@
       "url": "https://arxiv.org/abs/2609.33439",
       "title": "Raven: The Harness of Harnesses for Composable Agentic Intelligence",
       "abstract": "As large language models advance, AI agents are moving beyond isolated, domain-specific tasks toward long-horizon, cross-domain workflows. This transition exposes two challenges: increasing harness complexity makes manual design difficult to scale, while tighter coupling to specific domains limits the generality of a single harness. The central question thus shifts from how to engineer a stronger harness for one domain to how to autonomously construct specialized harnesses, improve them through experience, and orchestrate them across domains. We introduce Raven, The Harness of Harnesses, an open-source multi-agent ecosystem that automatically constructs and evolves modular harnesses for specific models and domains, treating each executable model--harness pair as a composable unit of intelligence. To support an All-Domain Collaboration Network, its Host Agent decomposes goals, matches subtasks to specialized agents, coordinates execution dependencies, and integrates results, while a host archive and EverOS preserve experience across tasks and Skill Forge makes that experience available as reusable procedures. Our theory establishes sufficient conditions for such composition to expand reliable task coverage beyond that of the available individual agents under a shared resource budget. On complex and long-horizon tasks, Raven significantly outperforms the state-of-the-art agent systems, pushing the frontier of composable agentic intelligence.",
-      "upvotes": 672,
+      "upvotes": 674,
       "authors": [
         "EverMind AI"
       ],
@@ -33,7 +33,7 @@
       "url": "https://arxiv.org/abs/2609.39102",
       "title": "False Frontiers: Diagnosing and Mitigating Co-Cheating in Self-Evolving Search Agents",
       "abstract": "Self-evolving search agents build their own training curricula by jointly optimizing a proposer that generates questions and a solver that answers them. This closed loop introduces a failure mode we call co-cheating: the proposer and solver increasingly agree on shared errors, so internal reward improves without a matching gain in external correctness. A post-hoc audit against source evidence shows co-cheating growing more severe over successive rounds of self-evolution, with pseudo-label correctness stagnating or declining even as the in-loop training signal improves. The most direct mitigation is to verify proposals before training: we introduce multi-sample verification (MSV), which queries the same model three times with the source and three times without it to decide task admission and replace unreliable pseudo-labels. MSV partially reduces false agreement but leaves substantial residual co-cheating and costs six extra labeler generations per candidate. These limitations motivate CrossFit, our main method: it partitions the proposer's source documents into groups A and B; questions generated from A are scored by an auxiliary solver trained only on B, and vice versa. The cross-fitted agreement determines proposer reward, so a same-source pseudo-label cannot be reproduced through the feedback solver, while the original solver's update rule is unchanged. Rerunning the loop with Qwen3.5-4B and Qwen3.5-9B, MSV reduces false-agreement mass from 6.1% to 5.7% and from 8.8% to 7.2%, whereas CrossFit reduces it to 3.0% and 3.7%. Replaying identical proposals with source-excluded feedback further reduces false agreement to 0.4% and 0.1%, isolating feedback ancestry from curriculum changes. Across seven downstream search benchmarks, CrossFit improves average performance over standard coupled self-evolution by 8.8 and 8.4 points and over Search-R1 by 8.7 and 7.8 points at 4B and 9B.",
-      "upvotes": 496,
+      "upvotes": 602,
       "authors": [
         "Meijia Chen",
         "Hao Li",
@@ -47,6 +47,22 @@
         "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/69cb3e2fa6964a91fe8c2c97/1SJLGjmcRZ5xHSjK_K6dW.png"
       },
       "publishedAt": "2026-09-30T00:00:00.000Z",
+      "featuredOn": "2026-10-01"
+    },
+    {
+      "arxiv": "2609.36484",
+      "url": "https://arxiv.org/abs/2609.36484",
+      "title": "The Teacher Is a Direction, Not a Destination: Extrapolating RL-Induced Representation Residuals in On-Policy Distillation",
+      "abstract": "On-policy distillation (OPD) trains a student to match the teacher's next-token distributions on the student's own trajectories and has yielded substantial empirical gains. Generalized variants allow the student to surpass the teacher by extrapolating an implicit reward in output space. The language-model head, however, attenuates this change anisotropically: much of the change encoded in the teacher's hidden states reaches the logits at a small fraction of its weight, and the sampled-token log-probability ratios on which output-space extrapolation relies inject noise that the extrapolation amplifies, making training unstable. We observe that reinforcement learning (RL) shifts a model's internal representations relative to its base checkpoint, and that the direction of this shift can be measured at every layer. Motivated by this observation, we propose RIDE (RL-Induced Direction Extrapolation), which extrapolates the RL-induced change directly in representation space: at every layer and token position, RIDE computes the residual between the teacher and its pre-RL checkpoint and regresses the student's hidden states toward targets displaced beyond the teacher along this residual. Conditioned on a sampled trajectory, this regression is equivalent to maximizing a linear directional reward defined by the residual under a quadratic penalty centered at the teacher, which makes explicit how the objective moves the student along the RL-induced direction while limiting its deviation from the teacher. Across four base/RL-teacher pairs spanning different scales, architectures, and pre-training lineages, RIDE approaches or exceeds the RL-trained teacher on every pair and is the only method whose mean does so, and it consistently outperforms output-space extrapolation, which degrades the student whenever the teacher is close to its base. Project page: https://github.com/xixixixixxxx/RIDE.",
+      "upvotes": 515,
+      "authors": [
+        "Hao Li",
+        "MeiJia Chen",
+        "Weijie Ren"
+      ],
+      "authorCount": 7,
+      "organization": null,
+      "publishedAt": "2026-09-29T00:00:00.000Z",
       "featuredOn": "2026-10-01"
     },
     {
@@ -67,22 +83,6 @@
         "fullname": "Renmin University of China",
         "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61ac8f8a00d01045fca0ad2f/670IAX9A2-BflqA5MiSBW.jpeg"
       },
-      "publishedAt": "2026-09-29T00:00:00.000Z",
-      "featuredOn": "2026-10-01"
-    },
-    {
-      "arxiv": "2609.36484",
-      "url": "https://arxiv.org/abs/2609.36484",
-      "title": "The Teacher Is a Direction, Not a Destination: Extrapolating RL-Induced Representation Residuals in On-Policy Distillation",
-      "abstract": "On-policy distillation (OPD) trains a student to match the teacher's next-token distributions on the student's own trajectories and has yielded substantial empirical gains. Generalized variants allow the student to surpass the teacher by extrapolating an implicit reward in output space. The language-model head, however, attenuates this change anisotropically: much of the change encoded in the teacher's hidden states reaches the logits at a small fraction of its weight, and the sampled-token log-probability ratios on which output-space extrapolation relies inject noise that the extrapolation amplifies, making training unstable. We observe that reinforcement learning (RL) shifts a model's internal representations relative to its base checkpoint, and that the direction of this shift can be measured at every layer. Motivated by this observation, we propose RIDE (RL-Induced Direction Extrapolation), which extrapolates the RL-induced change directly in representation space: at every layer and token position, RIDE computes the residual between the teacher and its pre-RL checkpoint and regresses the student's hidden states toward targets displaced beyond the teacher along this residual. Conditioned on a sampled trajectory, this regression is equivalent to maximizing a linear directional reward defined by the residual under a quadratic penalty centered at the teacher, which makes explicit how the objective moves the student along the RL-induced direction while limiting its deviation from the teacher. Across four base/RL-teacher pairs spanning different scales, architectures, and pre-training lineages, RIDE approaches or exceeds the RL-trained teacher on every pair and is the only method whose mean does so, and it consistently outperforms output-space extrapolation, which degrades the student whenever the teacher is close to its base. Project page: https://github.com/xixixixixxxx/RIDE.",
-      "upvotes": 451,
-      "authors": [
-        "Hao Li",
-        "MeiJia Chen",
-        "Weijie Ren"
-      ],
-      "authorCount": 7,
-      "organization": null,
       "publishedAt": "2026-09-29T00:00:00.000Z",
       "featuredOn": "2026-10-01"
     },
@@ -175,7 +175,7 @@
       "url": "https://arxiv.org/abs/2610.01780",
       "title": "RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations",
       "abstract": "A companion that talks with a person for months should come to understand them. It should remember what they said, infer who they are, and know when the past bears on the message in front of it. Testing this requires a real person's record, and such records are private, so benchmarks generate the person and the questions and settle in advance what matters. We release \\bench, ten real relationships with an AI companion: 27,218 messages over up to 120 days, released as the conversation and four files derived from it, a profile, a persona, a chat ground truth and a question set, each citing the messages it rests on. Every chat label carries the reasoning trace that produced it, checked stage by stage against the conversation. Three findings follow. First, the past is rarely needed and far away. Pooled measures mislead: a recency window finds the required message for 95.9\\% of probes and 2.2\\% of those that need memory, and at the natural rate 96\\% of the gain from supplying recorded evidence comes from messages that need none. Second, no detector we tried can tell when memory is needed on real messages, authored questions over the same histories leak the cue, and labeling the same messages as memories raises their use by ten to fourteen points. Third, three agent systems reconstruct the persona with the same F1 at a 31-fold difference in cost.",
-      "upvotes": 277,
+      "upvotes": 281,
       "authors": [
         "Arman Behnam",
         "Sunglyoung Kim",
@@ -196,7 +196,7 @@
       "url": "https://arxiv.org/abs/2609.29233",
       "title": "Post-Training Leaves Behavioral Shadows on Unrelated Decisions",
       "abstract": "We find that language models can transfer capabilities through task-unrelated text. Post-training typically improves language models using task-specific data. Prior work on subliminal learning shows that information about these updates can pass through unrelated generations, but has largely focused on traits or preferences using extensive teacher outputs. We introduce Active Taskless Distillation (ATD), which achieves capability transfer using only a single word from the teacher per prompt. ATD probes the behavioral shadow of post-training by selecting prompts where the teacher and student's shared public ancestor is nearly indifferent between two ordinary words. A student initialized from this ancestor learns solely from the resulting prompt-word pairs, without target-task examples, teacher logits, or teacher parameters. In the primary coding experiment with Qwen2.5-1.5B, 5,664nses yield a 5.34 pp gain on HumanEval+ over an exact nuisance-matched control thadisrupts prompt-resperiments showtransfer in scientific knowledge, commonsense reasoning, and reading comprehensins across additional model generations, sizes, and families. Functional analyses show that the learned sid composable, andthat its strength tracks the teacher's update strength.",
-      "upvotes": 274,
+      "upvotes": 275,
       "authors": [
         "Ziyang Zhang",
         "Yubin Jing",
@@ -217,7 +217,7 @@
       "url": "https://arxiv.org/abs/2609.38721",
       "title": "UniEvo-VL: An On-policy Self-Distillation Training Recipe for Multimodal Model Self-improvement",
       "abstract": "Modern multimodal models bring generation and understanding into a single unified system, which enables them to provide and learn from their own feedback. Motivated by this unified capacity, we introduce UniEvo-VL, a self-evolving framework for multimodal models to learn from this constructive self-correction feedback during test-time compute. Instead of relying on a separate, often larger, teacher, we leverage their self-critiques as privileged information and ask a single multimodal model to act as both teacher and student with different contexts. The student only sees the vanilla question, while the teacher conditions on the privileged critique. Then training minimizes the per-state divergence between their denoising diffusion distributions over the student's own sampling trajectories. Experiments demonstrate that UniEvo-VL improves the image generation capabilities of multimodal models, while maintaining their sensitivity to additional reflection information. Specifically, we build on top of the open-source Qwen-image-2512 and observe a significant performance gain from 0.747 to 0.808 on GenEval and from 32.97 to 35.53 on GenEval2 Soft-TIFA. Moreover, attempts with more powerful external critics (e.g., GPT5.6-Luna) show that multimodal models with strong judge capabilities can anticipate a higher self-evolving ceiling. Last but not least, mixed text-rendering outcomes show that our self-improvements may not be uniform across different tasks. Our study aims to shed light on the current hot recursive self-improvement research line to enhance the user experience when using multimodal models without external supervision or guidance.",
-      "upvotes": 272,
+      "upvotes": 273,
       "authors": [
         "Fang Wu",
         "Da Xing",
@@ -232,6 +232,27 @@
       },
       "publishedAt": "2026-09-30T00:00:00.000Z",
       "featuredOn": "2026-10-01"
+    },
+    {
+      "arxiv": "2609.33325",
+      "url": "https://arxiv.org/abs/2609.33325",
+      "title": "VisionHOPE: Visual Backbones as Self-Modifying Learning Systems",
+      "abstract": "Visual backbones have evolved from Convolutional Neural Networks (CNNs) with local aggregation to Vision Transformers (ViTs) with global interactions, State-Space Models (SSMs) with input-dependent state transitions, and Test-Time Training (TTT) layers that adapt an inner learner while processing an image. Across this progression, visual computation has become increasingly adaptive to each input, yet the rules governing that adaptation remain largely prescribed by the trained backbone. We introduce VisionHOPE, the first generic visual backbone formulated as a self-modifying learning system, in which what the model remembers and how it learns co-evolve within an image. Building on the self-referential construction of Nested Learning (NL), VisionHOPE realizes this co-evolution through five coupled memories that store content, generate key and value representations, and govern learning rate and retention. These memories evolve jointly as visual context accumulates along each scan. However, directly applying the unconstrained self-referential update to a visual backbone leads to instability. We therefore derive a stability-matched step-size control scheme that combines a soft cap on self-referential injection with a spectral clamp on the retained memory transition, and prove that the resulting memory dynamics are non-expansive along each scan. For two-dimensional feature maps, we adapt NL's chunk formulation by aligning chunks with image rows and columns across four directional scans. The proposed VisionHOPE achieves competitive results on ImageNet-1K, COCO, and ADE20K, establishing self-modifying learning systems as a practical foundation for general-purpose visual backbones. The code is available at https://github.com/PSRben/VisionHOPE.",
+      "upvotes": 263,
+      "authors": [
+        "Siran Peng",
+        "Tianshuo Zhang",
+        "Tianyu Fu"
+      ],
+      "authorCount": 11,
+      "organization": {
+        "_id": "69c65a9e3b5bbcceca48c75b",
+        "name": "Mininglamp-2718",
+        "fullname": "Mininglamp Technology",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/69c656d25cf6c8ac26073013/sJ_pUHr_6G89GHJK5qPm7.png"
+      },
+      "publishedAt": "2026-09-27T00:00:00.000Z",
+      "featuredOn": "2026-09-29"
     },
     {
       "arxiv": "2610.01762",
@@ -280,7 +301,7 @@
       "url": "https://arxiv.org/abs/2609.34563",
       "title": "Rethinking Latent Visual Reasoning: Grounding Latent Reasoning in Visual Evidence",
       "abstract": "Latent visual reasoning (LVR) enables multimodal large language models (MLLMs) to perform intermediate computation in continuous latent tokens rather than expressing every reasoning step in words. However, unlike textual CoT, latent reasoning is not directly observable, making it difficult to supervise what latent tokens learn. In this work, we first conduct a thorough analysis of latent-token behavior and identify a latent evidence-credit gap: latent tokens respond only weakly to image perturbations that alter the correct answer. We hypothesize that this issue stems from the lack of explicit supervision during GRPO training. These findings suggest that a final-answer reward provides too little guidance on what visual evidence to preserve or how credit should be assigned across latent tokens. To bridge this gap, we propose ReaLVR, which brings visual-evidence supervision to the model's own free-running latent trajectories. ReaLVR contrasts correct and model-generated wrong answers to determine where stronger supervision is needed, and relevant and mismatched visual evidence to specify what to preserve. Across three model families, ReaLVR consistently outperforms evaluated LVR baselines, achieving the highest five-task average of 63.7% on Qwen2.5-VL-7B. Crucially, we are the first to scale visual reasoning in latent space, showing that our framework continues to deliver robust improvements at frontier model scales up to 235B. Further analyses show more question-sensitive latent-token positions, stronger alignment with relevant visual regions, and greater fixed-context dependence on the most attended latent tokens.",
-      "upvotes": 218,
+      "upvotes": 219,
       "authors": [
         "Xi Xiao",
         "Tianchen Zhao",
@@ -297,11 +318,27 @@
       "featuredOn": "2026-10-01"
     },
     {
+      "arxiv": "2610.08448",
+      "url": "https://arxiv.org/abs/2610.08448",
+      "title": "Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability",
+      "abstract": "On-Policy Distillation (OPD) trains a student on its own generations using teacher feedback. With different tokenizers, comparing teacher and student predictions requires alignment at both sequence and vocabulary levels. In this paper, we examine whether expanding this alignment coverage improves learning. Across three heterogeneous teacher--student pairs on mathematical reasoning and code generation, strict 1:1 groups already cover most student-generated tokens despite substantial vocabulary mismatch. On responses sampled from the students before distillation, the shared vocabulary retains nearly all teacher and student probability mass at strictly aligned positions on average. Restricting reverse KL to a student-selected top-16 subset of the shared vocabulary at each strict position achieves accuracy comparable to full shared-vocabulary OPD, outperforming the evaluated cross-tokenizer baselines. Adding mean squared error supervision on span log-probabilities in mismatch groups gives complete supervision coverage, yet reduces accuracy. At checkpoints from training with only the strict loss, the span gradients show weak or negative directional agreement with the strict gradients and grow in magnitude relative to them. These diagnostics may help explain the accuracy drop from adding span supervision. Our findings motivate a shift from maximizing alignment coverage to prioritizing supervision reliability: compact supervision at strict positions can be more effective than broader coverage that introduces weakly aligned or conflicting training signals.",
+      "upvotes": 202,
+      "authors": [
+        "Bingxi Hou",
+        "Guochao Jiang",
+        "Guofeng Quan"
+      ],
+      "authorCount": 7,
+      "organization": null,
+      "publishedAt": "2026-10-06T00:00:00.000Z",
+      "featuredOn": "2026-10-07"
+    },
+    {
       "arxiv": "2609.35259",
       "url": "https://arxiv.org/abs/2609.35259",
       "title": "On-Policy or Off-Policy Learning? A Systematic Study of Distillation Dynamics",
       "abstract": "On-policy learning has been argued to reduce catastrophic forgetting, produce sparser parameter updates, and improve generalisation. However, existing comparisons between supervised fine-tuning and reinforcement learning vary many factors simultaneously, making the contribution of rollout policy difficult to isolate. We study the effect of rollout policy in a controlled strong-to-weak distillation setting, by independently varying rollout policy, token-level KL direction, and learning rate across the Llama3 and Qwen2.5 model families and reasoning tasks spanning scientific, medical, and arithmetic domains. Our analysis reveals a nuanced picture of distillation dynamics in which rollout policy does not necessarily play a central role. Instead, token-level KL direction more clearly shapes task performance and output coverage, while learning rate governs forgetting and update sparsity. Analysis of KL gradients and experiments along a continuous student-teacher rollout-policy spectrum explain this pattern: forward KL is remarkably robust to rollout policy, with its performance stable and strong despite changes to the rollout policy, whereas reverse KL is substantially more sensitive and favours student-generated rollouts. On-policy data nevertheless improves generalisation to harder variants of the Countdown arithmetic task under both KL directions, although this advantage does not reliably persist after subsequent RLVR. Our broader conclusions remain robust to removing gradient clipping, using sampled KL estimators, and training on tasks requiring longer reasoning chains. Overall, our results challenge the view that on-policy rollouts are inherently preferable and show that their value depends critically on the objective, evaluation setting, and optimisation hyperparameters.",
-      "upvotes": 200,
+      "upvotes": 202,
       "authors": [
         "Julianna Piskorz",
         "Antonin Berthon",
@@ -316,22 +353,6 @@
       },
       "publishedAt": "2026-09-28T00:00:00.000Z",
       "featuredOn": "2026-10-02"
-    },
-    {
-      "arxiv": "2610.08448",
-      "url": "https://arxiv.org/abs/2610.08448",
-      "title": "Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability",
-      "abstract": "On-Policy Distillation (OPD) trains a student on its own generations using teacher feedback. With different tokenizers, comparing teacher and student predictions requires alignment at both sequence and vocabulary levels. In this paper, we examine whether expanding this alignment coverage improves learning. Across three heterogeneous teacher--student pairs on mathematical reasoning and code generation, strict 1:1 groups already cover most student-generated tokens despite substantial vocabulary mismatch. On responses sampled from the students before distillation, the shared vocabulary retains nearly all teacher and student probability mass at strictly aligned positions on average. Restricting reverse KL to a student-selected top-16 subset of the shared vocabulary at each strict position achieves accuracy comparable to full shared-vocabulary OPD, outperforming the evaluated cross-tokenizer baselines. Adding mean squared error supervision on span log-probabilities in mismatch groups gives complete supervision coverage, yet reduces accuracy. At checkpoints from training with only the strict loss, the span gradients show weak or negative directional agreement with the strict gradients and grow in magnitude relative to them. These diagnostics may help explain the accuracy drop from adding span supervision. Our findings motivate a shift from maximizing alignment coverage to prioritizing supervision reliability: compact supervision at strict positions can be more effective than broader coverage that introduces weakly aligned or conflicting training signals.",
-      "upvotes": 187,
-      "authors": [
-        "Bingxi Hou",
-        "Guochao Jiang",
-        "Guofeng Quan"
-      ],
-      "authorCount": 7,
-      "organization": null,
-      "publishedAt": "2026-10-06T00:00:00.000Z",
-      "featuredOn": "2026-10-07"
     },
     {
       "arxiv": "2609.35347",
@@ -355,32 +376,11 @@
       "featuredOn": "2026-09-29"
     },
     {
-      "arxiv": "2609.33325",
-      "url": "https://arxiv.org/abs/2609.33325",
-      "title": "VisionHOPE: Visual Backbones as Self-Modifying Learning Systems",
-      "abstract": "Visual backbones have evolved from Convolutional Neural Networks (CNNs) with local aggregation to Vision Transformers (ViTs) with global interactions, State-Space Models (SSMs) with input-dependent state transitions, and Test-Time Training (TTT) layers that adapt an inner learner while processing an image. Across this progression, visual computation has become increasingly adaptive to each input, yet the rules governing that adaptation remain largely prescribed by the trained backbone. We introduce VisionHOPE, the first generic visual backbone formulated as a self-modifying learning system, in which what the model remembers and how it learns co-evolve within an image. Building on the self-referential construction of Nested Learning (NL), VisionHOPE realizes this co-evolution through five coupled memories that store content, generate key and value representations, and govern learning rate and retention. These memories evolve jointly as visual context accumulates along each scan. However, directly applying the unconstrained self-referential update to a visual backbone leads to instability. We therefore derive a stability-matched step-size control scheme that combines a soft cap on self-referential injection with a spectral clamp on the retained memory transition, and prove that the resulting memory dynamics are non-expansive along each scan. For two-dimensional feature maps, we adapt NL's chunk formulation by aligning chunks with image rows and columns across four directional scans. The proposed VisionHOPE achieves competitive results on ImageNet-1K, COCO, and ADE20K, establishing self-modifying learning systems as a practical foundation for general-purpose visual backbones. The code is available at https://github.com/PSRben/VisionHOPE.",
-      "upvotes": 175,
-      "authors": [
-        "Siran Peng",
-        "Tianshuo Zhang",
-        "Tianyu Fu"
-      ],
-      "authorCount": 11,
-      "organization": {
-        "_id": "69c65a9e3b5bbcceca48c75b",
-        "name": "Mininglamp-2718",
-        "fullname": "Mininglamp Technology",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/69c656d25cf6c8ac26073013/sJ_pUHr_6G89GHJK5qPm7.png"
-      },
-      "publishedAt": "2026-09-27T00:00:00.000Z",
-      "featuredOn": "2026-09-29"
-    },
-    {
       "arxiv": "2610.05608",
       "url": "https://arxiv.org/abs/2610.05608",
       "title": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation",
       "abstract": "We present Kandinsky 6.0 Video, a family of foundation diffusion models for synchronized text-to-audio-video generation, comprising Kandinsky 6.0 Video Lite (3B parameters) and Kandinsky 6.0 Video Pro (29B parameters). Both models generate 5-second video clips with synchronized 44 kHz audio, including lip-sync, in text-to-audio-video (T2AV) and image-to-audio-video (I2AV) modes; a built-in super-resolution model raises the output resolution to Full-HD (1920times1080). Building on the video generation capabilities of Kandinsky 5.0, Kandinsky 6.0 Video employs a dual-stream CrossDiT architecture that connects a pretrained video stream and a newly trained audio stream through bidirectional cross-attention for temporal and semantic alignment. Our continuous pretraining strategy first trains the audio stream from scratch on large-scale audio corpora and then trains both streams jointly on paired audio-video data while preserving unimodal fidelity; pretraining is followed by supervised fine-tuning, reinforcement-learning-based post-training, and distillation. In side-by-side human evaluation, Kandinsky 6.0 Video Pro clearly outperforms its predecessor, Kandinsky 5.0 Video Pro, and remains competitive with leading audio-video generation models, particularly in speech quality. To accelerate open research and deployment in multimedia generation, we release the code, model checkpoints, and diffusers integration under the MIT license.",
-      "upvotes": 162,
+      "upvotes": 164,
       "authors": [
         "Team Kandinsky",
         "Julia Agafonova",
@@ -395,6 +395,48 @@
       },
       "publishedAt": "2026-10-04T00:00:00.000Z",
       "featuredOn": "2026-10-06"
+    },
+    {
+      "arxiv": "2610.08077",
+      "url": "https://arxiv.org/abs/2610.08077",
+      "title": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight",
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) turns agent experience into learning signals primarily through scalar outcome rewards after interaction. For group-relative objectives, however, this signal vanishes when all rollouts receive the same reward, even though their trajectories may reveal useful information about what the task requires and how the agent fails. We ask a complementary question: can hindsight teach an agent what it could have anticipated before acting? We introduce prospective learning, which uses post-hoc experience to supervise foresight predictions from the pre-interaction view, and instantiate it with Self-Retrospection Distillation (SRD). Intuitively, a completed trajectory reveals knowledge that would have been useful and pitfalls that should be avoided; SRD distills this privileged hindsight into trajectory-blind foresight of the same policy. Foresight serves only as a training target and need not be explicitly generated at inference time. Across 10 tool-integrated reasoning and long-horizon agentic tasks, SRD complements RLVR and self-distillation baselines with gains of up to 24.2 pp. Its advantage is especially pronounced when reward contrast is scarce: when 37--98% of rollout groups are reward-uniform across model scales, yet SRD can still exploit learning signal from sampled trajectories. In the 2B setting, where 98% of groups are all-failure, the RLVR training ends up at 0.0% success, while adding SRD reaches 60.6% under the same rollout budget. Our results suggest that post-hoc agent experience is useful not only for evaluating or improving behavior, but also for shaping predictive representations before available interaction.",
+      "upvotes": 156,
+      "authors": [
+        "Haoxiang Zhang",
+        "Qinglin Chen",
+        "Hiroaki Hayashi"
+      ],
+      "authorCount": 12,
+      "organization": {
+        "_id": "5f6d64475e78cc6b0ed31e4c",
+        "name": "Salesforce",
+        "fullname": "Salesforce AI Research",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1602756670970-noauth.jpeg"
+      },
+      "publishedAt": "2026-10-06T00:00:00.000Z",
+      "featuredOn": "2026-10-08"
+    },
+    {
+      "arxiv": "2610.09823",
+      "url": "https://arxiv.org/abs/2610.09823",
+      "title": "UltraText Bench: A Comprehensive Bilingual Benchmark for Evaluating Visual Text Rendering in Image Generation",
+      "abstract": "Dense visual text requires image generators to reproduce long strings across multiple regions with correct placement and legibility. As short-string rendering improves, evaluation must test sustained performance across more demanding scenes. We introduce UltraText Bench, a bilingual benchmark for prompt-only generation of dense visual text. It contains 432 prompts spanning 24 real-world scene categories and three difficulty levels, split equally between English and Chinese. Each human-reviewed prompt supplies exact strings for four to twelve text regions, paired with structured references for their content, placement, and visual attributes. We use the Q-Judger vision-language model to assess each image against the complete reference, reporting text fidelity, text clarity, spatial quality, and scene quality. Across 24 model configurations, these dimensions reveal different strengths: Z-Image-Turbo gains 3.81 clarity points over Z-Image-Base while losing 14.76 fidelity points under the reported settings. Performance also varies with workload; Qwen-Image-2512's English composite falls from 86.50 at L1 to 42.86 at L3. Ten participants took part in human evaluation of the automatic scores. Repository: https://github.com/LINs-lab/UltraText_Bench.",
+      "upvotes": 153,
+      "authors": [
+        "Deyuan Liu",
+        "Yihao Hu",
+        "Jingxuan Zhang"
+      ],
+      "authorCount": 16,
+      "organization": {
+        "_id": "643cb10025681c3afab0f1a6",
+        "name": "Westlake-University",
+        "fullname": "Westlake University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6437eca0819f3ab20d162e14/SQRCHUyjPRyqdtV3um42X.jpeg"
+      },
+      "publishedAt": "2026-10-07T00:00:00.000Z",
+      "featuredOn": "2026-10-08"
     },
     {
       "arxiv": "2609.34759",
@@ -418,25 +460,25 @@
       "featuredOn": "2026-09-30"
     },
     {
-      "arxiv": "2610.09823",
-      "url": "https://arxiv.org/abs/2610.09823",
-      "title": "UltraText Bench: A Comprehensive Bilingual Benchmark for Evaluating Visual Text Rendering in Image Generation",
-      "abstract": "Dense visual text requires image generators to reproduce long strings across multiple regions with correct placement and legibility. As short-string rendering improves, evaluation must test sustained performance across more demanding scenes. We introduce UltraText Bench, a bilingual benchmark for prompt-only generation of dense visual text. It contains 432 prompts spanning 24 real-world scene categories and three difficulty levels, split equally between English and Chinese. Each human-reviewed prompt supplies exact strings for four to twelve text regions, paired with structured references for their content, placement, and visual attributes. We use the Q-Judger vision-language model to assess each image against the complete reference, reporting text fidelity, text clarity, spatial quality, and scene quality. Across 24 model configurations, these dimensions reveal different strengths: Z-Image-Turbo gains 3.81 clarity points over Z-Image-Base while losing 14.76 fidelity points under the reported settings. Performance also varies with workload; Qwen-Image-2512's English composite falls from 86.50 at L1 to 42.86 at L3. Ten participants took part in human evaluation of the automatic scores. Repository: https://github.com/LINs-lab/UltraText_Bench.",
+      "arxiv": "2610.12374",
+      "url": "https://arxiv.org/abs/2610.12374",
+      "title": "AgentGarten: Code Worlds for Evolving Agents",
+      "abstract": "Interactive virtual worlds allow agents to learn through exploration and interaction. What agents can learn is bounded by the environments they practice in, which must be faithful, with consistent state, rules, and dynamics, and realistic, with observations that follow the real-world visual distributions. Achieving both across diverse worlds remains a bottleneck. We introduce AgentGarten, a framework that couples simulators and game engines with a shared neural renderer to build real-time interactive environments. Its simulation backends maintain persistent world state and execute program-defined interaction rules, while the renderer generates visual observations from structured conditions exported through a common interface. To build the neural renderer, we adapt a pretrained video model to geometry conditions, distill it with our proposed Adversarial Forcing, and optimize inference for real-time interaction. Adversarial Forcing makes history prefilling differentiable through exact replay, so that losses on later predictions update how the renderer encodes prior observations, and adds real-data adversarial supervision to improve its visual quality. In AgentGarten, agents perceive the world through visual observations, interact with it in real time, and improve by distilling each round of experience into playbooks that subsequent agents inherit and refine. Our empirical study demonstrates a substantial gain in learning efficiency, with agents learning from just 4 rounds compared with millions for a conventional reinforcement learning counterpart. As new worlds can be written as code and rendered through the same interface, environments can scale in both number and difficulty alongside their agents, a step toward agents that keep evolving through interactive experience.",
       "upvotes": 149,
       "authors": [
-        "Deyuan Liu",
-        "Yihao Hu",
-        "Jingxuan Zhang"
+        "Jiawei Chi",
+        "Shangchen Miao",
+        "Zhiyuan Shi"
       ],
-      "authorCount": 16,
+      "authorCount": 14,
       "organization": {
-        "_id": "643cb10025681c3afab0f1a6",
-        "name": "Westlake-University",
-        "fullname": "Westlake University",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6437eca0819f3ab20d162e14/SQRCHUyjPRyqdtV3um42X.jpeg"
+        "_id": "6a77dec42fad4e89f1ce346a",
+        "name": "MirroS-Lab",
+        "fullname": "MirroS",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/643b866bff50448bcfc7d1d1/pSoXy9fqBTNK3AUuisaH-.png"
       },
-      "publishedAt": "2026-10-07T00:00:00.000Z",
-      "featuredOn": "2026-10-08"
+      "publishedAt": "2026-10-08T00:00:00.000Z",
+      "featuredOn": "2026-10-09"
     },
     {
       "arxiv": "2609.31620",
@@ -502,53 +544,11 @@
       "featuredOn": "2026-09-30"
     },
     {
-      "arxiv": "2610.08077",
-      "url": "https://arxiv.org/abs/2610.08077",
-      "title": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight",
-      "abstract": "Reinforcement learning with verifiable rewards (RLVR) turns agent experience into learning signals primarily through scalar outcome rewards after interaction. For group-relative objectives, however, this signal vanishes when all rollouts receive the same reward, even though their trajectories may reveal useful information about what the task requires and how the agent fails. We ask a complementary question: can hindsight teach an agent what it could have anticipated before acting? We introduce prospective learning, which uses post-hoc experience to supervise foresight predictions from the pre-interaction view, and instantiate it with Self-Retrospection Distillation (SRD). Intuitively, a completed trajectory reveals knowledge that would have been useful and pitfalls that should be avoided; SRD distills this privileged hindsight into trajectory-blind foresight of the same policy. Foresight serves only as a training target and need not be explicitly generated at inference time. Across 10 tool-integrated reasoning and long-horizon agentic tasks, SRD complements RLVR and self-distillation baselines with gains of up to 24.2 pp. Its advantage is especially pronounced when reward contrast is scarce: when 37--98% of rollout groups are reward-uniform across model scales, yet SRD can still exploit learning signal from sampled trajectories. In the 2B setting, where 98% of groups are all-failure, the RLVR training ends up at 0.0% success, while adding SRD reaches 60.6% under the same rollout budget. Our results suggest that post-hoc agent experience is useful not only for evaluating or improving behavior, but also for shaping predictive representations before available interaction.",
-      "upvotes": 137,
-      "authors": [
-        "Haoxiang Zhang",
-        "Qinglin Chen",
-        "Hiroaki Hayashi"
-      ],
-      "authorCount": 12,
-      "organization": {
-        "_id": "5f6d64475e78cc6b0ed31e4c",
-        "name": "Salesforce",
-        "fullname": "Salesforce AI Research",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1602756670970-noauth.jpeg"
-      },
-      "publishedAt": "2026-10-06T00:00:00.000Z",
-      "featuredOn": "2026-10-08"
-    },
-    {
-      "arxiv": "2610.12374",
-      "url": "https://arxiv.org/abs/2610.12374",
-      "title": "AgentGarten: Code Worlds for Evolving Agents",
-      "abstract": "Interactive virtual worlds allow agents to learn through exploration and interaction. What agents can learn is bounded by the environments they practice in, which must be faithful, with consistent state, rules, and dynamics, and realistic, with observations that follow the real-world visual distributions. Achieving both across diverse worlds remains a bottleneck. We introduce AgentGarten, a framework that couples simulators and game engines with a shared neural renderer to build real-time interactive environments. Its simulation backends maintain persistent world state and execute program-defined interaction rules, while the renderer generates visual observations from structured conditions exported through a common interface. To build the neural renderer, we adapt a pretrained video model to geometry conditions, distill it with our proposed Adversarial Forcing, and optimize inference for real-time interaction. Adversarial Forcing makes history prefilling differentiable through exact replay, so that losses on later predictions update how the renderer encodes prior observations, and adds real-data adversarial supervision to improve its visual quality. In AgentGarten, agents perceive the world through visual observations, interact with it in real time, and improve by distilling each round of experience into playbooks that subsequent agents inherit and refine. Our empirical study demonstrates a substantial gain in learning efficiency, with agents learning from just 4 rounds compared with millions for a conventional reinforcement learning counterpart. As new worlds can be written as code and rendered through the same interface, environments can scale in both number and difficulty alongside their agents, a step toward agents that keep evolving through interactive experience.",
-      "upvotes": 135,
-      "authors": [
-        "Jiawei Chi",
-        "Shangchen Miao",
-        "Zhiyuan Shi"
-      ],
-      "authorCount": 14,
-      "organization": {
-        "_id": "6a77dec42fad4e89f1ce346a",
-        "name": "MirroS-Lab",
-        "fullname": "MirroS",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/643b866bff50448bcfc7d1d1/pSoXy9fqBTNK3AUuisaH-.png"
-      },
-      "publishedAt": "2026-10-08T00:00:00.000Z",
-      "featuredOn": "2026-10-09"
-    },
-    {
       "arxiv": "2609.38288",
       "url": "https://arxiv.org/abs/2609.38288",
       "title": "AREX-2: Advancing Self-Improving Agents through Long-Horizon Reflective Tasks",
       "abstract": "We present AREX-2, an effort to advance the self-improving capability of LLM agents, which we define as the ability to iteratively refine a solution at test time. This ability rests on two complementary capabilities: reflection, which produces a solution better than the current one, and long-horizon execution, which keeps the iteration effective over many rounds. We hypothesize that both capabilities are domain-agnostic, and can therefore be learned in scenarios that are well suited for supervision. Accordingly, we synthesize long-horizon improvement trajectories from machine learning and algorithmic programming tasks, two domains that offer verifiable feedback and reward sustained iteration. Trained on this data, our agent, built on Qwen3.8-27B, achieves strong results on MLE-bench Lite (81.8) and Frontier-CS (70.7), transfers to deep research with 84.0 on BrowseComp, 52.6 on HLE, 92.2 on GAIA, and 93.8 on DeepSearchQA, and keeps improving as its budget of rounds grows. These results show that long-horizon reflective data is an effective route toward self-improving agents.",
-      "upvotes": 135,
+      "upvotes": 136,
       "authors": [
         "Hongjin Qian",
         "Chaofan Li",
@@ -563,6 +563,27 @@
       },
       "publishedAt": "2026-09-29T00:00:00.000Z",
       "featuredOn": "2026-10-01"
+    },
+    {
+      "arxiv": "2610.08215",
+      "url": "https://arxiv.org/abs/2610.08215",
+      "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
+      "abstract": "Learning from experience is essential for LLM agents to adapt to unfamiliar and dynmaic environments. Evaluating this ability is therefore important for understanding how effectively agents acquire and use new knowledge. Existing benchmarks have sought to evaluate this ability, but they primarily evaluate tasks whose rules are provided in the instructions or already familiar to pretrained models, making it difficult to distinguish learning from interactions from reasoning with existing knowledge. To address this, we introduce Learn2Play Bench, a benchmark of newly designed text-based games, whose rules are novel or counterintuitive, requiring agents to acquire knowledge through interaction rather than rely solely on pretrained knowledge. These games provide reproducible feedback and automatic scoring, enabling controlled evaluation of learning across repeated attempts. We also vary game instances to test whether agents can apply what they have learned to new situations. Therefore, we evaluate how backbone models, self-evolving methods, and agent harnesses affect agents' learning ability, revealing three findings: (1) Experience retention: Retaining complete records of actions and feedback can support more effective learning than summarizing these experiences into rules or strategies. (2) Human agent gap: Top-performing human players achieve higher peak scores than the evaluated agents. Human explore more varied strategies, and repeat actions less. (3) Harness matters: With the backbone fixed, changing the harness can improve performance while reducing estimated inference cost. Together, these findings provide insights into how LLM agents learn from experience and suggest directions for future work to improve their learning ability. Project website: https://liushiliushi.github.io/learn2play-bench-website/",
+      "upvotes": 135,
+      "authors": [
+        "Yibo Li",
+        "Jinhang Qiu",
+        "Zhi Zheng"
+      ],
+      "authorCount": 7,
+      "organization": {
+        "_id": "6508ab2b349930913196378b",
+        "name": "NationalUniversityofSingapore",
+        "fullname": "National University of Singapore",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+      },
+      "publishedAt": "2026-10-08T00:00:00.000Z",
+      "featuredOn": "2026-10-09"
     },
     {
       "arxiv": "2609.32607",
@@ -586,6 +607,27 @@
       "featuredOn": "2026-09-30"
     },
     {
+      "arxiv": "2610.12242",
+      "url": "https://arxiv.org/abs/2610.12242",
+      "title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing",
+      "abstract": "Large language model (LLM) routing distributes inference work across different models, advancing the cost-quality Pareto frontier of LLM serving. While coarse-grained routing at the session or query level has been widely adopted in production systems, recent algorithmic work shows that fine-grained token-level routing can yield substantial efficiency and quality gains. However, efficiently serving token-level routed inference poses significant challenges to existing systems. Built on single-LLM assumptions, current systems suffer from severe step desynchronization and frequent batch admission delays under token-level routing, and they also impose high implementation complexity on developers. To address these challenges, we design TokenRouter, an efficient and developer-friendly serving system for token-level routed LLM inference. TokenRouter follows the principle of request-centric programming, model-centric execution: developers describe routing logic from the perspective of a single request, while the runtime launches a subserver for each LLM and dispatches requests asynchronously. Each subserver employs a delayed-batching scheduler, whose optimal hyperparameters are derived from a mathematical throughput model of the system. Across diverse routing algorithms, workloads, and model pairs, TokenRouter achieves 2.01-64.15x higher decoding throughput than existing systems, substantially advancing the serving efficiency of token-level LLM routing. Our code is available at https://github.com/thu-nics/TokenRouter.",
+      "upvotes": 129,
+      "authors": [
+        "Tianyu Fu",
+        "Tengxuan Liu",
+        "Ruoxi Wang"
+      ],
+      "authorCount": 7,
+      "organization": {
+        "_id": "64b74b5fb727f8771ab887f9",
+        "name": "nics-efc",
+        "fullname": "Tsinghua-NICS-EFC",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/641031b1a78453b8d96b8420/vmgxct2WsyHcKT2x2NAYT.jpeg"
+      },
+      "publishedAt": "2026-10-08T00:00:00.000Z",
+      "featuredOn": "2026-10-09"
+    },
+    {
       "arxiv": "2609.36380",
       "url": "https://arxiv.org/abs/2609.36380",
       "title": "LEGO-Anything: Coding Agents for 3D Scene Reconstruction",
@@ -605,6 +647,48 @@
       },
       "publishedAt": "2026-09-28T00:00:00.000Z",
       "featuredOn": "2026-09-30"
+    },
+    {
+      "arxiv": "2609.38839",
+      "url": "https://arxiv.org/abs/2609.38839",
+      "title": "FrameMorrow: Future-guided Frame Selection with Prospective Tokens for Long-Horizon Video Generation",
+      "abstract": "Long-horizon video generation requires models to effectively leverage an increasingly long generation history. As the generated history grows, retaining all previous content becomes increasingly expensive and redundant, making effective historical selection essential. Existing approaches often determine historical relevance based on the current content. However, information relevant to the present is not necessarily useful for future generation, while seemingly less relevant history may become important later. Our key insight is that historical information should be selected according to its relevance to future information needs. Capturing these needs does not require generating the full future; instead, a compact representation of what becomes important next is sufficient to guide historical selection. Building on this insight, we propose FrameMorrow, a prospective frame selector that predicts a small set of prospective tokens representing future information needs and uses them to identify relevant information from history. FrameMorrow selects explicit historical frames rather than model-specific internal states, enabling plug-and-play integration across diverse generators, including closed-source models, with little additional inference cost. We evaluate FrameMorrow across five benchmarks and 11 generative models spanning long-video generation, interactive generation, and action-conditioned world models. Extensive experiments demonstrate consistent improvements in long-range consistency, visual quality, and action alignment across diverse generation settings.",
+      "upvotes": 124,
+      "authors": [
+        "Bo Yin",
+        "Xiaobin Hu",
+        "Jiaqi Zhao"
+      ],
+      "authorCount": 4,
+      "organization": {
+        "_id": "6508ab2b349930913196378b",
+        "name": "NationalUniversityofSingapore",
+        "fullname": "National University of Singapore",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+      },
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "featuredOn": "2026-10-05"
+    },
+    {
+      "arxiv": "2610.06647",
+      "url": "https://arxiv.org/abs/2610.06647",
+      "title": "LoGRA: Scaling LLM Reinforcement Learning with Low-Rank Gradient Sketches",
+      "abstract": "Reinforcement learning (RL) has greatly advanced the capabilities of large language models (LLMs), but its memory demands remain a barrier to broader adoption. We introduce LoGRA, an approach to RL post-training that reduces memory by retaining useful learning signals in low-rank gradient sketches. These compact representations support both model updates and efficient policy synchronization. To prevent overly large updates from disrupting learning, we complement gradient compression with predicted-KL step control, which estimates policy changes before applying each update and adjusts its magnitude accordingly. Across reasoning tasks, LoGRA reduces average training memory by up to 45.7\\% without sacrificing performance. It also enables stable training of a 27B-parameter model for over 1,100 steps on a single eight-GPU node, where dense Adam runs out of memory, making previously memory-infeasible RL training practical. Code is available in the https://github.com/skzhang1/labs-molt/tree/logra/examples/scripts/logra{Molt library}.",
+      "upvotes": 123,
+      "authors": [
+        "Shaokun Zhang",
+        "Yifan Zhang",
+        "Jian Hu"
+      ],
+      "authorCount": 8,
+      "organization": {
+        "_id": "60262b67268c201cdc8b7d43",
+        "name": "nvidia",
+        "fullname": "NVIDIA",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png"
+      },
+      "publishedAt": "2026-10-05T00:00:00.000Z",
+      "featuredOn": "2026-10-06"
     },
     {
       "arxiv": "2609.38923",
@@ -632,7 +716,7 @@
       "url": "https://arxiv.org/abs/2609.39982",
       "title": "Mid-Harness: Scaling Actions Between Model and Harness for Terminal Agents",
       "abstract": "Terminal agents act through stochastic model generations, yet the ability to generate a useful action does not ensure its reliable execution. A poor command (e.g., wrong package install) can change the environment in ways that hinder subsequent progress, even when the model could generate a better alternative. We investigate whether allocating test-time compute at the model-harness boundary can improve action reliability and trajectory success, and what makes this allocation effective. To study these questions, we introduce Mid-Harness, which samples and verifies candidate actions before forwarding one for execution, while keeping the generator and harness unchanged. With a TMAX-9B generator, more action sampling yields little benefit under weak verification, whereas a capable verifier can exploit useful alternatives from the same generator. On TerminalBench-Lite, a GPT-5.6 Sol verifier raises Pass@1 from 50.00% for the base agent to 68.03% with 8 sampled actions. When the same TMAX-9B model serves as the verifier, pairwise verification performs best among the evaluated verification mechanisms. Distilling responses from the stronger verifier into TMAX-9B further improves Pass@1, while leaving the action generator unchanged. With TMAX-9B on TerminalBench-Lite, combining action and trajectory scaling reaches higher success at lower estimated token cost than generating more trajectories alone. Mid-Harness also improves performance across additional models, benchmarks, and harnesses. These findings identify action scaling as a promising target for test-time compute scaling in terminal agents.",
-      "upvotes": 119,
+      "upvotes": 120,
       "authors": [
         "Minki Kang",
         "Ryo Hachiuma",
@@ -649,53 +733,11 @@
       "featuredOn": "2026-10-01"
     },
     {
-      "arxiv": "2610.08215",
-      "url": "https://arxiv.org/abs/2610.08215",
-      "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
-      "abstract": "Learning from experience is essential for LLM agents to adapt to unfamiliar and dynmaic environments. Evaluating this ability is therefore important for understanding how effectively agents acquire and use new knowledge. Existing benchmarks have sought to evaluate this ability, but they primarily evaluate tasks whose rules are provided in the instructions or already familiar to pretrained models, making it difficult to distinguish learning from interactions from reasoning with existing knowledge. To address this, we introduce Learn2Play Bench, a benchmark of newly designed text-based games, whose rules are novel or counterintuitive, requiring agents to acquire knowledge through interaction rather than rely solely on pretrained knowledge. These games provide reproducible feedback and automatic scoring, enabling controlled evaluation of learning across repeated attempts. We also vary game instances to test whether agents can apply what they have learned to new situations. Therefore, we evaluate how backbone models, self-evolving methods, and agent harnesses affect agents' learning ability, revealing three findings: (1) Experience retention: Retaining complete records of actions and feedback can support more effective learning than summarizing these experiences into rules or strategies. (2) Human agent gap: Top-performing human players achieve higher peak scores than the evaluated agents. Human explore more varied strategies, and repeat actions less. (3) Harness matters: With the backbone fixed, changing the harness can improve performance while reducing estimated inference cost. Together, these findings provide insights into how LLM agents learn from experience and suggest directions for future work to improve their learning ability. Project website: https://liushiliushi.github.io/learn2play-bench-website/",
-      "upvotes": 117,
-      "authors": [
-        "Yibo Li",
-        "Jinhang Qiu",
-        "Zhi Zheng"
-      ],
-      "authorCount": 7,
-      "organization": {
-        "_id": "6508ab2b349930913196378b",
-        "name": "NationalUniversityofSingapore",
-        "fullname": "National University of Singapore",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
-      },
-      "publishedAt": "2026-10-08T00:00:00.000Z",
-      "featuredOn": "2026-10-09"
-    },
-    {
-      "arxiv": "2610.12242",
-      "url": "https://arxiv.org/abs/2610.12242",
-      "title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing",
-      "abstract": "Large language model (LLM) routing distributes inference work across different models, advancing the cost-quality Pareto frontier of LLM serving. While coarse-grained routing at the session or query level has been widely adopted in production systems, recent algorithmic work shows that fine-grained token-level routing can yield substantial efficiency and quality gains. However, efficiently serving token-level routed inference poses significant challenges to existing systems. Built on single-LLM assumptions, current systems suffer from severe step desynchronization and frequent batch admission delays under token-level routing, and they also impose high implementation complexity on developers. To address these challenges, we design TokenRouter, an efficient and developer-friendly serving system for token-level routed LLM inference. TokenRouter follows the principle of request-centric programming, model-centric execution: developers describe routing logic from the perspective of a single request, while the runtime launches a subserver for each LLM and dispatches requests asynchronously. Each subserver employs a delayed-batching scheduler, whose optimal hyperparameters are derived from a mathematical throughput model of the system. Across diverse routing algorithms, workloads, and model pairs, TokenRouter achieves 2.01-64.15x higher decoding throughput than existing systems, substantially advancing the serving efficiency of token-level LLM routing. Our code is available at https://github.com/thu-nics/TokenRouter.",
-      "upvotes": 117,
-      "authors": [
-        "Tianyu Fu",
-        "Tengxuan Liu",
-        "Ruoxi Wang"
-      ],
-      "authorCount": 7,
-      "organization": {
-        "_id": "64b74b5fb727f8771ab887f9",
-        "name": "nics-efc",
-        "fullname": "Tsinghua-NICS-EFC",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/641031b1a78453b8d96b8420/vmgxct2WsyHcKT2x2NAYT.jpeg"
-      },
-      "publishedAt": "2026-10-08T00:00:00.000Z",
-      "featuredOn": "2026-10-09"
-    },
-    {
       "arxiv": "2609.38169",
       "url": "https://arxiv.org/abs/2609.38169",
       "title": "STEPQuant: When and Where Errors Matter in Delta-Rule Recurrent State Quantization",
       "abstract": "Linear attention replaces growing KV caches with fixed-size recurrent states, yet these persistent states can become a substantial memory bottleneck under concurrent serving. Directly quantizing recurrent states to low precision often leads to severe accuracy degradation, as quantization errors propagate through successive state updates. We discover that the impact of these errors depends on two complementary dimensions: temporally, errors in long-lived memory can persist across many decoding steps; spatially, errors in different key rows affect model outputs differently, while state magnitudes vary substantially along both rows and columns. Motivated by these observations, we propose STEPQuant, a spatial-temporal post-training quantization framework for Delta-rule recurrent states. STEPQuant allocates precision according to error magnitude and memory lifetime, and jointly fits key-row and value-column scales based on state distributions and key-row impact on output error. Experiments on Qwen3.8-27B and Kimi-Linear-48B-A3B-Instruct across both long- and short-generation benchmarks show that STEPQuant closely matches FP32-state accuracy under a nominal 6-bit budget and outperforms uniform INT8 in its 4-bit configuration. Integrated into SGLang with optimized GPU kernels, 6-bit STEPQuant achieves over 5x recurrent-state compression and reduces total serving memory by up to 68.7%. Our code is available at https://github.com/Dreamer-Toby/STEPQuant.",
-      "upvotes": 116,
+      "upvotes": 117,
       "authors": [
         "Bingchen Yao",
         "Haobo Xu",
@@ -733,32 +775,11 @@
       "featuredOn": "2026-09-30"
     },
     {
-      "arxiv": "2609.38839",
-      "url": "https://arxiv.org/abs/2609.38839",
-      "title": "FrameMorrow: Future-guided Frame Selection with Prospective Tokens for Long-Horizon Video Generation",
-      "abstract": "Long-horizon video generation requires models to effectively leverage an increasingly long generation history. As the generated history grows, retaining all previous content becomes increasingly expensive and redundant, making effective historical selection essential. Existing approaches often determine historical relevance based on the current content. However, information relevant to the present is not necessarily useful for future generation, while seemingly less relevant history may become important later. Our key insight is that historical information should be selected according to its relevance to future information needs. Capturing these needs does not require generating the full future; instead, a compact representation of what becomes important next is sufficient to guide historical selection. Building on this insight, we propose FrameMorrow, a prospective frame selector that predicts a small set of prospective tokens representing future information needs and uses them to identify relevant information from history. FrameMorrow selects explicit historical frames rather than model-specific internal states, enabling plug-and-play integration across diverse generators, including closed-source models, with little additional inference cost. We evaluate FrameMorrow across five benchmarks and 11 generative models spanning long-video generation, interactive generation, and action-conditioned world models. Extensive experiments demonstrate consistent improvements in long-range consistency, visual quality, and action alignment across diverse generation settings.",
-      "upvotes": 114,
-      "authors": [
-        "Bo Yin",
-        "Xiaobin Hu",
-        "Jiaqi Zhao"
-      ],
-      "authorCount": 4,
-      "organization": {
-        "_id": "6508ab2b349930913196378b",
-        "name": "NationalUniversityofSingapore",
-        "fullname": "National University of Singapore",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
-      },
-      "publishedAt": "2026-09-30T00:00:00.000Z",
-      "featuredOn": "2026-10-05"
-    },
-    {
       "arxiv": "2609.38078",
       "url": "https://arxiv.org/abs/2609.38078",
       "title": "MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation",
       "abstract": "Vision-language-action (VLA) models have advanced robotic manipulation, but their zero-shot generalization in new tasks and environments remains limited, and their reliance on specialized training keeps them from benefiting directly from rapidly advancing general-purpose vision-language models (VLMs). In parallel, recent agentic robotic systems leverage VLMs for high-level reasoning or coding agents for robot control, but often depend on extensive external models and tools, introducing additional complexity and cost. This motivates us to ask: Can a general-purpose VLM itself operate a robot more like the human teleoperator by reasoning directly from observations, issuing actions, and continuously adapting to execution feedback, without relying on external models such as learned action experts, coding agents or grounding tools like SAM3? In this work, we introduce MotorMind, a robot manipulation harness that connects VLM-proposed mid-level actions to deterministic robot control and feedback, with asynchronous monitoring and background memory updates. Without task-specific policy training, coding agents, or additional grounding tools such as SAM3, MotorMind achieves 66.7% success on the base LIBERO-PRO suites and 53.8% under perturbations, compared with at most 13.3% and 19.2%, respectively, for the prior zero-shot methods we evaluate. The same interface reaches 95% average success on a real xArm6 robot across direct manipulation and human-perturbation settings. Replacing the backbone with a stronger VLM further improves performance, while the remaining failures - primarily due to visual grounding, embodied reasoning, and action knowledge - decrease as VLM capability improves. These results show that a general-purpose VLM, when equipped with an appropriate mid-level action representation and asynchronous execution harness, can perform effective zero-shot robotic manipulation.",
-      "upvotes": 113,
+      "upvotes": 114,
       "authors": [
         "Bingxuan Li",
         "Siqi Song",
@@ -773,6 +794,27 @@
       },
       "publishedAt": "2026-09-29T00:00:00.000Z",
       "featuredOn": "2026-10-05"
+    },
+    {
+      "arxiv": "2610.01509",
+      "url": "https://arxiv.org/abs/2610.01509",
+      "title": "Sharpening Tax in Post-Training",
+      "abstract": "An emerging hypothesis about reinforcement learning (RL) post-training of large language models (LLMs) is that it merely sharpens existing behaviors of a base model, improving single-shot accuracy at the cost of solution coverage. Although this trade-off has been observed in math and coding tasks, it need not extend to agentic tasks, where multi-turn tool use and interaction may require capabilities newly acquired during post-training. Our surprising finding is that pre-trained LLMs, equipped with a light inference harness, can serve as capable agents. Despite far lower accuracy (pass@1), they often surpass their post-trained counterparts in solution coverage (pass@K) given a sufficient test-time budget. We further analyze the underlying mechanism and show that post-training pushes tasks toward two extremes, always solved or never solved, and thereby improves sampling efficiency and consistency at the cost of solution coverage. To measure this cost, we propose Sharpening Tax, a diagnostic metric that quantifies the loss in test-time scalability after post-training. Across 14 base/post-trained model pairs from four families and three agentic benchmarks (42 cases in total), the tax is prevalent in most settings, can be estimated from a few rollouts, and correlates well with other metrics. Finally, we present posterior-tempered group sampling (PTGS), a simple plug-and-play Bayesian sampler that adapts the sampling temperature per prompt to its estimated difficulty. Applied during RL training in two agentic environments, PTGS pays a smaller tax than the fixed-temperature baseline, solving more tasks under repeated sampling while also improving single-shot accuracy.",
+      "upvotes": 111,
+      "authors": [
+        "Changdae Oh",
+        "Qi Zeng",
+        "Qi Qi"
+      ],
+      "authorCount": 10,
+      "organization": {
+        "_id": "6a78cbce04f58391d2d7c93b",
+        "name": "meta",
+        "fullname": "Meta",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/Yq_gbM7i78tR3nfEvcwSA.png"
+      },
+      "publishedAt": "2026-10-01T00:00:00.000Z",
+      "featuredOn": "2026-10-02"
     },
     {
       "arxiv": "2609.40340",
@@ -794,48 +836,6 @@
       },
       "publishedAt": "2026-09-30T00:00:00.000Z",
       "featuredOn": "2026-10-01"
-    },
-    {
-      "arxiv": "2609.35432",
-      "url": "https://arxiv.org/abs/2609.35432",
-      "title": "Self-Evolving Coding Agents: From Digital Programs to Physical-World Intelligence",
-      "abstract": "Vision-language-action (VLA) and world-action (WAM) models map observations and instructions directly to robot actions. This directness ties a policy to training: minor layout or viewpoint changes cause failure, and instructions generalize poorly. The root cause lies in representation: task requirements, conditions, progress, and failure recovery are implicitly encoded in action sequences, making them difficult to inspect or revise. Digital coding agents offer a precedent: LLMs call tools, verify results, and revise from feedback as executable code. The same working pattern of explicit state, manageable execution, and revisable procedures underlies generalization and long-horizon execution in the physical world, letting physical experience return as reusable programs, memory, or evidence. We propose Physical Coding, representing task state and execution as code. Code as World records objects, relations, constraints, and progress; Code as Policy organizes planning, verification, recovery, and execution. We build HexaAnything, which calls perception, planning, and control tools, including VLA/WAM policies, and makes in-the-loop decisions from external feedback. Verified traces become data and memory, enabling evolution from tools and Harness to model weights, architectures, and ultimately hardware and task design. On RoboCasa365, HexaAnything improves Composite-Unseen and overall success over XR-1 VLA, and its Harness-trained HexaModel beats the base on every split, indicating code traces internalize physical execution. On PhyBench and a dual-arm AgileX robot, the agent autonomously completes physics experiments and most tabletop tasks, often faster than published results. We observe data, model, and tool self-evolution; future work targets weight internalization, autonomous redesign of architectures, languages, representations, and tasks, and deployment in manufacturing and science.",
-      "upvotes": 109,
-      "authors": [
-        "Hongcheng Gao",
-        "Jingjing Zhou",
-        "Zelin Zheng"
-      ],
-      "authorCount": 13,
-      "organization": {
-        "_id": "6abb5636f14e3e1fc4777010",
-        "name": "HexaFuture",
-        "fullname": "HexaFuture",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62728f4f6253fe2068da1021/edI56L2Vh8bku4QOwA_uA.jpeg"
-      },
-      "publishedAt": "2026-09-28T00:00:00.000Z",
-      "featuredOn": "2026-09-29"
-    },
-    {
-      "arxiv": "2610.01509",
-      "url": "https://arxiv.org/abs/2610.01509",
-      "title": "Sharpening Tax in Post-Training",
-      "abstract": "An emerging hypothesis about reinforcement learning (RL) post-training of large language models (LLMs) is that it merely sharpens existing behaviors of a base model, improving single-shot accuracy at the cost of solution coverage. Although this trade-off has been observed in math and coding tasks, it need not extend to agentic tasks, where multi-turn tool use and interaction may require capabilities newly acquired during post-training. Our surprising finding is that pre-trained LLMs, equipped with a light inference harness, can serve as capable agents. Despite far lower accuracy (pass@1), they often surpass their post-trained counterparts in solution coverage (pass@K) given a sufficient test-time budget. We further analyze the underlying mechanism and show that post-training pushes tasks toward two extremes, always solved or never solved, and thereby improves sampling efficiency and consistency at the cost of solution coverage. To measure this cost, we propose Sharpening Tax, a diagnostic metric that quantifies the loss in test-time scalability after post-training. Across 14 base/post-trained model pairs from four families and three agentic benchmarks (42 cases in total), the tax is prevalent in most settings, can be estimated from a few rollouts, and correlates well with other metrics. Finally, we present posterior-tempered group sampling (PTGS), a simple plug-and-play Bayesian sampler that adapts the sampling temperature per prompt to its estimated difficulty. Applied during RL training in two agentic environments, PTGS pays a smaller tax than the fixed-temperature baseline, solving more tasks under repeated sampling while also improving single-shot accuracy.",
-      "upvotes": 108,
-      "authors": [
-        "Changdae Oh",
-        "Qi Zeng",
-        "Qi Qi"
-      ],
-      "authorCount": 10,
-      "organization": {
-        "_id": "6a78cbce04f58391d2d7c93b",
-        "name": "meta",
-        "fullname": "Meta",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/Yq_gbM7i78tR3nfEvcwSA.png"
-      },
-      "publishedAt": "2026-10-01T00:00:00.000Z",
-      "featuredOn": "2026-10-02"
     }
   ]
 }
