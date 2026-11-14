@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-13T09:41:59.058Z",
+  "generatedAt": "2026-11-14T09:05:09.587Z",
   "source": "Hugging Face Daily Papers API",
   "window": {
-    "from": "2026-10-31",
-    "to": "2026-11-13",
+    "from": "2026-11-01",
+    "to": "2026-11-14",
     "days": 14
   },
   "note": "추천 수(upvotes) 내림차순. 초록은 원문 그대로이므로 요약의 근거로 쓸 것.",
@@ -56,7 +56,7 @@
       "url": "https://arxiv.org/abs/2611.08449",
       "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
       "abstract": "Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one coordinate token at a time, making richer predictions increasingly costly. We introduce VFlash, a method for fast, accurate visual planning through Flash Primitive Decoding. VFlash exploits the known structure of visual primitives to predict their coordinates jointly, using a lightweight drafter that generates an entire primitive in one forward pass. The layout adapts to the primitive's type, dimensionality, and length, supporting compact boxes and long, variable-length trajectories. Crucially, spatial accuracy need not require reproducing an autoregressive model's exact token sequence. VFlash therefore trains on annotated primitives and directly accepts structurally valid predictions without target-token agreement. Across the evaluated 2D and 3D robot trajectory tasks, VFlash consistently reduces prediction errors relative to autoregressive decoding. Preliminary single-rollout measurements indicate approximately 25x faster generation for 3D point motion forecasting. A world action model conditioned on VFlash plans achieves 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline.",
-      "upvotes": 116,
+      "upvotes": 117,
       "authors": [
         "Yu-Cheng Chou",
         "Shihao Wang",
@@ -138,7 +138,7 @@
       "url": "https://arxiv.org/abs/2611.06043",
       "title": "Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription",
       "abstract": "Streaming speech recognition is increasingly consumed by machines, such as translators and voice agents, that act on each token as it appears. A token that is later revised costs wasted work or a wrong action. In this work, we present Confucius4-R2T2 (short for Real Real-Time Transcription), a stable-prefix streaming ASR model that never modifies its earlier output while maintaining high accuracy and low latency. R2T2 is obtained by post-training Qwen3-ASR-1.7B on 1,500 hours of Chinese and English audio while freezing its pre-trained audio encoder and projector. The adaptation is based on the concept of Longest Stable Prefix (LSP), a new notion that we introduce in this work. We prove that LSP is monotone under the prefix order, consistent with the full-audio output, and maximal among labels that equal a whole earlier output. Learning from LSP labels converts a full-context model into a stable-prefix streaming one without any architectural change. Extensive evaluations show that R2T2 brings streaming recognition close to the base model's full-context quality while delivering stable text with low emission lag. Its gains extend beyond the post-training languages, demonstrating a practical path from full-context ASR to stable streaming. We open-source the model weights and code at https://huggingface.co/netease-youdao/Confucius4-R2T2 and https://github.com/netease-youdao/Confucius4-R2T2.",
-      "upvotes": 92,
+      "upvotes": 94,
       "authors": [
         "Daniel Huang",
         "Qi He",
@@ -197,6 +197,43 @@
       "featuredOn": "2026-11-06"
     },
     {
+      "arxiv": "2611.15777",
+      "url": "https://arxiv.org/abs/2611.15777",
+      "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
+      "abstract": "System One models promise fast, general-purpose decision-making without lengthy token generation. However, understanding their capability spectrum and decision reliability requires more than aggregate performance on current benchmarks. Existing evaluations often provide limited insight into the breadth of model capabilities and the reliability of their decisions. We introduce SO-Arena, a benchmark characterizing the capability spectrum and decision reliability of System One models across 11 domains and five capability families. For the capability spectrum, SO-Arena offers evidence-grounded evaluation through reliable sources and manual verification of reference labels against model-visible inputs; fine-grained capability assessment through domain-specific difficulty criteria; and realistic interactive evaluation, where models iteratively execute actions in sandboxes. Reasoning-intensive tasks further enable system one-two comparison. Beyond accuracy, SO-Arena assesses decision reliability through two complementary measures: decision stability under controlled option-set changes and missing-answer recognition when no valid option is available. Evaluations across 21 models reveal that the benefits of scaling and additional reasoning vary substantially across domains. More importantly, strong overall performance does not necessarily imply reliable decision-making: the best-performing System One model ranks only seventh in reliability. Together, these findings highlight the need to characterize capability spectrum and decision reliability as complementary dimensions, providing a systematic view of the strengths and limitations of System One models.",
+      "upvotes": 83,
+      "authors": [
+        "Lichen Li",
+        "Ziping Dong",
+        "Sicheng Feng"
+      ],
+      "authorCount": 5,
+      "organization": {
+        "_id": "6508ab2b349930913196378b",
+        "name": "NationalUniversityofSingapore",
+        "fullname": "National University of Singapore",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+      },
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "featuredOn": "2026-11-13"
+    },
+    {
+      "arxiv": "2611.05275",
+      "url": "https://arxiv.org/abs/2611.05275",
+      "title": "Route Anything: A Study of Model and Policy Routing for General-Purpose AI Systems",
+      "abstract": "Artificial general intelligence (AGI) requires a method that can understand, generate, reason, and act across diverse domains and modalities. Rather than relying on a single model to master every capability, a promising path toward AGI now is to orchestrate a heterogeneous ecosystem of specialized models, tools, and policies (candidates) into a unified AI system. At the heart of this vision lies a fundamental question: how can an AI system dynamically select and coordinate the most capable candidate for each task while balancing performance and computational cost? In this work, we present Route Anything, a unified framework for studying model and policy routing across general-purpose AI systems. We develop a unified theoretical foundation that characterizes optimal routing under quality--cost trade-offs and establishes how the information available to a router determines its attainable performance. To systematically investigate routing across diverse capabilities, we first construct an omni-modal trajectory matrix spanning 25 benchmarks across language understanding, image, video, and speech generation, coding and workplace agents, and robotic manipulation, comprising 374,401 scored runs from 452 candidate configurations. Building on this framework, we train and test different routers to investigate the potential of omni-modal model routing, the capabilities of learned routers, and the conditions under which routing improves efficiency. Our results reveal substantial opportunities for capability orchestration: per-input oracle routing outperforms the best fixed candidate by 5.4 points, and learned routers outperform it by 0.3 points across 16 benchmarks, by 2.1 points on video generation, and by 1.1 points on robot manipulation while using 24% less policy time. More importantly, routing raises efficiency by 8.82x on average compared with the reference model.",
+      "upvotes": 83,
+      "authors": [
+        "Pengfei Zhou",
+        "Yixing Ma",
+        "Hexin Wang"
+      ],
+      "authorCount": 7,
+      "organization": null,
+      "publishedAt": "2026-11-03T00:00:00.000Z",
+      "featuredOn": "2026-11-04"
+    },
+    {
       "arxiv": "2611.04916",
       "url": "https://arxiv.org/abs/2611.04916",
       "title": "Behind Video Generation: Observations and Insights on Multimodal Understanding from Kling",
@@ -214,22 +251,6 @@
         "fullname": "KlingAI Research",
         "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/60e272ca6c78a8c122b12127/ZQV1aKLUDPf2rUcxxAqj6.jpeg"
       },
-      "publishedAt": "2026-11-03T00:00:00.000Z",
-      "featuredOn": "2026-11-04"
-    },
-    {
-      "arxiv": "2611.05275",
-      "url": "https://arxiv.org/abs/2611.05275",
-      "title": "Route Anything: A Study of Model and Policy Routing for General-Purpose AI Systems",
-      "abstract": "Artificial general intelligence (AGI) requires a method that can understand, generate, reason, and act across diverse domains and modalities. Rather than relying on a single model to master every capability, a promising path toward AGI now is to orchestrate a heterogeneous ecosystem of specialized models, tools, and policies (candidates) into a unified AI system. At the heart of this vision lies a fundamental question: how can an AI system dynamically select and coordinate the most capable candidate for each task while balancing performance and computational cost? In this work, we present Route Anything, a unified framework for studying model and policy routing across general-purpose AI systems. We develop a unified theoretical foundation that characterizes optimal routing under quality--cost trade-offs and establishes how the information available to a router determines its attainable performance. To systematically investigate routing across diverse capabilities, we first construct an omni-modal trajectory matrix spanning 25 benchmarks across language understanding, image, video, and speech generation, coding and workplace agents, and robotic manipulation, comprising 374,401 scored runs from 452 candidate configurations. Building on this framework, we train and test different routers to investigate the potential of omni-modal model routing, the capabilities of learned routers, and the conditions under which routing improves efficiency. Our results reveal substantial opportunities for capability orchestration: per-input oracle routing outperforms the best fixed candidate by 5.4 points, and learned routers outperform it by 0.3 points across 16 benchmarks, by 2.1 points on video generation, and by 1.1 points on robot manipulation while using 24% less policy time. More importantly, routing raises efficiency by 8.82x on average compared with the reference model.",
-      "upvotes": 82,
-      "authors": [
-        "Pengfei Zhou",
-        "Yixing Ma",
-        "Hexin Wang"
-      ],
-      "authorCount": 7,
-      "organization": null,
       "publishedAt": "2026-11-03T00:00:00.000Z",
       "featuredOn": "2026-11-04"
     },
@@ -297,6 +318,27 @@
       "featuredOn": "2026-11-03"
     },
     {
+      "arxiv": "2611.03953",
+      "url": "https://arxiv.org/abs/2611.03953",
+      "title": "P^2-MOPD: Accelerating Multi-Teacher On-Policy Distillation via Parameter Priors",
+      "abstract": "Multi-teacher on-policy distillation consolidates expert capabilities by supervising student-generated trajectories, whereas task arithmetic offers a training-free alternative through linear parameter combinations. We view the linear combination of student and expert parameters as a single differentiable model and propose P^2-MOPD, which jointly optimizes the mixing coefficients and the student weights under the same on-policy distillation objective. Unlike task arithmetic, which stays within the span of the frozen student and expert parameters for any choice of merging coefficients, P^2-MOPD keeps the student trainable, so the experts act as parameter priors without confining it to this span. Across four domains at 1.7B and 4B scales, P^2-MOPD achieves faster and more balanced recovery than MOPD from the same initialization, surpassing its final average recovery in half the training steps. At the end of training, our 1.7B model reaches 94.7% average recovery, versus 80.9% for MOPD.",
+      "upvotes": 70,
+      "authors": [
+        "Sinuo Wang",
+        "Jiacheng Lu",
+        "Zeyu Zhang"
+      ],
+      "authorCount": 11,
+      "organization": {
+        "_id": "66e43eae9d477f566f937935",
+        "name": "stepfun-ai",
+        "fullname": "StepFun",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/644f7e6233ac8f46fa0b9e26/CmF2ocXhkr2UtHXgmwq7-.png"
+      },
+      "publishedAt": "2026-11-02T20:53:15.000Z",
+      "featuredOn": "2026-11-09"
+    },
+    {
       "arxiv": "2611.04277",
       "url": "https://arxiv.org/abs/2611.04277",
       "title": "Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training",
@@ -316,27 +358,6 @@
       },
       "publishedAt": "2026-11-03T00:00:00.000Z",
       "featuredOn": "2026-11-06"
-    },
-    {
-      "arxiv": "2611.03953",
-      "url": "https://arxiv.org/abs/2611.03953",
-      "title": "P^2-MOPD: Accelerating Multi-Teacher On-Policy Distillation via Parameter Priors",
-      "abstract": "Multi-teacher on-policy distillation consolidates expert capabilities by supervising student-generated trajectories, whereas task arithmetic offers a training-free alternative through linear parameter combinations. We view the linear combination of student and expert parameters as a single differentiable model and propose P^2-MOPD, which jointly optimizes the mixing coefficients and the student weights under the same on-policy distillation objective. Unlike task arithmetic, which stays within the span of the frozen student and expert parameters for any choice of merging coefficients, P^2-MOPD keeps the student trainable, so the experts act as parameter priors without confining it to this span. Across four domains at 1.7B and 4B scales, P^2-MOPD achieves faster and more balanced recovery than MOPD from the same initialization, surpassing its final average recovery in half the training steps. At the end of training, our 1.7B model reaches 94.7% average recovery, versus 80.9% for MOPD.",
-      "upvotes": 69,
-      "authors": [
-        "Sinuo Wang",
-        "Jiacheng Lu",
-        "Zeyu Zhang"
-      ],
-      "authorCount": 11,
-      "organization": {
-        "_id": "66e43eae9d477f566f937935",
-        "name": "stepfun-ai",
-        "fullname": "StepFun",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/644f7e6233ac8f46fa0b9e26/CmF2ocXhkr2UtHXgmwq7-.png"
-      },
-      "publishedAt": "2026-11-02T20:53:15.000Z",
-      "featuredOn": "2026-11-09"
     },
     {
       "arxiv": "2611.08264",
@@ -360,17 +381,23 @@
       "featuredOn": "2026-11-09"
     },
     {
-      "arxiv": "2611.14210",
-      "url": "https://arxiv.org/abs/2611.14210",
-      "title": "Tree-Ising: Repairing Language Models with Bit-Level Ising Edits",
-      "abstract": "Weight-space programming, introduced in recent MIT work by Takehi et al., enables a frontier LLM agent to read a network's weights and write a repair. Their GPT-6 Astra agent corrected the reasoning loops of Qwen3.5-0.8B without gradients, using 158 agent turns, 89.7 million tokens, and 50 forward-pass requests. Our method, Tree-Ising, casts this repair as a sparse discrete optimization problem over the model's own BF16 weights. Forward statistics define an objective that weakens a loop direction, strengthens a concluding direction, and preserves the layer's output on productive tokens. Within a state-tree representation, where lossless BF16 storage acts as a special case, the admissible edits are sign flips and exponent shifts that preserve all shared group exponents and mantissas. We decompose this objective exactly into independent QUBO (Ising) problems, one per output row, which we solve on a GPU using simulated annealing or quantum-inspired simulated bifurcation. On the agent's two layers, Tree-Ising achieves 54.6% on MATH-500, outperforming the agent's edit (51.7%) under the same evaluation protocol, while the base model scores 7.9% as reported. The simulated bifurcation solver yields a statistically indistinguishable repair at 55.1%. Both solvers outperform the agent edit across all five math benchmarks, with statistically significant improvements on MATH-500 and GSM8K after correcting for multiple comparisons. Our approach modifies 13% to 17% fewer weights and reduces BF16 bit flips by a factor of 2.2 to 2.3. It requires only four forward-pass requests and zero LLM tokens, with the annealing recipe costing about $0.90 in GPU time. On Qwen3.5-2B, with layers and dose selected using only the base model, the same recipe increases greedy GSM8K accuracy from 21.6% to 69.4%. As a proof of concept, we execute an eight-variable repair subproblem using QAOA on an IBM Heron processor.",
+      "arxiv": "2611.14320",
+      "url": "https://arxiv.org/abs/2611.14320",
+      "title": "Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents",
+      "abstract": "External memory enables LLM agents to improve from experience by distilling trajectories of past tasks into concise lessons for new tasks. However, memory can also lead to memory-induced degradation, where an agent fails on tasks it would solve without memory, often because it follows a lesson that is incorrect, or misapplies or misreads a valid one. This is because lessons are inferred from trajectories labeled only with task success or failure, yet are typically provided without the trajectories they came from, leaving the agent no way to check them. To address this, we introduce WikiTrace, an evidence-linked memory system designed to let agents check each lesson against its original trajectory. Specifically, motivated by the finding that a trajectory often still holds the evidence needed to catch an erroneous lesson, WikiTrace stores each lesson as a concise insight linked to a summary of why its trajectory succeeded or failed and to the raw trajectory itself. Then, on a new task, the agent starts from all insights and, whenever one lacks details needed to act, conflicts with another, or comes from a failed task, descends through its links with terminal tools to fill in missing details or correct the insight before acting. We validate WikiTrace on five agentic benchmarks, showing that it consistently outperforms existing memory approaches and a baseline given the same insights alone, while also reducing memory-induced degradation. Our code is available at https://github.com/yukyeongleee/wikitrace",
       "upvotes": 66,
       "authors": [
-        "Hadi Salloum",
-        "Ammar Ali"
+        "Yukyeong Lee",
+        "Yumin Choi",
+        "Jinheon Baek"
       ],
-      "authorCount": 2,
-      "organization": null,
+      "authorCount": 4,
+      "organization": {
+        "_id": "6475760c33192631bad2bb38",
+        "name": "kaist-ai",
+        "fullname": "KAIST AI",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6469949654873f0043b09c22/aaZFiyXe1qR-Dmy_xq67m.png"
+      },
       "publishedAt": "2026-11-10T00:00:00.000Z",
       "featuredOn": "2026-11-11"
     },
@@ -417,27 +444,6 @@
       "featuredOn": "2026-11-02"
     },
     {
-      "arxiv": "2611.14320",
-      "url": "https://arxiv.org/abs/2611.14320",
-      "title": "Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents",
-      "abstract": "External memory enables LLM agents to improve from experience by distilling trajectories of past tasks into concise lessons for new tasks. However, memory can also lead to memory-induced degradation, where an agent fails on tasks it would solve without memory, often because it follows a lesson that is incorrect, or misapplies or misreads a valid one. This is because lessons are inferred from trajectories labeled only with task success or failure, yet are typically provided without the trajectories they came from, leaving the agent no way to check them. To address this, we introduce WikiTrace, an evidence-linked memory system designed to let agents check each lesson against its original trajectory. Specifically, motivated by the finding that a trajectory often still holds the evidence needed to catch an erroneous lesson, WikiTrace stores each lesson as a concise insight linked to a summary of why its trajectory succeeded or failed and to the raw trajectory itself. Then, on a new task, the agent starts from all insights and, whenever one lacks details needed to act, conflicts with another, or comes from a failed task, descends through its links with terminal tools to fill in missing details or correct the insight before acting. We validate WikiTrace on five agentic benchmarks, showing that it consistently outperforms existing memory approaches and a baseline given the same insights alone, while also reducing memory-induced degradation. Our code is available at https://github.com/yukyeongleee/wikitrace",
-      "upvotes": 65,
-      "authors": [
-        "Yukyeong Lee",
-        "Yumin Choi",
-        "Jinheon Baek"
-      ],
-      "authorCount": 4,
-      "organization": {
-        "_id": "6475760c33192631bad2bb38",
-        "name": "kaist-ai",
-        "fullname": "KAIST AI",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6469949654873f0043b09c22/aaZFiyXe1qR-Dmy_xq67m.png"
-      },
-      "publishedAt": "2026-11-10T00:00:00.000Z",
-      "featuredOn": "2026-11-11"
-    },
-    {
       "arxiv": "2611.06910",
       "url": "https://arxiv.org/abs/2611.06910",
       "title": "FrontierPhysics: Evaluating Agents for End-to-End Physics Research",
@@ -480,27 +486,6 @@
       "featuredOn": "2026-11-05"
     },
     {
-      "arxiv": "2611.12885",
-      "url": "https://arxiv.org/abs/2611.12885",
-      "title": "World In-Context Learning for Agentic Robot Manipulation",
-      "abstract": "Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. In-context learning (ICL) avoids this coupling but has not matched trained policies, because a demonstration recorded in another scene carries no feedback from the world the robot currently faces. We observe that what an agent learns in context is semantic, recording task steps and object roles rather than visual appearance, so experience gathered in one world transfers to another. Based on this insight, we propose World In-Context Learning (WICL), a paradigm in which a frozen model starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights. We build RoboScript, a modular infrastructure that implements WICL for agentic manipulation. From a single demonstration, RoboScript learns each task through rehearsal in simulation, freezes the learned knowledge as a Task Memory, and deploys the frozen memory on new scenes with data isolation that ensures every deployment input is available on a real robot. On all 50 tasks of RoboTwin 2.0, RoboScript reaches 83.4% mean success across clean and randomized settings with one demonstration per task and no gradient updates, exceeding the strongest trained action policy by over 20 points. The method generalizes across visual distributions, improves through reflection, scales with the foundation model, and transfers to a physical dual-arm robot through cross-embodiment memory adaptation. With a world in the loop, a robot can learn a manipulation task in its context as well as it learns one in its weights. All code is available at https://github.com/ArcheOne-AI/RoboScript",
-      "upvotes": 58,
-      "authors": [
-        "Heng Fang",
-        "Zehui Guo",
-        "Yuehan Zhang"
-      ],
-      "authorCount": 6,
-      "organization": {
-        "_id": "6af42a5f11469c47fb586796",
-        "name": "ArcheOne-AI",
-        "fullname": "ArcheOne-AI",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67467b5979406f42a14517e9/ILoHdVzDjb0mdclAuIZE4.png"
-      },
-      "publishedAt": "2026-11-09T00:00:00.000Z",
-      "featuredOn": "2026-11-11"
-    },
-    {
       "arxiv": "2611.10771",
       "url": "https://arxiv.org/abs/2611.10771",
       "title": "WorldFoundry: Towards Unified Infrastructure for World Intelligence",
@@ -520,6 +505,27 @@
       },
       "publishedAt": "2026-11-07T14:59:22.000Z",
       "featuredOn": "2026-11-10"
+    },
+    {
+      "arxiv": "2611.12885",
+      "url": "https://arxiv.org/abs/2611.12885",
+      "title": "World In-Context Learning for Agentic Robot Manipulation",
+      "abstract": "Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. In-context learning (ICL) avoids this coupling but has not matched trained policies, because a demonstration recorded in another scene carries no feedback from the world the robot currently faces. We observe that what an agent learns in context is semantic, recording task steps and object roles rather than visual appearance, so experience gathered in one world transfers to another. Based on this insight, we propose World In-Context Learning (WICL), a paradigm in which a frozen model starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights. We build RoboScript, a modular infrastructure that implements WICL for agentic manipulation. From a single demonstration, RoboScript learns each task through rehearsal in simulation, freezes the learned knowledge as a Task Memory, and deploys the frozen memory on new scenes with data isolation that ensures every deployment input is available on a real robot. On all 50 tasks of RoboTwin 2.0, RoboScript reaches 83.4% mean success across clean and randomized settings with one demonstration per task and no gradient updates, exceeding the strongest trained action policy by over 20 points. The method generalizes across visual distributions, improves through reflection, scales with the foundation model, and transfers to a physical dual-arm robot through cross-embodiment memory adaptation. With a world in the loop, a robot can learn a manipulation task in its context as well as it learns one in its weights. All code is available at https://github.com/ArcheOne-AI/RoboScript",
+      "upvotes": 57,
+      "authors": [
+        "Heng Fang",
+        "Zehui Guo",
+        "Yuehan Zhang"
+      ],
+      "authorCount": 6,
+      "organization": {
+        "_id": "6af42a5f11469c47fb586796",
+        "name": "ArcheOne-AI",
+        "fullname": "ArcheOne-AI",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67467b5979406f42a14517e9/ILoHdVzDjb0mdclAuIZE4.png"
+      },
+      "publishedAt": "2026-11-09T00:00:00.000Z",
+      "featuredOn": "2026-11-11"
     },
     {
       "arxiv": "2611.12762",
@@ -606,6 +612,27 @@
       "featuredOn": "2026-11-06"
     },
     {
+      "arxiv": "2611.11995",
+      "url": "https://arxiv.org/abs/2611.11995",
+      "title": "Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization",
+      "abstract": "In this work, we study whether frontier agent can continually improve real-world AI infrastructure over long horizons. We introduce Infrathon, a benchmark of diverse, long-horizon AI infrastructure optimization tasks across different levels. We evaluate six models across 150 runs with 24-hour budgets, totaling over 10,000 GPU-hours. Our results show that model rankings vary with the evaluation horizon, while 135 of the 150 runs achieve further improvements during the second half of their budgets. These findings indicate that shorter evaluations can overlook both optimization gains and changes in relative model performance. We also find agents can discover solutions that outperform human-designed baselines: Claude Opus 5.5 increases the mean KV-cache compression ratio from 6.82% with the human-designed Quant-VideoGen codec to 19.86%. Analysis of agent trajectories identifies task violations, unreliable testing, and premature completion as barriers to sustained improvement. Together, Our Infrathon framework provide resources for constructing long-horizon tasks, evaluating frontier agents, and discovering good infrastructure solutions.",
+      "upvotes": 51,
+      "authors": [
+        "Zhengyu Hu",
+        "Zheyuan Xiao",
+        "Yike Wang"
+      ],
+      "authorCount": 21,
+      "organization": {
+        "_id": "6315a1bb86b3db2ac420100e",
+        "name": "UW",
+        "fullname": "University of Washington",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61ac8f8a00d01045fca0ad2f/gr5B_WVvbMr4kTox5UkwZ.jpeg"
+      },
+      "publishedAt": "2026-11-09T00:00:00.000Z",
+      "featuredOn": "2026-11-10"
+    },
+    {
       "arxiv": "2611.02497",
       "url": "https://arxiv.org/abs/2611.02497",
       "title": "RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild",
@@ -657,6 +684,27 @@
       "organization": null,
       "publishedAt": "2026-11-02T13:41:14.000Z",
       "featuredOn": "2026-11-03"
+    },
+    {
+      "arxiv": "2611.14815",
+      "url": "https://arxiv.org/abs/2611.14815",
+      "title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
+      "abstract": "Driving world models aim to simulate how a scene unfolds under different ego actions. This requires plausible motion of surrounding vehicles as well as precise ego-trajectory control. Learning vehicle motion from perspective video alone is challenging because motion is entangled with appearance and vehicles can be occluded. Prior work therefore conditions video generation on layouts that specify vehicle motion, providing control over surrounding vehicles but requiring their future trajectories as inputs. We introduce BirdDreams, an autoregressive driving world model that jointly generates perspective video and a schematic bird's-eye-view (BEV) video, making scene layout part of the predicted future. The BEV, rendered from scene annotations for training, depicts roads and vehicles as simple shapes at a fixed metric scale, providing a top-down view of their positions and motion with reduced occlusion between vehicles. Perspective video, by contrast, retains scene details that the BEV omits, such as traffic signals and object appearance. Joint attention between two video diffusion transformers, one per stream, lets each stream inform the other during generation. The predicted BEV also provides a geometric interface for ego control: we translate and rotate its latest frame along an input ego trajectory and use the resulting frames as a soft condition that shows how the scene would appear to move if only the ego vehicle moved. At inference, BirdDreams generates both videos from a single camera image without requiring an HD map or vehicle-state inputs. On PhysicalAI-AV and nuScenes, BirdDreams follows input ego trajectories more faithfully than prior driving world models and generates more plausible ego motion without ego-action conditioning. Human evaluation shows that BirdDreams outperforms a perspective-only baseline in generating realistic surrounding-vehicle behavior.",
+      "upvotes": 49,
+      "authors": [
+        "Junyoung Seo",
+        "Jaewoo Seo",
+        "Seungryong Kim"
+      ],
+      "authorCount": 6,
+      "organization": {
+        "_id": "60262b67268c201cdc8b7d43",
+        "name": "nvidia",
+        "fullname": "NVIDIA",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png"
+      },
+      "publishedAt": "2026-11-10T00:00:00.000Z",
+      "featuredOn": "2026-11-13"
     },
     {
       "arxiv": "2611.01560",
@@ -754,53 +802,11 @@
       "featuredOn": "2026-11-03"
     },
     {
-      "arxiv": "2611.06741",
-      "url": "https://arxiv.org/abs/2611.06741",
-      "title": "TailSteer: Trajectory-Tail Steering for Drift-Resistant Multi-turn Image Editing",
-      "abstract": "Strong single-turn editing performance does not guarantee reliable multi-turn interaction: as edited outputs are repeatedly reused, small unintended changes can accumulate into severe visual drift. This long-term drift is often mitigated through training on multi-turn data or cross-turn rollouts, potentially altering pretrained priors, or through specialized inference-time mechanisms that are difficult to scale to foundation models. We introduce TailSteer, a final-stage training framework that improves multi-turn robustness while retaining the generative and editing capabilities acquired through earlier training. TailSteer follows a simple principle: keep early denoising dynamics close to those of the base model and concentrate preservation corrections near the trajectory tail, where fine-grained deviations can be suppressed. These corrections are learned from the editor's own on-policy denoising rollouts, using unchanged source content as a preservation reference without requiring curated ground-truth editing pairs. Experiments across the FLUX, SenseNova, and Qwen families show that TailSteer substantially reduces cumulative drift over 15-20 editing turns while largely preserving base-model performance on extensive text-to-image and single-image editing benchmarks. These results demonstrate that long-horizon editing robustness can be unlocked in foundation models after TailSteer, rather than by relearning their existing capabilities.",
-      "upvotes": 44,
-      "authors": [
-        "Ruikang Li",
-        "Zixuan Chen",
-        "Jiarui Wu"
-      ],
-      "authorCount": 9,
-      "organization": {
-        "_id": "6a5f15b1b77765ffe357acea",
-        "name": "MMLab-CUHK",
-        "fullname": "MMLab-CUHK",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/683971013e5dd928f059bade/BB2gIkNcqFxhcogB5vOiJ.png"
-      },
-      "publishedAt": "2026-11-04T00:00:00.000Z",
-      "featuredOn": "2026-11-06"
-    },
-    {
-      "arxiv": "2610.42149",
-      "url": "https://arxiv.org/abs/2610.42149",
-      "title": "Latent Reasoning in Continuous Space for Unified Multimodal Models",
-      "abstract": "Unified Multimodal Models (UMMs) achieve remarkable success on diverse multimodal understanding and generation tasks, yet they still struggle to effectively leverage language-based chain-of-thought reasoning for image generation. As a result, existing reasoning-augmented UMMs often fail to inherit the test-time scaling and fine-grained controllability observed in large language models. We attribute this failure to a fundamental modality mismatch: reasoning is performed in a discrete token space, whereas image generation operates in a continuous space. To bridge this gap, we introduce a Latent Reasoning framework in Continuous space (LARC), which alleviates the token-level bottleneck by reasoning over continuous hidden states. Specifically, the training framework consists of two stages: (i) curriculum supervised fine-tuning (SFT), and (ii) information-gain reinforcement learning (RL). First, the curriculum SFT stage gradually converts token-level reasoning into latent reasoning. Subsequently, the information-gain RL stage self-evolves latent reasoning without ground truth supervision. Experiments across diverse text-to-image generation benchmarks show that LARC consistently improves generation quality, prompt following, and compositional fidelity. Notably, LARC achieves state-of-the-art performance on GenEval with a 7%p gain over BAGEL and demonstrates clear test-time scaling behavior, outperforming token-based generation under both parallel and sequential test-time scaling strategies.",
-      "upvotes": 44,
-      "authors": [
-        "Byungwoo Jeon",
-        "Yoonwoo Jeong",
-        "Hyunseok Lee"
-      ],
-      "authorCount": 5,
-      "organization": {
-        "_id": "6475760c33192631bad2bb38",
-        "name": "kaist-ai",
-        "fullname": "KAIST AI",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6469949654873f0043b09c22/aaZFiyXe1qR-Dmy_xq67m.png"
-      },
-      "publishedAt": "2026-10-30T00:00:00.000Z",
-      "featuredOn": "2026-11-02"
-    },
-    {
       "arxiv": "2610.40394",
       "url": "https://arxiv.org/abs/2610.40394",
       "title": "Scaling Mathematical Proof Supervision from Structured Textbooks",
       "abstract": "Mathematical supervision for language models is typically flattened into isolated problem-solution pairs, discarding the curricular organization and evidential structure of the original sources. We introduce TOME-Math (Textbook-Oriented Mathematical Evidence), a large-scale corpus that converts 2,118 textbooks spanning the core areas of university-level mathematics subjects into approximately 380K structured proof-supervision records while preserving chapter order, proposition-proof links, dependency references, and source provenance. Leveraging these structural signals, we explore curriculum learning across multiple mathematical subjects and characterize scaling patterns with supervision volume and source breadth. At full scale, fine-tuning on TOME-Math raises the unweighted mean score across our held-out evaluations and established public benchmarks by 16.7 percentage points over the base model, while exceeding all three public instruction-data baselines evaluated in aggregate. Our findings highlight structured textbooks as both a scalable source of mathematical supervision and an empirical framework for studying the impact of data organization on mathematical reasoning. We will release the corpus to facilitate further research on structured mathematical supervision.",
-      "upvotes": 43,
+      "upvotes": 45,
       "authors": [
         "Youqing Fang",
         "Zhouqi Hua",
