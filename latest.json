@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-14T09:05:09.587Z",
+  "generatedAt": "2026-11-15T09:35:33.540Z",
   "source": "Hugging Face Daily Papers API",
   "window": {
-    "from": "2026-11-01",
-    "to": "2026-11-14",
+    "from": "2026-11-02",
+    "to": "2026-11-15",
     "days": 14
   },
   "note": "추천 수(upvotes) 내림차순. 초록은 원문 그대로이므로 요약의 근거로 쓸 것.",
@@ -31,6 +31,27 @@
       "featuredOn": "2026-11-03"
     },
     {
+      "arxiv": "2611.15777",
+      "url": "https://arxiv.org/abs/2611.15777",
+      "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
+      "abstract": "System One models promise fast, general-purpose decision-making without lengthy token generation. However, understanding their capability spectrum and decision reliability requires more than aggregate performance on current benchmarks. Existing evaluations often provide limited insight into the breadth of model capabilities and the reliability of their decisions. We introduce SO-Arena, a benchmark characterizing the capability spectrum and decision reliability of System One models across 11 domains and five capability families. For the capability spectrum, SO-Arena offers evidence-grounded evaluation through reliable sources and manual verification of reference labels against model-visible inputs; fine-grained capability assessment through domain-specific difficulty criteria; and realistic interactive evaluation, where models iteratively execute actions in sandboxes. Reasoning-intensive tasks further enable system one-two comparison. Beyond accuracy, SO-Arena assesses decision reliability through two complementary measures: decision stability under controlled option-set changes and missing-answer recognition when no valid option is available. Evaluations across 21 models reveal that the benefits of scaling and additional reasoning vary substantially across domains. More importantly, strong overall performance does not necessarily imply reliable decision-making: the best-performing System One model ranks only seventh in reliability. Together, these findings highlight the need to characterize capability spectrum and decision reliability as complementary dimensions, providing a systematic view of the strengths and limitations of System One models.",
+      "upvotes": 136,
+      "authors": [
+        "Lichen Li",
+        "Ziping Dong",
+        "Sicheng Feng"
+      ],
+      "authorCount": 5,
+      "organization": {
+        "_id": "6508ab2b349930913196378b",
+        "name": "NationalUniversityofSingapore",
+        "fullname": "National University of Singapore",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+      },
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "featuredOn": "2026-11-13"
+    },
+    {
       "arxiv": "2611.00859",
       "url": "https://arxiv.org/abs/2611.00859",
       "title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation",
@@ -56,7 +77,7 @@
       "url": "https://arxiv.org/abs/2611.08449",
       "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
       "abstract": "Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one coordinate token at a time, making richer predictions increasingly costly. We introduce VFlash, a method for fast, accurate visual planning through Flash Primitive Decoding. VFlash exploits the known structure of visual primitives to predict their coordinates jointly, using a lightweight drafter that generates an entire primitive in one forward pass. The layout adapts to the primitive's type, dimensionality, and length, supporting compact boxes and long, variable-length trajectories. Crucially, spatial accuracy need not require reproducing an autoregressive model's exact token sequence. VFlash therefore trains on annotated primitives and directly accepts structurally valid predictions without target-token agreement. Across the evaluated 2D and 3D robot trajectory tasks, VFlash consistently reduces prediction errors relative to autoregressive decoding. Preliminary single-rollout measurements indicate approximately 25x faster generation for 3D point motion forecasting. A world action model conditioned on VFlash plans achieves 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline.",
-      "upvotes": 117,
+      "upvotes": 119,
       "authors": [
         "Yu-Cheng Chou",
         "Shihao Wang",
@@ -77,7 +98,7 @@
       "url": "https://arxiv.org/abs/2611.05376",
       "title": "From Autonomous Agents to Cognitive Symbionts: Toward AI-Augmented Human Intelligence",
       "abstract": "For a decade, progress in artificial intelligence has been measured by how much a machine can do on its own. Large foundation models now write code and run multistep tasks, and personal agents act on a person's behalf. Yet people still forget what they once knew, miss what they are not looking at, fail to find the right words, and face hard choices without the benefit of their own history, because the machine that could help stands outside the situation. As AI moves into the physical world, attention has settled on one kind of intelligent individual, the embodied robot; we argue that the era of Physical AI holds a second kind of equal importance, the person augmented by AI. Alongside artificial general intelligence, which asks how intelligent a machine can be, stands AI-augmented human intelligence (AHI), which asks how much intelligence a machine can enable in a particular person. Realizing it calls for a new kind of system, a cognitive symbiont: a lifelong, embedded, real-time, private, low-friction, and proactive companion that senses what the person senses through external devices, keeps their context across years, models their situation and their mind, takes part in their thinking at the right moment, carries out everyday tasks with their context, and keeps learning the person as both change. We give the paradigm a conceptual core, the cognitive gap between what a person could bring to a situation and what they can hold in working memory, and organize its design space as a symbiosis loop of sensing, keeping, understanding, living alongside, acting for and thinking with the person, and growing, enclosed by a personal runtime and by trust. Because a symbiont changes what a person can do in front of others, it also raises risks of a new kind, from covert assistance in examinations to pressure on everyone to adopt it, and we treat their governance as part of the paradigm.",
-      "upvotes": 105,
+      "upvotes": 106,
       "authors": [
         "Hao Fei"
       ],
@@ -96,7 +117,7 @@
       "url": "https://arxiv.org/abs/2611.12806",
       "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
       "abstract": "Tactile sensing is an indispensable modality for contact-rich dexterous manipulation, a capability that hints at the ultimate frontiers of embodied intelligence. However, commercially available tactile sensors are still at a relatively early stage of development, with each type of sensor offering irreplaceable strengths alongside its own drawbacks. A key challenge is thus to free tactile understanding from sensor-specific physics, so that embodied models can effectively leverage heterogeneous tactile data. To this end, we develop LingBot-Touch, a tactile foundation model characterized by the following properties. (i) Our model yields a unified representation across different tactile sensors (i.e., piezoresistive, magnetic, and visuotactile sensors), and is easily extensible to new sensor types. (ii) The resulting tactile tokens are plug-and-play: they can be seamlessly integrated into policy models across paradigms, from diffusion policy to vision-language-action (VLA) models such as π_{0.5} and LingBot-VLA, consistently enhancing manipulation dexterity. (iii) Extensive experiments, spanning simulation and real-robot deployments across multiple hardware platforms, demonstrate that our tactile representation substantially benefits complex manipulation tasks while maintaining strong computational efficiency. We believe the findings in this work demonstrate the potential of leveraging cross-sensor data to scale tactile learning, and offer encouraging insights for the design of future hardware and embodied models.",
-      "upvotes": 102,
+      "upvotes": 103,
       "authors": [
         "Bing Han",
         "Yichuan Peng",
@@ -138,7 +159,7 @@
       "url": "https://arxiv.org/abs/2611.06043",
       "title": "Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription",
       "abstract": "Streaming speech recognition is increasingly consumed by machines, such as translators and voice agents, that act on each token as it appears. A token that is later revised costs wasted work or a wrong action. In this work, we present Confucius4-R2T2 (short for Real Real-Time Transcription), a stable-prefix streaming ASR model that never modifies its earlier output while maintaining high accuracy and low latency. R2T2 is obtained by post-training Qwen3-ASR-1.7B on 1,500 hours of Chinese and English audio while freezing its pre-trained audio encoder and projector. The adaptation is based on the concept of Longest Stable Prefix (LSP), a new notion that we introduce in this work. We prove that LSP is monotone under the prefix order, consistent with the full-audio output, and maximal among labels that equal a whole earlier output. Learning from LSP labels converts a full-context model into a stable-prefix streaming one without any architectural change. Extensive evaluations show that R2T2 brings streaming recognition close to the base model's full-context quality while delivering stable text with low emission lag. Its gains extend beyond the post-training languages, demonstrating a practical path from full-context ASR to stable streaming. We open-source the model weights and code at https://huggingface.co/netease-youdao/Confucius4-R2T2 and https://github.com/netease-youdao/Confucius4-R2T2.",
-      "upvotes": 94,
+      "upvotes": 93,
       "authors": [
         "Daniel Huang",
         "Qi He",
@@ -153,6 +174,27 @@
       },
       "publishedAt": "2026-11-04T06:46:50.000Z",
       "featuredOn": "2026-11-09"
+    },
+    {
+      "arxiv": "2611.08373",
+      "url": "https://arxiv.org/abs/2611.08373",
+      "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+      "abstract": "Reliable robotic manipulation requires both semantic understanding and precise control in three-dimensional space. However, vision-language-action (VLA) foundations largely inherit visual representations from 2D vision-language pre-training, while spatial supervision is often introduced only during task-specific adaptation. Developing spatial understanding as a transferable foundation-model capability therefore calls for learning from broader robot experience. We present SLA, a Spatial-Language-Action Model that scales implicit spatial alignment to continual pre-training and maintains it during downstream post-training. Initialized from a pretrained pi05 policy, SLA jointly optimizes action prediction and alignment between intermediate visual embeddings and spatial representations from a frozen 3D perception model. We curate and unify heterogeneous robot datasets to support spatial learning across diverse embodiments, tasks, and scenes. To accommodate this diversity, we introduce feature-dependent gates that adaptively aggregate visual embeddings from multiple VLA layers for spatial supervision. The teacher further exploits partially available depth and camera calibration alongside RGB observations, enabling effective use of heterogeneous geometric annotations. Probabilistic state dropout encourages reliance on visual cues and mitigates overfitting to demonstration trajectories. All auxiliary components are used only during training, allowing direct reuse of pretrained VLA weights and preserving the original inference architecture.",
+      "upvotes": 90,
+      "authors": [
+        "Fuhao Li",
+        "Wenxuan Song",
+        "Qizhou Huang"
+      ],
+      "authorCount": 10,
+      "organization": {
+        "_id": "65ad19cac14c3cf579ad9b68",
+        "name": "HKUSTGZ",
+        "fullname": "HKUSTGZ",
+        "avatar": "https://www.gravatar.com/avatar/70f662accc42fce026543de48099c80f?d=retro&size=100"
+      },
+      "publishedAt": "2026-11-05T00:00:00.000Z",
+      "featuredOn": "2026-11-06"
     },
     {
       "arxiv": "2611.14033",
@@ -174,48 +216,6 @@
       },
       "publishedAt": "2026-11-10T00:00:00.000Z",
       "featuredOn": "2026-11-11"
-    },
-    {
-      "arxiv": "2611.08373",
-      "url": "https://arxiv.org/abs/2611.08373",
-      "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
-      "abstract": "Reliable robotic manipulation requires both semantic understanding and precise control in three-dimensional space. However, vision-language-action (VLA) foundations largely inherit visual representations from 2D vision-language pre-training, while spatial supervision is often introduced only during task-specific adaptation. Developing spatial understanding as a transferable foundation-model capability therefore calls for learning from broader robot experience. We present SLA, a Spatial-Language-Action Model that scales implicit spatial alignment to continual pre-training and maintains it during downstream post-training. Initialized from a pretrained pi05 policy, SLA jointly optimizes action prediction and alignment between intermediate visual embeddings and spatial representations from a frozen 3D perception model. We curate and unify heterogeneous robot datasets to support spatial learning across diverse embodiments, tasks, and scenes. To accommodate this diversity, we introduce feature-dependent gates that adaptively aggregate visual embeddings from multiple VLA layers for spatial supervision. The teacher further exploits partially available depth and camera calibration alongside RGB observations, enabling effective use of heterogeneous geometric annotations. Probabilistic state dropout encourages reliance on visual cues and mitigates overfitting to demonstration trajectories. All auxiliary components are used only during training, allowing direct reuse of pretrained VLA weights and preserving the original inference architecture.",
-      "upvotes": 88,
-      "authors": [
-        "Fuhao Li",
-        "Wenxuan Song",
-        "Qizhou Huang"
-      ],
-      "authorCount": 10,
-      "organization": {
-        "_id": "65ad19cac14c3cf579ad9b68",
-        "name": "HKUSTGZ",
-        "fullname": "HKUSTGZ",
-        "avatar": "https://www.gravatar.com/avatar/70f662accc42fce026543de48099c80f?d=retro&size=100"
-      },
-      "publishedAt": "2026-11-05T00:00:00.000Z",
-      "featuredOn": "2026-11-06"
-    },
-    {
-      "arxiv": "2611.15777",
-      "url": "https://arxiv.org/abs/2611.15777",
-      "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
-      "abstract": "System One models promise fast, general-purpose decision-making without lengthy token generation. However, understanding their capability spectrum and decision reliability requires more than aggregate performance on current benchmarks. Existing evaluations often provide limited insight into the breadth of model capabilities and the reliability of their decisions. We introduce SO-Arena, a benchmark characterizing the capability spectrum and decision reliability of System One models across 11 domains and five capability families. For the capability spectrum, SO-Arena offers evidence-grounded evaluation through reliable sources and manual verification of reference labels against model-visible inputs; fine-grained capability assessment through domain-specific difficulty criteria; and realistic interactive evaluation, where models iteratively execute actions in sandboxes. Reasoning-intensive tasks further enable system one-two comparison. Beyond accuracy, SO-Arena assesses decision reliability through two complementary measures: decision stability under controlled option-set changes and missing-answer recognition when no valid option is available. Evaluations across 21 models reveal that the benefits of scaling and additional reasoning vary substantially across domains. More importantly, strong overall performance does not necessarily imply reliable decision-making: the best-performing System One model ranks only seventh in reliability. Together, these findings highlight the need to characterize capability spectrum and decision reliability as complementary dimensions, providing a systematic view of the strengths and limitations of System One models.",
-      "upvotes": 83,
-      "authors": [
-        "Lichen Li",
-        "Ziping Dong",
-        "Sicheng Feng"
-      ],
-      "authorCount": 5,
-      "organization": {
-        "_id": "6508ab2b349930913196378b",
-        "name": "NationalUniversityofSingapore",
-        "fullname": "National University of Singapore",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
-      },
-      "publishedAt": "2026-11-11T00:00:00.000Z",
-      "featuredOn": "2026-11-13"
     },
     {
       "arxiv": "2611.05275",
@@ -448,7 +448,7 @@
       "url": "https://arxiv.org/abs/2611.06910",
       "title": "FrontierPhysics: Evaluating Agents for End-to-End Physics Research",
       "abstract": "AI agents are playing an increasingly important role in physics research. However, existing physics benchmarks only evaluate fixed questions, isolated sub-tasks, or paper reproduction with given solutions, and rarely check research quality alongside correctness. We introduce FrontierPhysics, an end-to-end benchmark with 56 tasks made by 42 physicists based on their own research, covering nine domains across theoretical, computational, and experimental physics. Each task requires agents to review the literature, develop a research plan, conduct research and experiments, and produce structured outputs and scientific manuscripts. Combining deterministic verifiers with expert-authored rubrics, FrontierPhysics evaluates whether agents' research is correct and publishable. Across 22 models in 26 configurations, no configuration passes more than 46 of its 168 rollouts. Manual review of agent trajectories shows that frontier agents' main weaknesses are insufficiently rigorous reasoning and limited expert intuition, rather than gaps in physics knowledge or execution errors.",
-      "upvotes": 62,
+      "upvotes": 63,
       "authors": [
         "Bingran You",
         "Wenjun Ke",
@@ -484,6 +484,27 @@
       },
       "publishedAt": "2026-11-04T18:59:58.000Z",
       "featuredOn": "2026-11-05"
+    },
+    {
+      "arxiv": "2611.12762",
+      "url": "https://arxiv.org/abs/2611.12762",
+      "title": "Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery",
+      "abstract": "We introduce Sage-Taiyi, a metacognition-inspired architecture that uses accumulated scientific understanding to guide what to investigate next and how to investigate it. Through explicit monitoring and control, the system revises its understanding of evidence, assumptions, and unresolved questions, then uses these assessments to adapt research targets and select reusable reasoning methods. On Taiyi-Bench, an AI co-scientist ideation benchmark comprising 265 tasks from 50 papers across ten disciplines, Sage-Taiyi ranks first on all eight metrics of historical rediscovery and open-ended ideation, achieving an Overall score of 54.0 compared with 47.9 for the strongest baseline, AI Scientist-v2. It also performs well on two external scientific ideation benchmarks. Five expert-guided collaborations further connect its proposals to experimental and computational validation across chemistry, materials science, and engineering. In chemistry, reaction-condition optimization raises the yield of cobalt-catalyzed carbonylation from trace amounts to 84% and photocatalytic allylic amination from 13% to 69%. These results support metacognitive regulation as an approach to scientific ideation and its progression toward practical validation.",
+      "upvotes": 58,
+      "authors": [
+        "Weida Wang",
+        "Benteng Chen",
+        "Yigeng Jiang"
+      ],
+      "authorCount": 90,
+      "organization": {
+        "_id": "6a4fb75a1c66dbf208e7ddb6",
+        "name": "Shanghai-AI-Laboratory",
+        "fullname": "Shanghai AI Laboratory",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65cd955637be1841d0b75397/Rao_Kq6NMtTVfSqLUIR4k.webp"
+      },
+      "publishedAt": "2026-11-09T00:00:00.000Z",
+      "featuredOn": "2026-11-10"
     },
     {
       "arxiv": "2611.10771",
@@ -526,27 +547,6 @@
       },
       "publishedAt": "2026-11-09T00:00:00.000Z",
       "featuredOn": "2026-11-11"
-    },
-    {
-      "arxiv": "2611.12762",
-      "url": "https://arxiv.org/abs/2611.12762",
-      "title": "Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery",
-      "abstract": "We introduce Sage-Taiyi, a metacognition-inspired architecture that uses accumulated scientific understanding to guide what to investigate next and how to investigate it. Through explicit monitoring and control, the system revises its understanding of evidence, assumptions, and unresolved questions, then uses these assessments to adapt research targets and select reusable reasoning methods. On Taiyi-Bench, an AI co-scientist ideation benchmark comprising 265 tasks from 50 papers across ten disciplines, Sage-Taiyi ranks first on all eight metrics of historical rediscovery and open-ended ideation, achieving an Overall score of 54.0 compared with 47.9 for the strongest baseline, AI Scientist-v2. It also performs well on two external scientific ideation benchmarks. Five expert-guided collaborations further connect its proposals to experimental and computational validation across chemistry, materials science, and engineering. In chemistry, reaction-condition optimization raises the yield of cobalt-catalyzed carbonylation from trace amounts to 84% and photocatalytic allylic amination from 13% to 69%. These results support metacognitive regulation as an approach to scientific ideation and its progression toward practical validation.",
-      "upvotes": 57,
-      "authors": [
-        "Weida Wang",
-        "Benteng Chen",
-        "Yigeng Jiang"
-      ],
-      "authorCount": 90,
-      "organization": {
-        "_id": "6a4fb75a1c66dbf208e7ddb6",
-        "name": "Shanghai-AI-Laboratory",
-        "fullname": "Shanghai AI Laboratory",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65cd955637be1841d0b75397/Rao_Kq6NMtTVfSqLUIR4k.webp"
-      },
-      "publishedAt": "2026-11-09T00:00:00.000Z",
-      "featuredOn": "2026-11-10"
     },
     {
       "arxiv": "2611.05377",
@@ -616,7 +616,7 @@
       "url": "https://arxiv.org/abs/2611.11995",
       "title": "Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization",
       "abstract": "In this work, we study whether frontier agent can continually improve real-world AI infrastructure over long horizons. We introduce Infrathon, a benchmark of diverse, long-horizon AI infrastructure optimization tasks across different levels. We evaluate six models across 150 runs with 24-hour budgets, totaling over 10,000 GPU-hours. Our results show that model rankings vary with the evaluation horizon, while 135 of the 150 runs achieve further improvements during the second half of their budgets. These findings indicate that shorter evaluations can overlook both optimization gains and changes in relative model performance. We also find agents can discover solutions that outperform human-designed baselines: Claude Opus 5.5 increases the mean KV-cache compression ratio from 6.82% with the human-designed Quant-VideoGen codec to 19.86%. Analysis of agent trajectories identifies task violations, unreliable testing, and premature completion as barriers to sustained improvement. Together, Our Infrathon framework provide resources for constructing long-horizon tasks, evaluating frontier agents, and discovering good infrastructure solutions.",
-      "upvotes": 51,
+      "upvotes": 52,
       "authors": [
         "Zhengyu Hu",
         "Zheyuan Xiao",
@@ -654,6 +654,27 @@
       "featuredOn": "2026-11-04"
     },
     {
+      "arxiv": "2611.14815",
+      "url": "https://arxiv.org/abs/2611.14815",
+      "title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
+      "abstract": "Driving world models aim to simulate how a scene unfolds under different ego actions. This requires plausible motion of surrounding vehicles as well as precise ego-trajectory control. Learning vehicle motion from perspective video alone is challenging because motion is entangled with appearance and vehicles can be occluded. Prior work therefore conditions video generation on layouts that specify vehicle motion, providing control over surrounding vehicles but requiring their future trajectories as inputs. We introduce BirdDreams, an autoregressive driving world model that jointly generates perspective video and a schematic bird's-eye-view (BEV) video, making scene layout part of the predicted future. The BEV, rendered from scene annotations for training, depicts roads and vehicles as simple shapes at a fixed metric scale, providing a top-down view of their positions and motion with reduced occlusion between vehicles. Perspective video, by contrast, retains scene details that the BEV omits, such as traffic signals and object appearance. Joint attention between two video diffusion transformers, one per stream, lets each stream inform the other during generation. The predicted BEV also provides a geometric interface for ego control: we translate and rotate its latest frame along an input ego trajectory and use the resulting frames as a soft condition that shows how the scene would appear to move if only the ego vehicle moved. At inference, BirdDreams generates both videos from a single camera image without requiring an HD map or vehicle-state inputs. On PhysicalAI-AV and nuScenes, BirdDreams follows input ego trajectories more faithfully than prior driving world models and generates more plausible ego motion without ego-action conditioning. Human evaluation shows that BirdDreams outperforms a perspective-only baseline in generating realistic surrounding-vehicle behavior.",
+      "upvotes": 50,
+      "authors": [
+        "Junyoung Seo",
+        "Jaewoo Seo",
+        "Seungryong Kim"
+      ],
+      "authorCount": 6,
+      "organization": {
+        "_id": "60262b67268c201cdc8b7d43",
+        "name": "nvidia",
+        "fullname": "NVIDIA",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png"
+      },
+      "publishedAt": "2026-11-10T00:00:00.000Z",
+      "featuredOn": "2026-11-13"
+    },
+    {
       "arxiv": "2611.03233",
       "url": "https://arxiv.org/abs/2611.03233",
       "title": "Axion 1.0: Open Agent Foundation Models, Simplified",
@@ -684,27 +705,6 @@
       "organization": null,
       "publishedAt": "2026-11-02T13:41:14.000Z",
       "featuredOn": "2026-11-03"
-    },
-    {
-      "arxiv": "2611.14815",
-      "url": "https://arxiv.org/abs/2611.14815",
-      "title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
-      "abstract": "Driving world models aim to simulate how a scene unfolds under different ego actions. This requires plausible motion of surrounding vehicles as well as precise ego-trajectory control. Learning vehicle motion from perspective video alone is challenging because motion is entangled with appearance and vehicles can be occluded. Prior work therefore conditions video generation on layouts that specify vehicle motion, providing control over surrounding vehicles but requiring their future trajectories as inputs. We introduce BirdDreams, an autoregressive driving world model that jointly generates perspective video and a schematic bird's-eye-view (BEV) video, making scene layout part of the predicted future. The BEV, rendered from scene annotations for training, depicts roads and vehicles as simple shapes at a fixed metric scale, providing a top-down view of their positions and motion with reduced occlusion between vehicles. Perspective video, by contrast, retains scene details that the BEV omits, such as traffic signals and object appearance. Joint attention between two video diffusion transformers, one per stream, lets each stream inform the other during generation. The predicted BEV also provides a geometric interface for ego control: we translate and rotate its latest frame along an input ego trajectory and use the resulting frames as a soft condition that shows how the scene would appear to move if only the ego vehicle moved. At inference, BirdDreams generates both videos from a single camera image without requiring an HD map or vehicle-state inputs. On PhysicalAI-AV and nuScenes, BirdDreams follows input ego trajectories more faithfully than prior driving world models and generates more plausible ego motion without ego-action conditioning. Human evaluation shows that BirdDreams outperforms a perspective-only baseline in generating realistic surrounding-vehicle behavior.",
-      "upvotes": 49,
-      "authors": [
-        "Junyoung Seo",
-        "Jaewoo Seo",
-        "Seungryong Kim"
-      ],
-      "authorCount": 6,
-      "organization": {
-        "_id": "60262b67268c201cdc8b7d43",
-        "name": "nvidia",
-        "fullname": "NVIDIA",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png"
-      },
-      "publishedAt": "2026-11-10T00:00:00.000Z",
-      "featuredOn": "2026-11-13"
     },
     {
       "arxiv": "2611.01560",
@@ -742,6 +742,27 @@
       },
       "publishedAt": "2026-10-22T00:00:00.000Z",
       "featuredOn": "2026-11-02"
+    },
+    {
+      "arxiv": "2610.40394",
+      "url": "https://arxiv.org/abs/2610.40394",
+      "title": "Scaling Mathematical Proof Supervision from Structured Textbooks",
+      "abstract": "Mathematical supervision for language models is typically flattened into isolated problem-solution pairs, discarding the curricular organization and evidential structure of the original sources. We introduce TOME-Math (Textbook-Oriented Mathematical Evidence), a large-scale corpus that converts 2,118 textbooks spanning the core areas of university-level mathematics subjects into approximately 380K structured proof-supervision records while preserving chapter order, proposition-proof links, dependency references, and source provenance. Leveraging these structural signals, we explore curriculum learning across multiple mathematical subjects and characterize scaling patterns with supervision volume and source breadth. At full scale, fine-tuning on TOME-Math raises the unweighted mean score across our held-out evaluations and established public benchmarks by 16.7 percentage points over the base model, while exceeding all three public instruction-data baselines evaluated in aggregate. Our findings highlight structured textbooks as both a scalable source of mathematical supervision and an empirical framework for studying the impact of data organization on mathematical reasoning. We will release the corpus to facilitate further research on structured mathematical supervision.",
+      "upvotes": 47,
+      "authors": [
+        "Youqing Fang",
+        "Zhouqi Hua",
+        "Yinhao Tang"
+      ],
+      "authorCount": 10,
+      "organization": {
+        "_id": "64a2d5fa81252883206f24c9",
+        "name": "internlm",
+        "fullname": "Intern Large Models",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6432683407bad11484a68457/Q3Y0dL79GcsnaBCGRMooZ.png"
+      },
+      "publishedAt": "2026-10-29T00:00:00.000Z",
+      "featuredOn": "2026-11-12"
     },
     {
       "arxiv": "2611.07392",
@@ -800,27 +821,6 @@
       },
       "publishedAt": "2026-11-02T00:00:00.000Z",
       "featuredOn": "2026-11-03"
-    },
-    {
-      "arxiv": "2610.40394",
-      "url": "https://arxiv.org/abs/2610.40394",
-      "title": "Scaling Mathematical Proof Supervision from Structured Textbooks",
-      "abstract": "Mathematical supervision for language models is typically flattened into isolated problem-solution pairs, discarding the curricular organization and evidential structure of the original sources. We introduce TOME-Math (Textbook-Oriented Mathematical Evidence), a large-scale corpus that converts 2,118 textbooks spanning the core areas of university-level mathematics subjects into approximately 380K structured proof-supervision records while preserving chapter order, proposition-proof links, dependency references, and source provenance. Leveraging these structural signals, we explore curriculum learning across multiple mathematical subjects and characterize scaling patterns with supervision volume and source breadth. At full scale, fine-tuning on TOME-Math raises the unweighted mean score across our held-out evaluations and established public benchmarks by 16.7 percentage points over the base model, while exceeding all three public instruction-data baselines evaluated in aggregate. Our findings highlight structured textbooks as both a scalable source of mathematical supervision and an empirical framework for studying the impact of data organization on mathematical reasoning. We will release the corpus to facilitate further research on structured mathematical supervision.",
-      "upvotes": 45,
-      "authors": [
-        "Youqing Fang",
-        "Zhouqi Hua",
-        "Yinhao Tang"
-      ],
-      "authorCount": 10,
-      "organization": {
-        "_id": "64a2d5fa81252883206f24c9",
-        "name": "internlm",
-        "fullname": "Intern Large Models",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6432683407bad11484a68457/Q3Y0dL79GcsnaBCGRMooZ.png"
-      },
-      "publishedAt": "2026-10-29T00:00:00.000Z",
-      "featuredOn": "2026-11-12"
     }
   ]
 }
