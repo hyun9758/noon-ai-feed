@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-19T10:28:50.214Z",
+  "generatedAt": "2026-11-20T10:09:46.425Z",
   "source": "Hugging Face Daily Papers API",
   "window": {
-    "from": "2026-11-06",
-    "to": "2026-11-19",
+    "from": "2026-11-07",
+    "to": "2026-11-20",
     "days": 14
   },
   "note": "추천 수(upvotes) 내림차순. 초록은 원문 그대로이므로 요약의 근거로 쓸 것.",
@@ -14,7 +14,7 @@
       "url": "https://arxiv.org/abs/2611.22115",
       "title": "TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks",
       "abstract": "We present Xing 4, a series of large language models that extends the TeleChat lineage through coordinated advances in model architecture and training infrastructure on Ascend. This report describes the design principles and systems engineering behind the series, spanning architecture selection, large-scale pretraining, and reasoning and agentic post-training. We study how sparse activation, attention design, model depth and width, and speculative decoding balance model capacity with computation, memory access, and execution overhead. Our pretraining infrastructure builds on MindSpore HyperParallel, combining topology-aware hybrid sharding, efficient distributed optimizer execution, and coordinated management of long-sequence workloads and activation memory. CPU affinity and core isolation further reduce host scheduling interference. Together, these mechanisms support the pretraining of a 285B-parameter model on 8,192 Ascend 910C cards, providing a concrete setting for the architectural and systems studies. For post-training, we introduce TeleGym, a unified agent execution platform that connects execution, evaluation, and trajectory construction to policy optimization. Disaggregated asynchronous execution, bounded oversampling, and partial rollout accommodate heterogeneous task durations while preserving trajectory continuity across policy updates. Together, these advances establish an Ascend-oriented training foundation for the continued development of Xing 4 across model scales and increasingly demanding reasoning and agent workloads.",
-      "upvotes": 156,
+      "upvotes": 163,
       "authors": [
         "Xingchen AGI Lab",
         "Baotian Hu",
@@ -35,7 +35,7 @@
       "url": "https://arxiv.org/abs/2611.18397",
       "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
       "abstract": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds.",
-      "upvotes": 132,
+      "upvotes": 141,
       "authors": [
         "Run Luo",
         "Kuan Zhang",
@@ -51,7 +51,7 @@
       "url": "https://arxiv.org/abs/2611.18359",
       "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
       "abstract": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks. Instead of training a dedicated policy for each family of tasks, an agentic robotic system applies a foundation model to open-world embodied tasks. It operates in a closed loop: observing the environment, interpreting user intent, reasoning about the task, invoking skills and tools, verifying outcomes, and adapting its strategy. Despite these advances, the community has yet to converge on a shared definition, a reliable evaluation framework, or a research roadmap. We argue that Embodied System 2, realized by a foundation model together with an embodied harness, forms the decision-making core of agentic robotics. Its central challenge is to translate general-purpose reasoning into effective and verifiable actions under physical constraints such as limited reaction time, mechanical limits, unpredictable environment changes, and irreversible consequences. Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy. On top of the Embodied System 2 and the evaluation framework, we envision a research roadmap toward sustained autonomy: the ability to perform work safely and reliably with progressively broader responsibility, from executing individual primitives to fulfilling standing roles.",
-      "upvotes": 129,
+      "upvotes": 135,
       "authors": [
         "Grid Robotics",
         "Qingfeng Lan",
@@ -68,32 +68,32 @@
       "featuredOn": "2026-11-16"
     },
     {
-      "arxiv": "2611.08449",
-      "url": "https://arxiv.org/abs/2611.08449",
-      "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
-      "abstract": "Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one coordinate token at a time, making richer predictions increasingly costly. We introduce VFlash, a method for fast, accurate visual planning through Flash Primitive Decoding. VFlash exploits the known structure of visual primitives to predict their coordinates jointly, using a lightweight drafter that generates an entire primitive in one forward pass. The layout adapts to the primitive's type, dimensionality, and length, supporting compact boxes and long, variable-length trajectories. Crucially, spatial accuracy need not require reproducing an autoregressive model's exact token sequence. VFlash therefore trains on annotated primitives and directly accepts structurally valid predictions without target-token agreement. Across the evaluated 2D and 3D robot trajectory tasks, VFlash consistently reduces prediction errors relative to autoregressive decoding. Preliminary single-rollout measurements indicate approximately 25x faster generation for 3D point motion forecasting. A world action model conditioned on VFlash plans achieves 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline.",
-      "upvotes": 120,
+      "arxiv": "2611.24738",
+      "url": "https://arxiv.org/abs/2611.24738",
+      "title": "Jeveration: System One Models Now Generate",
+      "abstract": "System One models such as Jev return decisions through fast, parallel prediction. In this paper, we introduce Jeveration, showing that the same decision paradigm can also generate high-quality images in a single forward pass. Jeveration builds on a frozen vision-language model, repurposing its visual-semantic knowledge for holistic image generation. The key challenge is to maintain global consistency. A single prompt admits many valid images, yet parallel predictions must converge on a coherent whole. We therefore condition all positions on a shared random state to coordinate parallel predictions, so that each draw yields a different but coherent image. Since the model tends to ignore this state under direct image supervision, we first learn a distribution over discrete image codes to guide single-pass generation. Beyond text-to-image generation, we further unify image-to-image generation and dense prediction within the same architecture, so that one checkpoint supports all three tasks, each in one forward pass. Experiments show that Jeveration generates a 512x512 image in 78 ms, up to 122x faster than existing unified models, while maintaining competitive image quality and dense prediction performance.",
+      "upvotes": 123,
       "authors": [
-        "Yu-Cheng Chou",
-        "Shihao Wang",
-        "Jin Huang"
+        "Yuhe Liu",
+        "Qi Li",
+        "Shihua Zhang"
       ],
-      "authorCount": 19,
+      "authorCount": 4,
       "organization": {
-        "_id": "60262b67268c201cdc8b7d43",
-        "name": "nvidia",
-        "fullname": "NVIDIA",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png"
+        "_id": "67c6b5eda8999849cc2739aa",
+        "name": "NUS-DSA3101",
+        "fullname": "National University of Singapore",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67c6b59341330fa608335ff0/E8jB5V_iTM8isw_2tzpFv.png"
       },
-      "publishedAt": "2026-11-05T00:00:00.000Z",
-      "featuredOn": "2026-11-06"
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "featuredOn": "2026-11-19"
     },
     {
       "arxiv": "2611.12806",
       "url": "https://arxiv.org/abs/2611.12806",
       "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
       "abstract": "Tactile sensing is an indispensable modality for contact-rich dexterous manipulation, a capability that hints at the ultimate frontiers of embodied intelligence. However, commercially available tactile sensors are still at a relatively early stage of development, with each type of sensor offering irreplaceable strengths alongside its own drawbacks. A key challenge is thus to free tactile understanding from sensor-specific physics, so that embodied models can effectively leverage heterogeneous tactile data. To this end, we develop LingBot-Touch, a tactile foundation model characterized by the following properties. (i) Our model yields a unified representation across different tactile sensors (i.e., piezoresistive, magnetic, and visuotactile sensors), and is easily extensible to new sensor types. (ii) The resulting tactile tokens are plug-and-play: they can be seamlessly integrated into policy models across paradigms, from diffusion policy to vision-language-action (VLA) models such as π_{0.5} and LingBot-VLA, consistently enhancing manipulation dexterity. (iii) Extensive experiments, spanning simulation and real-robot deployments across multiple hardware platforms, demonstrate that our tactile representation substantially benefits complex manipulation tasks while maintaining strong computational efficiency. We believe the findings in this work demonstrate the potential of leveraging cross-sensor data to scale tactile learning, and offer encouraging insights for the design of future hardware and embodied models.",
-      "upvotes": 107,
+      "upvotes": 108,
       "authors": [
         "Bing Han",
         "Yichuan Peng",
@@ -114,7 +114,7 @@
       "url": "https://arxiv.org/abs/2611.21218",
       "title": "InclusionMed: Benchmarking AI for Inclusive Healthcare",
       "abstract": "Advancing medical AI for inclusive healthcare requires evaluation across diverse healthcare roles, tasks, and care settings, but benchmark coverage remains uneven. We introduce InclusionMed, an open medical AI evaluation initiative for inclusive healthcare. The InclusionMed Atlas organizes benchmarks across three healthcare roles and three AI capabilities. For the first release, we selected four public benchmarks from 388 candidates through structured audits and independent reproduction. With InclusionMed-DxFiles, our private diagnostic reasoning benchmark, the Atlas contains five benchmarks covering three of its nine role--capability cells. We evaluated frontier large language models on the Atlas and aggregated their results into the InclusionMed Index, with overall scores ranging from 17.5 to 49.1 out of 100. The Index also reports scores by healthcare role and AI capability, showing that a model's rank varied with the role or capability considered. A within-benchmark analysis using task-level tags showed that the ten highest-ranked models in the Index all scored higher on patient communication than on clinical decision-making. Models with similar Index scores also differed substantially in estimated inference cost. These findings highlight the need for evaluation covering more diverse healthcare needs and for context-specific model selection. Through open collaboration and community contributions, InclusionMed seeks to ensure that diverse healthcare needs worldwide shape how medical AI progress is defined and measured.",
-      "upvotes": 101,
+      "upvotes": 104,
       "authors": [
         "The InclusionMed Collaboration"
       ],
@@ -128,7 +128,7 @@
       "url": "https://arxiv.org/abs/2611.21072",
       "title": "Sage S2.1 Flash Technical Report",
       "abstract": "We introduce Sage S1.5 Flash, a 320-billion-parameter general-purpose mixture-of-experts model designed to reason over scientific evidence and act in interactive environments. Sage Sci-Perception uses dedicated encoders for molecular graphs and biological sequences and represents spectra as ordered patches of measurements. Modality-specific projectors map these representations into the input space of a shared backbone, which processes them alongside text and images. To develop the model's agent capabilities, we construct verifiable environments for tool use, search, and coding, as well as specialized workflows involving machine learning experiments and scientific software. Task completion is checked against execution results, changes in environment state, or submitted artifacts. We evaluate Sage S1.5 Flash on 33 benchmarks across seven domains. In the primary comparison against five baselines, it ranks first on OfficeQA Pro (72.2), MLE-bench Lite (90.3 HumanRank), Harvey LAB, and SpreadsheetBench~2, and second on OSWorld-Verified (85.2), WebArena-Verified (67.6), and DeepResearch Bench~II (54.2). These results show particular strengths in using documentary evidence, producing verifiable workbooks, and carrying out machine learning tasks, alongside competitive performance in desktop and browser workflows that require the model to act on visual feedback.",
-      "upvotes": 96,
+      "upvotes": 97,
       "authors": [
         "Kun Cai",
         "Haodong Chen",
@@ -166,6 +166,27 @@
       "featuredOn": "2026-11-18"
     },
     {
+      "arxiv": "2611.21003",
+      "url": "https://arxiv.org/abs/2611.21003",
+      "title": "K2-Horizon: A Frontier Fleet of Open Source Language Models",
+      "abstract": "We present K2-Horizon, a fleet of six fully open language models, from a 0.9B dense model to a 375B-A23B MoE, built for general-purpose reasoning and agentic work across math and science, software engineering, deep research, office automation, and beyond. The models lead or are competitive with strong open models of their size on agentic and coding benchmarks. On the modeling side, to strengthen reasoning, we introduce Mixture-of-Value Attention (MoVA), applying MoE to attention value projections, and softplus attention gating, a more flexible, theoretically motivated gate. Our 36B-A4B model uses both and nearly matches a 32B dense model trained on the same data, with one-seventh the active parameters. We also introduce Uno, lossless diffusion adapters that speed up decoding by up to 2.2x without a separate draft model. Our release follows the LLM360 definition of open source for transparency and reproducibility: the full development history, including intermediate checkpoints from every training stage, pre-training data, training logs, and all training, evaluation, and infrastructure code, notably our production-scale xLLM framework for dense and MoE training and the RL360 reinforcement-learning stack. Beyond the data itself, we release and document in detail every pipeline that built it, the part of model development that open releases most rarely disclose. These pipelines produced roughly 10T synthetic pre-training tokens, showing that synthetic data can be a major ingredient of pre-training at scale. Four of the models share one 22T-token pre-training corpus and recipe, revealing consistent scaling behavior and enabling controlled studies of scale and sparsity. All artifacts are available at https://ifm.ai/k2/",
+      "upvotes": 88,
+      "authors": [
+        "K2 Team",
+        "Zhengzhong Liu",
+        "Haonan Li"
+      ],
+      "authorCount": 95,
+      "organization": {
+        "_id": "654bd1effb8732d0553a2a5b",
+        "name": "IFM",
+        "fullname": "Institute of Foundation Models",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/69e0929c5731872fd66f3b3c/AHedSSAaCV5S09amCYaWF.webp"
+      },
+      "publishedAt": "2026-11-16T00:00:00.000Z",
+      "featuredOn": "2026-11-17"
+    },
+    {
       "arxiv": "2611.15789",
       "url": "https://arxiv.org/abs/2611.15789",
       "title": "VibePrevisBench: Evaluating Agentic Coding for 4D Scene Generation in Blender",
@@ -185,27 +206,6 @@
       },
       "publishedAt": "2026-11-11T00:00:00.000Z",
       "featuredOn": "2026-11-16"
-    },
-    {
-      "arxiv": "2611.21003",
-      "url": "https://arxiv.org/abs/2611.21003",
-      "title": "K2-Horizon: A Frontier Fleet of Open Source Language Models",
-      "abstract": "We present K2-Horizon, a fleet of six fully open language models, from a 0.9B dense model to a 375B-A23B MoE, built for general-purpose reasoning and agentic work across math and science, software engineering, deep research, office automation, and beyond. The models lead or are competitive with strong open models of their size on agentic and coding benchmarks. On the modeling side, to strengthen reasoning, we introduce Mixture-of-Value Attention (MoVA), applying MoE to attention value projections, and softplus attention gating, a more flexible, theoretically motivated gate. Our 36B-A4B model uses both and nearly matches a 32B dense model trained on the same data, with one-seventh the active parameters. We also introduce Uno, lossless diffusion adapters that speed up decoding by up to 2.2x without a separate draft model. Our release follows the LLM360 definition of open source for transparency and reproducibility: the full development history, including intermediate checkpoints from every training stage, pre-training data, training logs, and all training, evaluation, and infrastructure code, notably our production-scale xLLM framework for dense and MoE training and the RL360 reinforcement-learning stack. Beyond the data itself, we release and document in detail every pipeline that built it, the part of model development that open releases most rarely disclose. These pipelines produced roughly 10T synthetic pre-training tokens, showing that synthetic data can be a major ingredient of pre-training at scale. Four of the models share one 22T-token pre-training corpus and recipe, revealing consistent scaling behavior and enabling controlled studies of scale and sparsity. All artifacts are available at https://ifm.ai/k2/",
-      "upvotes": 84,
-      "authors": [
-        "K2 Team",
-        "Zhengzhong Liu",
-        "Haonan Li"
-      ],
-      "authorCount": 95,
-      "organization": {
-        "_id": "654bd1effb8732d0553a2a5b",
-        "name": "IFM",
-        "fullname": "Institute of Foundation Models",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/69e0929c5731872fd66f3b3c/AHedSSAaCV5S09amCYaWF.webp"
-      },
-      "publishedAt": "2026-11-16T00:00:00.000Z",
-      "featuredOn": "2026-11-17"
     },
     {
       "arxiv": "2611.19937",
@@ -271,27 +271,6 @@
       "featuredOn": "2026-11-09"
     },
     {
-      "arxiv": "2611.06043",
-      "url": "https://arxiv.org/abs/2611.06043",
-      "title": "Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription",
-      "abstract": "Streaming speech recognition is increasingly consumed by machines, such as translators and voice agents, that act on each token as it appears. A token that is later revised costs wasted work or a wrong action. In this work, we present Confucius4-R2T2 (short for Real Real-Time Transcription), a stable-prefix streaming ASR model that never modifies its earlier output while maintaining high accuracy and low latency. R2T2 is obtained by post-training Qwen3-ASR-1.7B on 1,500 hours of Chinese and English audio while freezing its pre-trained audio encoder and projector. The adaptation is based on the concept of Longest Stable Prefix (LSP), a new notion that we introduce in this work. We prove that LSP is monotone under the prefix order, consistent with the full-audio output, and maximal among labels that equal a whole earlier output. Learning from LSP labels converts a full-context model into a stable-prefix streaming one without any architectural change. Extensive evaluations show that R2T2 brings streaming recognition close to the base model's full-context quality while delivering stable text with low emission lag. Its gains extend beyond the post-training languages, demonstrating a practical path from full-context ASR to stable streaming. We open-source the model weights and code at https://huggingface.co/netease-youdao/Confucius4-R2T2 and https://github.com/netease-youdao/Confucius4-R2T2.",
-      "upvotes": 71,
-      "authors": [
-        "Daniel Huang",
-        "Qi He",
-        "Shaoxiong Duan"
-      ],
-      "authorCount": 6,
-      "organization": {
-        "_id": "659841108982abaa5c6d03bb",
-        "name": "netease-youdao",
-        "fullname": "Netease Youdao",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/63aa90473453852ef5458cd3/MT47gbYG6X_YnyQ2MR_DM.png"
-      },
-      "publishedAt": "2026-11-04T06:46:50.000Z",
-      "featuredOn": "2026-11-09"
-    },
-    {
       "arxiv": "2611.08264",
       "url": "https://arxiv.org/abs/2611.08264",
       "title": "SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes",
@@ -313,25 +292,25 @@
       "featuredOn": "2026-11-09"
     },
     {
-      "arxiv": "2611.04277",
-      "url": "https://arxiv.org/abs/2611.04277",
-      "title": "Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training",
-      "abstract": "Harness evolution from a common base exhibits Locality, Complementarity, and Nonstationarity: variants repair different failures, and their utility changes as the policy learns. Rather than seeking a universally superior harness, we introduce Harness-S to selectively rescue failures of a base execution system through sibling harnesses and transfer the resulting capabilities into a single policy that remains effective under the original harness. Directional Harness Evolution develops specialized sibling harnesses along distinct repair directions, forming a reusable Sibling Harness Pool that remains fixed during policy training. Complementary Harness Rescue Training invokes this pool only when all initial attempts under the base harness fail. The same policy generates fresh rollouts under selected auxiliary harnesses, and these trajectories replace the failed group for reinforcement learning. An Adaptive Harness Router selects the Top-k variants using Harness Behavior Profiles and voting across multiple LLMs. Policy-aware profile re-anchoring refreshes this evidence as the policy learns. Across AppWorld, SWE-Gym, and DBBench, the trained policy substantially outperforms policy-only training when returned to the original base harness. Behavioral analyses and held-out cases support the transfer of harness-elicited behaviors into the policy itself. Reusing the router for Rank-1 inference provides additional gains at the same executor rollout count.",
+      "arxiv": "2611.06043",
+      "url": "https://arxiv.org/abs/2611.06043",
+      "title": "Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription",
+      "abstract": "Streaming speech recognition is increasingly consumed by machines, such as translators and voice agents, that act on each token as it appears. A token that is later revised costs wasted work or a wrong action. In this work, we present Confucius4-R2T2 (short for Real Real-Time Transcription), a stable-prefix streaming ASR model that never modifies its earlier output while maintaining high accuracy and low latency. R2T2 is obtained by post-training Qwen3-ASR-1.7B on 1,500 hours of Chinese and English audio while freezing its pre-trained audio encoder and projector. The adaptation is based on the concept of Longest Stable Prefix (LSP), a new notion that we introduce in this work. We prove that LSP is monotone under the prefix order, consistent with the full-audio output, and maximal among labels that equal a whole earlier output. Learning from LSP labels converts a full-context model into a stable-prefix streaming one without any architectural change. Extensive evaluations show that R2T2 brings streaming recognition close to the base model's full-context quality while delivering stable text with low emission lag. Its gains extend beyond the post-training languages, demonstrating a practical path from full-context ASR to stable streaming. We open-source the model weights and code at https://huggingface.co/netease-youdao/Confucius4-R2T2 and https://github.com/netease-youdao/Confucius4-R2T2.",
       "upvotes": 70,
       "authors": [
-        "Kangning Zhang",
-        "Wenxiang Jiao",
-        "Bowen Fang"
+        "Daniel Huang",
+        "Qi He",
+        "Shaoxiong Duan"
       ],
-      "authorCount": 11,
+      "authorCount": 6,
       "organization": {
-        "_id": "670dc5ba9fbc880b347455d8",
-        "name": "SJUT1",
-        "fullname": "Shanghai JiaoTong University",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/670dc582cad89cdabe16d6d3/RYLwroLKmhWCY8Yp1i5jr.png"
+        "_id": "659841108982abaa5c6d03bb",
+        "name": "netease-youdao",
+        "fullname": "Netease Youdao",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/63aa90473453852ef5458cd3/MT47gbYG6X_YnyQ2MR_DM.png"
       },
-      "publishedAt": "2026-11-03T00:00:00.000Z",
-      "featuredOn": "2026-11-06"
+      "publishedAt": "2026-11-04T06:46:50.000Z",
+      "featuredOn": "2026-11-09"
     },
     {
       "arxiv": "2611.14320",
@@ -355,27 +334,6 @@
       "featuredOn": "2026-11-11"
     },
     {
-      "arxiv": "2611.14848",
-      "url": "https://arxiv.org/abs/2611.14848",
-      "title": "Tideway: Phase-Aware Tiered Memory Management for MoE Inference on Consumer Devices",
-      "abstract": "Large language model (LLM) agents are rapidly becoming a dominant paradigm for AI applications. Recently, there is a growing demand to deploy large-scale Mixture-of-Experts (MoE) models locally on consumer PCs to balance data privacy, API costs, and inference efficiency. However, unlike datacenter servers with abundant DRAM, consumer devices are tightly constrained in both GPU VRAM and host RAM, forcing massive MoE weights to spill across VRAM, host RAM, and SSD. Under such spilling, we observe that existing systems fail to fully utilize this memory hierarchy, treating the tiers as independent caches and thrashing in inference. We present TIDEWAY, a system for efficient inference of large MoE models on memory-constrained consumer devices. Our core insight is to manage host RAM and GPU VRAM as a unified memory pool. Within this pool, TIDEWAY couples phase-aware memory layouts, which adapt to the distinct access patterns of prefill and decode, with an execution engine that optimizes CUDA Graph execution under expert paging. Our evaluations on representative consumer hardware with frontier MoE models demonstrate that TIDEWAY significantly outperforms state-of-the-art systems. On average, TIDEWAY achieves speedups of 1.97x in end-to-end latency and 2.40x in Time-to-First-Token (TTFT), along with 1.61x higher decode throughput against the fastest baseline. Our source code is publicly available at https://github.com/Afterglow231/Tideway .",
-      "upvotes": 61,
-      "authors": [
-        "Yifei Wang",
-        "Tsun-yu Yang",
-        "Yechen Xu"
-      ],
-      "authorCount": 10,
-      "organization": {
-        "_id": "693046d8083b2f4164718000",
-        "name": "DukeUniversity",
-        "fullname": "Duke University",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/68e396f2b5bb631e9b2fac9a/NkJVTayAUcmhckCZ_3AMG.png"
-      },
-      "publishedAt": "2026-11-10T00:00:00.000Z",
-      "featuredOn": "2026-11-19"
-    },
-    {
       "arxiv": "2611.12762",
       "url": "https://arxiv.org/abs/2611.12762",
       "title": "Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery",
@@ -395,27 +353,6 @@
       },
       "publishedAt": "2026-11-09T00:00:00.000Z",
       "featuredOn": "2026-11-10"
-    },
-    {
-      "arxiv": "2611.08373",
-      "url": "https://arxiv.org/abs/2611.08373",
-      "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
-      "abstract": "Reliable robotic manipulation requires both semantic understanding and precise control in three-dimensional space. However, vision-language-action (VLA) foundations largely inherit visual representations from 2D vision-language pre-training, while spatial supervision is often introduced only during task-specific adaptation. Developing spatial understanding as a transferable foundation-model capability therefore calls for learning from broader robot experience. We present SLA, a Spatial-Language-Action Model that scales implicit spatial alignment to continual pre-training and maintains it during downstream post-training. Initialized from a pretrained pi05 policy, SLA jointly optimizes action prediction and alignment between intermediate visual embeddings and spatial representations from a frozen 3D perception model. We curate and unify heterogeneous robot datasets to support spatial learning across diverse embodiments, tasks, and scenes. To accommodate this diversity, we introduce feature-dependent gates that adaptively aggregate visual embeddings from multiple VLA layers for spatial supervision. The teacher further exploits partially available depth and camera calibration alongside RGB observations, enabling effective use of heterogeneous geometric annotations. Probabilistic state dropout encourages reliance on visual cues and mitigates overfitting to demonstration trajectories. All auxiliary components are used only during training, allowing direct reuse of pretrained VLA weights and preserving the original inference architecture.",
-      "upvotes": 60,
-      "authors": [
-        "Fuhao Li",
-        "Wenxuan Song",
-        "Qizhou Huang"
-      ],
-      "authorCount": 10,
-      "organization": {
-        "_id": "65ad19cac14c3cf579ad9b68",
-        "name": "HKUSTGZ",
-        "fullname": "HKUSTGZ",
-        "avatar": "https://www.gravatar.com/avatar/70f662accc42fce026543de48099c80f?d=retro&size=100"
-      },
-      "publishedAt": "2026-11-05T00:00:00.000Z",
-      "featuredOn": "2026-11-06"
     },
     {
       "arxiv": "2611.14815",
@@ -460,6 +397,42 @@
       "featuredOn": "2026-11-10"
     },
     {
+      "arxiv": "2611.22055",
+      "url": "https://arxiv.org/abs/2611.22055",
+      "title": "Weight-Space Programming Doesn't Need Transformers",
+      "abstract": "Standard neural architectures such as the Transformer were chosen because they train well with gradient descent and run fast on GPUs. In weight-space programming, a large language model (LLM) writes target weights by hand without gradient-based training, so those reasons no longer apply. Should we keep the Transformer? Given minimal guidance, ten labeled examples, and a sandbox, mainly on multiple-choice questions, we task three frontier LLMs with either generating the weights of a fixed architecture or designing the architecture themselves. When free to design, all three compile plain-text facts into a sparse table queried by a fixed procedure, reaching up to 54.4% test accuracy. An LLM-designed model achieves higher test accuracy than the most accurate released Transformer that the same LLM wrote while using about 1,800x fewer parameters. Without gradients, they choose a table, in which the LLM can state what each weight means and can find and rewrite a wrong one. Each wrong answer points to one row, and removing a row changes about one other answer. From this, we propose an associative-memory-based model up to 17x faster on GPUs than a same-sized Transformer. We also test pretrained weights, other benchmarks, and tasks where models generate answers. Pretrained LLMs remain more accurate; the claim concerns which structure to build when writing weights.",
+      "upvotes": 55,
+      "authors": [
+        "Hyunjong Ok",
+        "Jaeho Lee"
+      ],
+      "authorCount": 2,
+      "organization": {
+        "_id": "62459012e1b9dab15a3e6674",
+        "name": "POSTECH",
+        "fullname": "Pohang University of Science and Technology",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1648726022705-62458f43d5895bdf34ee7d56.jpeg"
+      },
+      "publishedAt": "2026-11-17T00:00:00.000Z",
+      "featuredOn": "2026-11-18"
+    },
+    {
+      "arxiv": "2611.12068",
+      "url": "https://arxiv.org/abs/2611.12068",
+      "title": "MIRIX-2.0: Multi-Agent Memory System",
+      "abstract": "Long-term memory lets LLM agents personalize, stay consistent, and reuse what worked before. Parametric memories need training, consolidation can lose details for good, and keeping every record leaves a growing store to search. We present MIRIX-2.0, a multi-agent memory system designed to be practical, accurate, and efficient at once. It is the most accurate of the compared systems on four of five QA benchmarks. It reaches 91.4% on LoCoMo and 72.6% on LongMemEval-S, where it leads the strongest baseline by 14.3 points, and with AutoDream disabled it gains 31.0 and 22.0 points over HyperMem on single-hop and multi-hop document QA. As procedural memory, it yields the highest mean success among the compared memory methods on ALFWorld and WebShop and reaches 49.2% on MetaClaw-Bench, against 44.0% for MetaClaw's skill library. Six typed memory agents keep complete records as the system of record, and a provenance hypergraph indexes episodic and semantic records with n-ary frames that cite their rows. Retrieval runs under explicit budgets, so the evidence a question inspects does not grow with the history. AutoDream merges duplicate anchors outside the write path without rewriting any record, and it distills task sessions into skills. With AutoDream disabled, MIRIX-2.0 answers faster than HyperMem on all five timed benchmarks. It needs no fine-tuning, runs with closed and open models, and its code is public.",
+      "upvotes": 55,
+      "authors": [
+        "Wei-Chieh Huang",
+        "Weizhi Zhang",
+        "Jiayan Nan"
+      ],
+      "authorCount": 5,
+      "organization": null,
+      "publishedAt": "2026-11-09T00:00:00.000Z",
+      "featuredOn": "2026-11-16"
+    },
+    {
       "arxiv": "2611.12885",
       "url": "https://arxiv.org/abs/2611.12885",
       "title": "World In-Context Learning for Agentic Robot Manipulation",
@@ -502,22 +475,6 @@
       "featuredOn": "2026-11-10"
     },
     {
-      "arxiv": "2611.12068",
-      "url": "https://arxiv.org/abs/2611.12068",
-      "title": "MIRIX-2.0: Multi-Agent Memory System",
-      "abstract": "Long-term memory lets LLM agents personalize, stay consistent, and reuse what worked before. Parametric memories need training, consolidation can lose details for good, and keeping every record leaves a growing store to search. We present MIRIX-2.0, a multi-agent memory system designed to be practical, accurate, and efficient at once. It is the most accurate of the compared systems on four of five QA benchmarks. It reaches 91.4% on LoCoMo and 72.6% on LongMemEval-S, where it leads the strongest baseline by 14.3 points, and with AutoDream disabled it gains 31.0 and 22.0 points over HyperMem on single-hop and multi-hop document QA. As procedural memory, it yields the highest mean success among the compared memory methods on ALFWorld and WebShop and reaches 49.2% on MetaClaw-Bench, against 44.0% for MetaClaw's skill library. Six typed memory agents keep complete records as the system of record, and a provenance hypergraph indexes episodic and semantic records with n-ary frames that cite their rows. Retrieval runs under explicit budgets, so the evidence a question inspects does not grow with the history. AutoDream merges duplicate anchors outside the write path without rewriting any record, and it distills task sessions into skills. With AutoDream disabled, MIRIX-2.0 answers faster than HyperMem on all five timed benchmarks. It needs no fine-tuning, runs with closed and open models, and its code is public.",
-      "upvotes": 54,
-      "authors": [
-        "Wei-Chieh Huang",
-        "Weizhi Zhang",
-        "Jiayan Nan"
-      ],
-      "authorCount": 5,
-      "organization": null,
-      "publishedAt": "2026-11-09T00:00:00.000Z",
-      "featuredOn": "2026-11-16"
-    },
-    {
       "arxiv": "2611.09124",
       "url": "https://arxiv.org/abs/2611.09124",
       "title": "Toward the Era of Agentic Embodied Intelligence",
@@ -537,26 +494,6 @@
       },
       "publishedAt": "2026-11-06T00:00:00.000Z",
       "featuredOn": "2026-11-09"
-    },
-    {
-      "arxiv": "2611.22055",
-      "url": "https://arxiv.org/abs/2611.22055",
-      "title": "Weight-Space Programming Doesn't Need Transformers",
-      "abstract": "Standard neural architectures such as the Transformer were chosen because they train well with gradient descent and run fast on GPUs. In weight-space programming, a large language model (LLM) writes target weights by hand without gradient-based training, so those reasons no longer apply. Should we keep the Transformer? Given minimal guidance, ten labeled examples, and a sandbox, mainly on multiple-choice questions, we task three frontier LLMs with either generating the weights of a fixed architecture or designing the architecture themselves. When free to design, all three compile plain-text facts into a sparse table queried by a fixed procedure, reaching up to 54.4% test accuracy. An LLM-designed model achieves higher test accuracy than the most accurate released Transformer that the same LLM wrote while using about 1,800x fewer parameters. Without gradients, they choose a table, in which the LLM can state what each weight means and can find and rewrite a wrong one. Each wrong answer points to one row, and removing a row changes about one other answer. From this, we propose an associative-memory-based model up to 17x faster on GPUs than a same-sized Transformer. We also test pretrained weights, other benchmarks, and tasks where models generate answers. Pretrained LLMs remain more accurate; the claim concerns which structure to build when writing weights.",
-      "upvotes": 52,
-      "authors": [
-        "Hyunjong Ok",
-        "Jaeho Lee"
-      ],
-      "authorCount": 2,
-      "organization": {
-        "_id": "62459012e1b9dab15a3e6674",
-        "name": "POSTECH",
-        "fullname": "Pohang University of Science and Technology",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1648726022705-62458f43d5895bdf34ee7d56.jpeg"
-      },
-      "publishedAt": "2026-11-17T00:00:00.000Z",
-      "featuredOn": "2026-11-18"
     },
     {
       "arxiv": "2611.20218",
@@ -601,27 +538,11 @@
       "featuredOn": "2026-11-12"
     },
     {
-      "arxiv": "2611.07392",
-      "url": "https://arxiv.org/abs/2611.07392",
-      "title": "WeLM-Image: A Unified Image Generation Model towards Visual Intelligence",
-      "abstract": "We present WeLM-Image, a unified image foundation model that integrates multimodal understanding into text-to-image generation, instruction-guided editing, and multi-reference synthesis. Designed for single-GPU deployment in WeChat's large-scale consumer applications, the model processes text, reference images, and target latents as one interleaved sequence. A Mixture-of-Transformers (MoT) backbone combines shared attention with independent understanding and generation parameters to limit optimization interference. Equipping each path with Mixture-of-Experts (MoE) modules provides sparse capacity, with 31.7B stored parameters and approximately 5.4B generation parameters activated per target latent token. A generation-oriented data engine combines a knowledge-grounded visual vocabulary with large-scale visual clustering to balance semantic coverage and editing tasks, while training-time evaluation guides iterative data refinement. Bilingual annotations and verified editing supervision support progressive training up to native 1.5K resolution. We optimize generation and editing separately with rubric- and checklist-based rewards, then consolidate the specialized policies through noise-aware on-policy distillation. In the reported overall comparisons, the 1536-resolution model ranks first among the evaluated open-source models on PRISM-Bench, Qwen-Image-Bench, and UnicBench. MeanFlow-based few-step distillation yields WeLM-Image-Turbo, which generates a 1024times1024 image in 4.98\\,s on a single NVIDIA H20 GPU using eight guidance-free steps.",
-      "upvotes": 47,
-      "authors": [
-        "Canmiao Fu",
-        "Chen Li",
-        "Guohui Zhang"
-      ],
-      "authorCount": 16,
-      "organization": null,
-      "publishedAt": "2026-11-05T00:00:00.000Z",
-      "featuredOn": "2026-11-06"
-    },
-    {
       "arxiv": "2611.15131",
       "url": "https://arxiv.org/abs/2611.15131",
       "title": "Duo: A Reciprocal World Model for Full-Duplex Interaction",
       "abstract": "In this report, we introduce the Reciprocal World Model (RWM) and present Duo v1, a full-duplex world model that continuously perceives audiovisual inputs while responding to users in real time. The RWM treats intelligence and physical reality as equally fundamental to what constitutes a world. Existing world models largely focus on simulating the latter, leaving reasoning and decision-making as external controls rather than intrinsic parts of the world itself. In RWM, we identify two equally fundamental capabilities: Intent, which provides the cognition underlying world interactions, and Realization, which generates coherent audio-visual behavior. To realize this formulation, Duo v1 introduces three key technical designs: (1) Leveraging autoregressive modeling for continuous interaction reasoning and participation decisions, rather than restricting it to instruction understanding for diffusion models. (2) Constructing chunk-specific conditions and synchronize tokens across Intent and Realization on a unified timeline. Module-specific attention masks enforce causal dependencies both within and across chunks, preventing access to future inputs. (3) Mitigating distribution shift in both modules through dual rollout distillation, training on autoregressively generated Intent tokens and synthesized audiovisual histories from Realization. Both modules continuously perceive real-time audio, video, and text, enabling full-duplex interaction with spontaneous conversations and interruptions. Beyond conversation, users can share real objects, reshape virtual scenes, guide assistants, or play audiovisual games without mouse or keyboard controls. The release of Duo v1 makes our first step, with the next version coming soon. We look forward to broader exploration of this emerging field.",
-      "upvotes": 46,
+      "upvotes": 47,
       "authors": [
         "Hengyuan Cao",
         "Biao Gong",
@@ -659,32 +580,11 @@
       "featuredOn": "2026-11-13"
     },
     {
-      "arxiv": "2611.24738",
-      "url": "https://arxiv.org/abs/2611.24738",
-      "title": "Jeveration: System One Models Now Generate",
-      "abstract": "System One models such as Jev return decisions through fast, parallel prediction. In this paper, we introduce Jeveration, showing that the same decision paradigm can also generate high-quality images in a single forward pass. Jeveration builds on a frozen vision-language model, repurposing its visual-semantic knowledge for holistic image generation. The key challenge is to maintain global consistency. A single prompt admits many valid images, yet parallel predictions must converge on a coherent whole. We therefore condition all positions on a shared random state to coordinate parallel predictions, so that each draw yields a different but coherent image. Since the model tends to ignore this state under direct image supervision, we first learn a distribution over discrete image codes to guide single-pass generation. Beyond text-to-image generation, we further unify image-to-image generation and dense prediction within the same architecture, so that one checkpoint supports all three tasks, each in one forward pass. Experiments show that Jeveration generates a 512x512 image in 78 ms, up to 122x faster than existing unified models, while maintaining competitive image quality and dense prediction performance.",
-      "upvotes": 45,
-      "authors": [
-        "Yuhe Liu",
-        "Qi Li",
-        "Shihua Zhang"
-      ],
-      "authorCount": 4,
-      "organization": {
-        "_id": "67c6b5eda8999849cc2739aa",
-        "name": "NUS-DSA3101",
-        "fullname": "National University of Singapore",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67c6b59341330fa608335ff0/E8jB5V_iTM8isw_2tzpFv.png"
-      },
-      "publishedAt": "2026-11-18T00:00:00.000Z",
-      "featuredOn": "2026-11-19"
-    },
-    {
       "arxiv": "2611.19800",
       "url": "https://arxiv.org/abs/2611.19800",
       "title": "Multi-Branch Transformer",
       "abstract": "Transformer language models are commonly scaled by making their blocks wider or stacking them deeper. In this work, we explore a complementary path: branching, the parallel composition of full Transformer blocks. We introduce the Multi-Branch Transformer (MBT), which processes the input through shared initial layers, executes independently parameterized branches of sequential blocks in parallel, and fuses their outputs before shared final layers. At comparable training compute, we study three MBT variants: Wide-Shallow preserves block width, Narrow-Deep preserves sequential depth, and Balanced interpolates between them. In controlled pretraining experiments at four mixture-of-experts scales (0.8B to 2.1B total parameters), 2-branch Wide-Shallow MBTs consistently outperform sequential Transformers under matched parameter and training-compute budgets. Balanced MBTs improve further and retain comparable quality as the number of branches increases. To improve inference efficiency at long contexts, we introduce Joint-KV, which constructs a shared KV cache from branch representations at each depth. Our final recipe combines Balanced MBTs with Joint-KV, supported by an inference engine that exploits branch grouping and shared-cache reuse. Fitted scaling curves indicate that standard Transformers require up to 1.26x as much training body compute to match our final models' validation loss. These models reduce full-model KV-cache storage by up to 34% and deliver up to 51.4% higher decoding throughput on a single H200 GPU. Ablation studies show that branching yields gains beyond changes in width and depth, enables an effective KV-sharing strategy (Joint-KV), remains robust across fusion functions, and performs best in the middle layers. These findings show that branching offers a practical path for scaling language models toward both better modeling quality and faster inference.",
-      "upvotes": 45,
+      "upvotes": 44,
       "authors": [
         "Gaotang Li",
         "Lingjie Chen",
@@ -694,6 +594,27 @@
       "organization": null,
       "publishedAt": "2026-11-15T00:00:00.000Z",
       "featuredOn": "2026-11-18"
+    },
+    {
+      "arxiv": "2611.07222",
+      "url": "https://arxiv.org/abs/2611.07222",
+      "title": "SPILLWAY: Separating Target Admission from Sanitization to Defend Tool-Using Agents against Prompt Injection",
+      "abstract": "Tool-using agents act on email, files, and payments, so an instruction hidden in a web page or a shared document can make an agent send data or money to an attacker. Many runtime defenses put a language model on the decision that lets an action through, so the decision depends on a model that may read the attacker's text and adds model calls to every step. Provenance defenses keep the model off the final check but need a model to plan or route each task first. Where an action goes can instead be read from the tools' typed returns: an email's sender or a payment's account arrives in a typed field, while injected instructions arrive as free text. SPILLWAY turns this observation into a deterministic floor with no per-task plan. The check admits a call when each target value that appears in tool output but not in the user's task was returned by a read-only tool in a typed field or is covered by a fixed delegation rule. A deterministic sanitizer removes instruction-like regions its fixed rules match before the model reads them and retains the removed spans as evidence, and a local judge may restore a refused call, never one whose target lies in the removed text. Across three backbones, and seven task suites on one of them, no standard templated injection redirects an action to an attacker's target under SPILLWAY, at the highest observed mean utility and composite scores (NRP, ERS) of the defenses we run under that attack. A forged chat template also produces a raw zero, and mean in-scope attack success under a released reinforcement-learning attacker is .007. SPILLWAY reaches this floor with no defense-triggered backbone re-run and almost no added model call. As personal AI agents act on users' email, files, and payments, SPILLWAY gives them an auditable refusal floor on where their actions go that keeps them useful and holds across backbones.",
+      "upvotes": 44,
+      "authors": [
+        "Woosang Lim",
+        "Yeseul Chang",
+        "Jaewoo Lee"
+      ],
+      "authorCount": 3,
+      "organization": {
+        "_id": "6ae6bd3fa7e984ea11f6d31c",
+        "name": "saintmachines",
+        "fullname": "SAINT Machines",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67a2e4c9d62b7924b453afe3/YNjNkEBKDPkIurs0aQM4N.png"
+      },
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "featuredOn": "2026-11-17"
     },
     {
       "arxiv": "2611.08175",
@@ -712,46 +633,46 @@
       "featuredOn": "2026-11-09"
     },
     {
-      "arxiv": "2611.07222",
-      "url": "https://arxiv.org/abs/2611.07222",
-      "title": "SPILLWAY: Separating Target Admission from Sanitization to Defend Tool-Using Agents against Prompt Injection",
-      "abstract": "Tool-using agents act on email, files, and payments, so an instruction hidden in a web page or a shared document can make an agent send data or money to an attacker. Many runtime defenses put a language model on the decision that lets an action through, so the decision depends on a model that may read the attacker's text and adds model calls to every step. Provenance defenses keep the model off the final check but need a model to plan or route each task first. Where an action goes can instead be read from the tools' typed returns: an email's sender or a payment's account arrives in a typed field, while injected instructions arrive as free text. SPILLWAY turns this observation into a deterministic floor with no per-task plan. The check admits a call when each target value that appears in tool output but not in the user's task was returned by a read-only tool in a typed field or is covered by a fixed delegation rule. A deterministic sanitizer removes instruction-like regions its fixed rules match before the model reads them and retains the removed spans as evidence, and a local judge may restore a refused call, never one whose target lies in the removed text. Across three backbones, and seven task suites on one of them, no standard templated injection redirects an action to an attacker's target under SPILLWAY, at the highest observed mean utility and composite scores (NRP, ERS) of the defenses we run under that attack. A forged chat template also produces a raw zero, and mean in-scope attack success under a released reinforcement-learning attacker is .007. SPILLWAY reaches this floor with no defense-triggered backbone re-run and almost no added model call. As personal AI agents act on users' email, files, and payments, SPILLWAY gives them an auditable refusal floor on where their actions go that keeps them useful and holds across backbones.",
+      "arxiv": "2611.21099",
+      "url": "https://arxiv.org/abs/2611.21099",
+      "title": "ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models",
+      "abstract": "Frontier multimodal models can now control robots zero-shot from images, yet many manipulation tasks depend on contact forces that images cannot show. Bringing force to an API-only frozen model raises two challenges. First, contact evolves much faster than an API model can decide, so the system must close the loop on force beneath the model. Second, a frozen model cannot interpret raw force streams, so force must be returned in a form the model can reason about. Therefore, we present ForceHarness, a harness that lets frozen models use force without demonstrations or finetuning. After calibrating hand force from a wrist sensor or joint torques alone, ForceHarness addresses the first challenge with self-terminating force primitives that regulate force on their own and return at a contact event. To address the second challenge, a physics translation layer turns each force trace into physical quantities with uncertainty as the tool result. To evaluate ForceHarness against expert force controllers and learned policies under identical conditions, we also build HiddenPhys, a seven-task MuJoCo benchmark with hidden physical variables. On a real arm without a wrist force sensor, ForceHarness raises the zero-shot success rate of GPT-6 Astra from 3.3% to 90.0%. In simulation, it adds 17.5 percentage points on the public ForceBench suite and 34.3 percentage points on HiddenPhys, surpassing force-aware policies trained on demonstrations on both benchmarks and matching hand-written expert controllers on HiddenPhys. Ablations further show that smaller models make significantly better decisions when given physical quantities rather than raw force values.",
       "upvotes": 43,
       "authors": [
-        "Woosang Lim",
-        "Yeseul Chang",
-        "Jaewoo Lee"
+        "Ke Sun",
+        "Kevin Yuchen Ma",
+        "Yike Zhang"
       ],
-      "authorCount": 3,
+      "authorCount": 5,
       "organization": {
-        "_id": "6ae6bd3fa7e984ea11f6d31c",
-        "name": "saintmachines",
-        "fullname": "SAINT Machines",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67a2e4c9d62b7924b453afe3/YNjNkEBKDPkIurs0aQM4N.png"
+        "_id": "63a553c4ce5763e06f78669c",
+        "name": "showlab",
+        "fullname": "Show Lab",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1671779505215-63a55320ce5763e06f78519c.png"
       },
-      "publishedAt": "2026-11-04T00:00:00.000Z",
-      "featuredOn": "2026-11-17"
+      "publishedAt": "2026-11-16T00:00:00.000Z",
+      "featuredOn": "2026-11-18"
     },
     {
-      "arxiv": "2611.06741",
-      "url": "https://arxiv.org/abs/2611.06741",
-      "title": "TailSteer: Trajectory-Tail Steering for Drift-Resistant Multi-turn Image Editing",
-      "abstract": "Strong single-turn editing performance does not guarantee reliable multi-turn interaction: as edited outputs are repeatedly reused, small unintended changes can accumulate into severe visual drift. This long-term drift is often mitigated through training on multi-turn data or cross-turn rollouts, potentially altering pretrained priors, or through specialized inference-time mechanisms that are difficult to scale to foundation models. We introduce TailSteer, a final-stage training framework that improves multi-turn robustness while retaining the generative and editing capabilities acquired through earlier training. TailSteer follows a simple principle: keep early denoising dynamics close to those of the base model and concentrate preservation corrections near the trajectory tail, where fine-grained deviations can be suppressed. These corrections are learned from the editor's own on-policy denoising rollouts, using unchanged source content as a preservation reference without requiring curated ground-truth editing pairs. Experiments across the FLUX, SenseNova, and Qwen families show that TailSteer substantially reduces cumulative drift over 15-20 editing turns while largely preserving base-model performance on extensive text-to-image and single-image editing benchmarks. These results demonstrate that long-horizon editing robustness can be unlocked in foundation models after TailSteer, rather than by relearning their existing capabilities.",
-      "upvotes": 43,
+      "arxiv": "2611.18482",
+      "url": "https://arxiv.org/abs/2611.18482",
+      "title": "MMFlash: Faster Speculative Decoding for Vision-Language Models",
+      "abstract": "Speculative decoding accelerates generation by letting a lightweight drafter propose tokens for parallel verification by a target model. Diffusion drafters such as DFlash propose an entire token block in a single forward pass, but mainly focus on text-only tasks, leaving multimodal drafting underexplored. To study this setting, we first introduce a metric of token-level visual dependence based on the KL divergence between next-token distributions with and without visual input. We find that acceptance rates decrease from 46% in the lowest visual-dependence quartile to 22% in the highest, with this disparity persisting after multimodal training. Motivated by this observation, we propose MMFlash, a simple and effective framework that adaptively upweights visually dependent tokens that the drafter predicts poorly. For long video inputs, MMFlash further employs sparse attention to reduce redundant attention computation and improve drafting quality. Across various multimodal benchmarks, MMFlash achieves lossless decoding speedups of up to 3.58times, outperforming EAGLE-3 and DFlash by up to 195.4% and 17.1%, respectively.",
+      "upvotes": 42,
       "authors": [
-        "Ruikang Li",
-        "Zixuan Chen",
-        "Jiarui Wu"
+        "Sicheng Feng",
+        "Zigeng Chen",
+        "Song Wang"
       ],
-      "authorCount": 9,
+      "authorCount": 5,
       "organization": {
-        "_id": "6a5f15b1b77765ffe357acea",
-        "name": "MMLab-CUHK",
-        "fullname": "MMLab-CUHK",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/683971013e5dd928f059bade/BB2gIkNcqFxhcogB5vOiJ.png"
+        "_id": "6508ab2b349930913196378b",
+        "name": "NationalUniversityofSingapore",
+        "fullname": "National University of Singapore",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
       },
-      "publishedAt": "2026-11-04T00:00:00.000Z",
-      "featuredOn": "2026-11-06"
+      "publishedAt": "2026-11-13T00:00:00.000Z",
+      "featuredOn": "2026-11-16"
     },
     {
       "arxiv": "2611.16748",
@@ -775,46 +696,130 @@
       "featuredOn": "2026-11-13"
     },
     {
-      "arxiv": "2611.21099",
-      "url": "https://arxiv.org/abs/2611.21099",
-      "title": "ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models",
-      "abstract": "Frontier multimodal models can now control robots zero-shot from images, yet many manipulation tasks depend on contact forces that images cannot show. Bringing force to an API-only frozen model raises two challenges. First, contact evolves much faster than an API model can decide, so the system must close the loop on force beneath the model. Second, a frozen model cannot interpret raw force streams, so force must be returned in a form the model can reason about. Therefore, we present ForceHarness, a harness that lets frozen models use force without demonstrations or finetuning. After calibrating hand force from a wrist sensor or joint torques alone, ForceHarness addresses the first challenge with self-terminating force primitives that regulate force on their own and return at a contact event. To address the second challenge, a physics translation layer turns each force trace into physical quantities with uncertainty as the tool result. To evaluate ForceHarness against expert force controllers and learned policies under identical conditions, we also build HiddenPhys, a seven-task MuJoCo benchmark with hidden physical variables. On a real arm without a wrist force sensor, ForceHarness raises the zero-shot success rate of GPT-6 Astra from 3.3% to 90.0%. In simulation, it adds 17.5 percentage points on the public ForceBench suite and 34.3 percentage points on HiddenPhys, surpassing force-aware policies trained on demonstrations on both benchmarks and matching hand-written expert controllers on HiddenPhys. Ablations further show that smaller models make significantly better decisions when given physical quantities rather than raw force values.",
+      "arxiv": "2611.15844",
+      "url": "https://arxiv.org/abs/2611.15844",
+      "title": "Open Vision Banana: A Fully Open Recipe for Generative Visual Perception",
+      "abstract": "Recent work suggests that pretrained image generators encode real-world understanding beyond image synthesis. Vision Banana exploits this by framing vision tasks as conditional image editing. However, its data, weights, code, and implementation details are not public. We present Open Vision Banana (OVB), a fully open and reproducible recipe for converting pretrained generators into unified multi-task perception systems. Our analyses identify the design choices that matter most for generalization, including color encoding, prompt design, parameter adaptation, and task balancing. These choices interact, so individually helpful choices can hurt when combined with others. Starting from 4B and 9B parameter open-weight base models and using 2.1M-3.8M training pairs from public datasets, OVB surpasses Vision Banana's reported Cityscapes zero-shot performance (73.9 vs. 69.9 mIoU) and rivals state-of-the-art affine-invariant depth estimators. Its non-zero-shot variants come within five points of Vision Banana on referring and reasoning segmentation but remain further behind on instance segmentation. All models largely retain the base model's image-editing abilities. With legend ensembling, we introduce a test-time scaling method for generator-based perception. It segments an image under several class-color legends and fuses the results by majority vote, correcting unstable color-class bindings and improving mIoU by up to 8.7 points on Cityscapes and 15.0 points on COCO-Object without retraining. We release the dataset construction and processing pipeline, the training and evaluation code, as well as the final, intermediate, and ablation checkpoints. Project website: https://openvisionbanana.github.io",
       "upvotes": 41,
       "authors": [
-        "Ke Sun",
-        "Kevin Yuchen Ma",
-        "Yike Zhang"
+        "Arpit Jadon",
+        "Valentinos Pariza",
+        "Jona Ruthardt"
       ],
-      "authorCount": 5,
+      "authorCount": 7,
       "organization": {
-        "_id": "63a553c4ce5763e06f78669c",
-        "name": "showlab",
-        "fullname": "Show Lab",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1671779505215-63a55320ce5763e06f78519c.png"
+        "_id": "670635814d8c8b01343c35c5",
+        "name": "FunAILab",
+        "fullname": "Fundamental AI Lab at UTN",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/637d21239a5217b88b7549c3/5rDBCg9OOamKK_UqCof_z.png"
       },
-      "publishedAt": "2026-11-16T00:00:00.000Z",
-      "featuredOn": "2026-11-18"
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "featuredOn": "2026-11-13"
     },
     {
-      "arxiv": "2611.18482",
-      "url": "https://arxiv.org/abs/2611.18482",
-      "title": "MMFlash: Faster Speculative Decoding for Vision-Language Models",
-      "abstract": "Speculative decoding accelerates generation by letting a lightweight drafter propose tokens for parallel verification by a target model. Diffusion drafters such as DFlash propose an entire token block in a single forward pass, but mainly focus on text-only tasks, leaving multimodal drafting underexplored. To study this setting, we first introduce a metric of token-level visual dependence based on the KL divergence between next-token distributions with and without visual input. We find that acceptance rates decrease from 46% in the lowest visual-dependence quartile to 22% in the highest, with this disparity persisting after multimodal training. Motivated by this observation, we propose MMFlash, a simple and effective framework that adaptively upweights visually dependent tokens that the drafter predicts poorly. For long video inputs, MMFlash further employs sparse attention to reduce redundant attention computation and improve drafting quality. Across various multimodal benchmarks, MMFlash achieves lossless decoding speedups of up to 3.58times, outperforming EAGLE-3 and DFlash by up to 195.4% and 17.1%, respectively.",
+      "arxiv": "2611.12886",
+      "url": "https://arxiv.org/abs/2611.12886",
+      "title": "Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning",
+      "abstract": "Agentic reinforcement learning (RL) and multi-teacher on-policy distillation (MOPD) offer complementary routes to post-training. For visual agents, however, tool use presents two related challenges. Models may overlook useful tool-returned observations, while poorly grounded actions can limit the evidence available for subsequent distillation. We introduce Reframe, a post-training framework that treats the observation state, rather than only the output distribution, as an object of alignment. First, Ground-Drop-GRPO (GD-GRPO) trains spatial and temporal specialists with evidence-aware rewards and stochastic removal of the original visual input, encouraging them to acquire grounded evidence and use the returned observations. Second, Observation-Gated-MOPD (OG-MOPD) replaces deficient tool actions with canonical ones mid-rollout and resumes distillation from the repaired observation. The two stages complement each other, as learning to rely on tool-returned observations can help the policy benefit from observation repair. Neither stage requires a task-specific SFT cold start. Extensive experiments over 14 image and video benchmarks demonstrate that Reframe outperforms both Mix-RL and vanilla MOPD. Ablation results show that GD-GRPO increases observation dependence and tool gain compared with outcome-based GRPO.",
       "upvotes": 41,
       "authors": [
-        "Sicheng Feng",
-        "Zigeng Chen",
-        "Song Wang"
+        "Haozhi Yuan",
+        "Handong Li",
+        "Yifan Zhang"
       ],
-      "authorCount": 5,
+      "authorCount": 4,
       "organization": {
-        "_id": "6508ab2b349930913196378b",
-        "name": "NationalUniversityofSingapore",
-        "fullname": "National University of Singapore",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+        "_id": "6314524a5f47a1896274d586",
+        "name": "NJU",
+        "fullname": "Nanjing University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1662276136108-6314518e5f47a1896274d080.jpeg"
       },
-      "publishedAt": "2026-11-13T00:00:00.000Z",
-      "featuredOn": "2026-11-16"
+      "publishedAt": "2026-11-09T00:00:00.000Z",
+      "featuredOn": "2026-11-10"
+    },
+    {
+      "arxiv": "2611.21607",
+      "url": "https://arxiv.org/abs/2611.21607",
+      "title": "ScaleVLA: Scaling Vision-Language-Action Models to 552 Billion Parameters",
+      "abstract": "Frontier Vision-Language Models (VLMs) such as GPT-6 Astra have demonstrated remarkable capabilities in robot control, suggesting that broad pretraining provides knowledge valuable for physical action. Yet most Vision-Language-Action (VLA) policies still rely on much smaller VLM backbones, leaving this potential largely untapped. We ask whether frontier-scale representations can provide a stronger foundation for robot learning. We introduce ScaleVLA, which connects a 552B DeepSeek-V4.1-Flash backbone to a trainable action DiT, and systematically compare VLMs from 2B to 552B under a shared training setup. We evaluate three fundamental capabilities of robot foundation models. In sample efficiency, just 10 demonstrations outperform a 2B backbone trained with 50 (87.8% vs. 85.6%). In generalization, LIBERO-PRO success reaches 45.1%, compared with at most 31.3% for smaller backbones. In precise manipulation, real-world charger insertion improves from 4/10 to 9/10 successes, with gains concentrated in contact-sensitive alignment. Despite its scale, ScaleVLA achieves 216 ms median latency per action chunk. Our findings suggest that frontier VLMs can serve not only as reasoning agents, but also as powerful representational foundations for efficient and generalizable robot policies.",
+      "upvotes": 39,
+      "authors": [
+        "Ruixi Yu",
+        "Dairu Liu",
+        "Xuchuan Chen"
+      ],
+      "authorCount": 12,
+      "organization": {
+        "_id": "6842da337b70d258bfb51b79",
+        "name": "GalaxyGeneralRobotics",
+        "fullname": "galbot",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6842d3b4297a588f54e85f84/q9PZ3SXbzzluHhhMjLD-3.jpeg"
+      },
+      "publishedAt": "2026-11-16T00:00:00.000Z",
+      "featuredOn": "2026-11-17"
+    },
+    {
+      "arxiv": "2611.04720",
+      "url": "https://arxiv.org/abs/2611.04720",
+      "title": "OneTrans-GSR: A Generative Slate Ranking Paradigm Unifying Reranking and Mix-Ranking with One Autoregressive Transformer",
+      "abstract": "Industrial recommender systems allocate substantial computation to pointwise candidate scoring, yet separate reranking and mix-ranking stages still assemble the final exposure slate using hand-crafted rules and specialized low-capacity models. Mix-ranking combines product cards, short videos, livestreams, and advertising cards supplied by distinct upstream business channels. Although these rules and models encode valuable domain knowledge, they are inherently limited in leveraging additional data and computation. They constrain the combinatorial space of candidate slates and determine objective trade-offs through manual tuning. To enable scalable and effective slate generation, we reformulate reranking and mix-ranking as a unified learning problem whose performance can improve with computation. Specifically, we instantiate this formulation across the reranking and mix-ranking stages and propose OneTrans-GSR, a single decoder-only policy that extends our deployed OneTrans backbone to generate the exposure slate end-to-end. During training, a reward model evaluates complete slates and guides reinforcement learning toward slate-level and long-term objectives. During decoding, business constraints are explicitly enforced. Offline evaluation shows that slate quality consistently improves as reward-model and policy compute increase. Deployed in a large-scale industrial recommendation system, OneTrans-GSR mixes heterogeneous content types within a unified slate. In online A/B tests, it improves GMV/u by 2.63%, advertiser value by 2.06%, and repurchase rate by 2.03%, while reducing end-to-end latency across the reranking and mix-ranking stages by 13%. These results mark a paradigm shift in slate generation: moving beyond human-engineered heuristics toward a general learned policy creates a scalable path for further algorithmic optimization and compute-driven improvement.",
+      "upvotes": 39,
+      "authors": [
+        "Feng Cheng",
+        "Yu-Hsuan Huang",
+        "Fengyi Wang"
+      ],
+      "authorCount": 16,
+      "organization": {
+        "_id": "653b817d32c97d0655575872",
+        "name": "ByteDance",
+        "fullname": "ByteDance",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
+      },
+      "publishedAt": "2026-11-03T00:00:00.000Z",
+      "featuredOn": "2026-11-09"
+    },
+    {
+      "arxiv": "2611.26444",
+      "url": "https://arxiv.org/abs/2611.26444",
+      "title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
+      "abstract": "Embodied intelligence aims to let robots perform complex physical tasks with human-like adaptability and reliability, which requires three complementary capabilities: history-based cognitive reasoning, precise and timely physical execution, and the composition of reasoning and execution through environmental feedback. Yet existing benchmarks either evaluate reasoning and execution within the same tasks or assess them separately without their composition, so they reveal little about whether a failure comes from reasoning, execution, or their composition. We introduce Mind2Act World, a diagnostic benchmark of 30 simulated manipulation tasks from five real-world application domains. Each task has three difficulty levels and two scene settings (Clean and Random), yielding 180 configurations. The tasks form three views: Mind tests decisions based on past observations, Act tests precise and timely execution, and Mind2Act combines both in closed-loop tasks where action outcomes guide later decisions. Comparing the three views shows whether a system lacks a capability or fails to compose capabilities it already has. A diagnosis harness further attributes the failed episodes of three representative systems to Mind, Act, or their composition and summarizes each system in a profile card. Our evaluation of multimodal agents, vision-language-action models (VLAs), and world-action models (WAMs) shows that competence in a single view does not carry over to Mind2Act tasks. Even the strongest agent succeeds in 52.7% of Mind and 39.0% of Act episodes but in only 12.0% of Mind2Act episodes. The strongest agent retains task state but struggles with sustained contact, whereas end-to-end policies execute practiced motions but retain little task state. These findings point to composing reasoning and execution through environmental feedback as the main open problem.",
+      "upvotes": 38,
+      "authors": [
+        "Yuzhi Huang",
+        "Jie Wu",
+        "Fanding Huang"
+      ],
+      "authorCount": 43,
+      "organization": {
+        "_id": "6afd89ce69ef8398d430ce24",
+        "name": "Mind2Act-World",
+        "fullname": "Mind2Act-World",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6ad1b7dd5e2996562085e701/Jygf_X5jwz5OER2RvD5_M.png"
+      },
+      "publishedAt": "2026-11-19T00:00:00.000Z",
+      "featuredOn": "2026-11-20"
+    },
+    {
+      "arxiv": "2611.21366",
+      "url": "https://arxiv.org/abs/2611.21366",
+      "title": "ALIVE: Making Streaming Video Models Interactive",
+      "abstract": "Streaming video LLMs can continuously observe the world, yet often handle user requests in isolation. We introduce ALIVE, an interactive streaming video model supporting proactive monitoring, streaming task coordination, and feedback-seeking interaction. We construct ALIVE-SFT-288K and ALIVE-RL-3K for two-stage training. Contrastive supervised fine-tuning teaches when and how to respond, while reinforcement learning with Behavior-Aligned Credit Assignment (BACA) combines trajectory-level and local advantages to refine decisions, responses, and silence across multi-turn interactions. We also introduce FSI-Bench to evaluate feedback seeking and subsequent task completion. ALIVE achieves the highest overall scores among the compared models on four public benchmarks and FSI-Bench, demonstrating strong streaming understanding and interactive capabilities.",
+      "upvotes": 38,
+      "authors": [
+        "Jinzhao Li",
+        "Yuan Xu",
+        "Jinxuan Wu"
+      ],
+      "authorCount": 16,
+      "organization": {
+        "_id": "628735cbc83a2d6ab8d14a66",
+        "name": "Tsinghua",
+        "fullname": "Tsinghua University",
+        "avatar": "https://www.gravatar.com/avatar/6c5c1441e3283e7543342e59277ea219?d=retro&size=100"
+      },
+      "publishedAt": "2026-11-16T00:00:00.000Z",
+      "featuredOn": "2026-11-19"
     }
   ]
 }
