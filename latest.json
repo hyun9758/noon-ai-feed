@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-20T10:09:46.425Z",
+  "generatedAt": "2026-11-21T09:56:51.782Z",
   "source": "Hugging Face Daily Papers API",
   "window": {
-    "from": "2026-11-07",
-    "to": "2026-11-20",
+    "from": "2026-11-08",
+    "to": "2026-11-21",
     "days": 14
   },
   "note": "추천 수(upvotes) 내림차순. 초록은 원문 그대로이므로 요약의 근거로 쓸 것.",
@@ -14,7 +14,7 @@
       "url": "https://arxiv.org/abs/2611.22115",
       "title": "TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks",
       "abstract": "We present Xing 4, a series of large language models that extends the TeleChat lineage through coordinated advances in model architecture and training infrastructure on Ascend. This report describes the design principles and systems engineering behind the series, spanning architecture selection, large-scale pretraining, and reasoning and agentic post-training. We study how sparse activation, attention design, model depth and width, and speculative decoding balance model capacity with computation, memory access, and execution overhead. Our pretraining infrastructure builds on MindSpore HyperParallel, combining topology-aware hybrid sharding, efficient distributed optimizer execution, and coordinated management of long-sequence workloads and activation memory. CPU affinity and core isolation further reduce host scheduling interference. Together, these mechanisms support the pretraining of a 285B-parameter model on 8,192 Ascend 910C cards, providing a concrete setting for the architectural and systems studies. For post-training, we introduce TeleGym, a unified agent execution platform that connects execution, evaluation, and trajectory construction to policy optimization. Disaggregated asynchronous execution, bounded oversampling, and partial rollout accommodate heterogeneous task durations while preserving trajectory continuity across policy updates. Together, these advances establish an Ascend-oriented training foundation for the continued development of Xing 4 across model scales and increasingly demanding reasoning and agent workloads.",
-      "upvotes": 163,
+      "upvotes": 166,
       "authors": [
         "Xingchen AGI Lab",
         "Baotian Hu",
@@ -31,48 +31,11 @@
       "featuredOn": "2026-11-18"
     },
     {
-      "arxiv": "2611.18397",
-      "url": "https://arxiv.org/abs/2611.18397",
-      "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-      "abstract": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds.",
-      "upvotes": 141,
-      "authors": [
-        "Run Luo",
-        "Kuan Zhang",
-        "Qi Deng"
-      ],
-      "authorCount": 27,
-      "organization": null,
-      "publishedAt": "2026-11-13T00:00:00.000Z",
-      "featuredOn": "2026-11-16"
-    },
-    {
-      "arxiv": "2611.18359",
-      "url": "https://arxiv.org/abs/2611.18359",
-      "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
-      "abstract": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks. Instead of training a dedicated policy for each family of tasks, an agentic robotic system applies a foundation model to open-world embodied tasks. It operates in a closed loop: observing the environment, interpreting user intent, reasoning about the task, invoking skills and tools, verifying outcomes, and adapting its strategy. Despite these advances, the community has yet to converge on a shared definition, a reliable evaluation framework, or a research roadmap. We argue that Embodied System 2, realized by a foundation model together with an embodied harness, forms the decision-making core of agentic robotics. Its central challenge is to translate general-purpose reasoning into effective and verifiable actions under physical constraints such as limited reaction time, mechanical limits, unpredictable environment changes, and irreversible consequences. Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy. On top of the Embodied System 2 and the evaluation framework, we envision a research roadmap toward sustained autonomy: the ability to perform work safely and reliably with progressively broader responsibility, from executing individual primitives to fulfilling standing roles.",
-      "upvotes": 135,
-      "authors": [
-        "Grid Robotics",
-        "Qingfeng Lan",
-        "Duo Li"
-      ],
-      "authorCount": 13,
-      "organization": {
-        "_id": "6afd38334c5940b843d5ffbc",
-        "name": "grid-robotics",
-        "fullname": "Grid Robotics",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6524d665ab1416594149e07e/WnJr-kvQj44G2qbPb-FqS.png"
-      },
-      "publishedAt": "2026-11-13T00:00:00.000Z",
-      "featuredOn": "2026-11-16"
-    },
-    {
       "arxiv": "2611.24738",
       "url": "https://arxiv.org/abs/2611.24738",
       "title": "Jeveration: System One Models Now Generate",
       "abstract": "System One models such as Jev return decisions through fast, parallel prediction. In this paper, we introduce Jeveration, showing that the same decision paradigm can also generate high-quality images in a single forward pass. Jeveration builds on a frozen vision-language model, repurposing its visual-semantic knowledge for holistic image generation. The key challenge is to maintain global consistency. A single prompt admits many valid images, yet parallel predictions must converge on a coherent whole. We therefore condition all positions on a shared random state to coordinate parallel predictions, so that each draw yields a different but coherent image. Since the model tends to ignore this state under direct image supervision, we first learn a distribution over discrete image codes to guide single-pass generation. Beyond text-to-image generation, we further unify image-to-image generation and dense prediction within the same architecture, so that one checkpoint supports all three tasks, each in one forward pass. Experiments show that Jeveration generates a 512x512 image in 78 ms, up to 122x faster than existing unified models, while maintaining competitive image quality and dense prediction performance.",
-      "upvotes": 123,
+      "upvotes": 148,
       "authors": [
         "Yuhe Liu",
         "Qi Li",
@@ -89,11 +52,48 @@
       "featuredOn": "2026-11-19"
     },
     {
+      "arxiv": "2611.18397",
+      "url": "https://arxiv.org/abs/2611.18397",
+      "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+      "abstract": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds.",
+      "upvotes": 144,
+      "authors": [
+        "Run Luo",
+        "Kuan Zhang",
+        "Qi Deng"
+      ],
+      "authorCount": 27,
+      "organization": null,
+      "publishedAt": "2026-11-13T00:00:00.000Z",
+      "featuredOn": "2026-11-16"
+    },
+    {
+      "arxiv": "2611.18359",
+      "url": "https://arxiv.org/abs/2611.18359",
+      "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
+      "abstract": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks. Instead of training a dedicated policy for each family of tasks, an agentic robotic system applies a foundation model to open-world embodied tasks. It operates in a closed loop: observing the environment, interpreting user intent, reasoning about the task, invoking skills and tools, verifying outcomes, and adapting its strategy. Despite these advances, the community has yet to converge on a shared definition, a reliable evaluation framework, or a research roadmap. We argue that Embodied System 2, realized by a foundation model together with an embodied harness, forms the decision-making core of agentic robotics. Its central challenge is to translate general-purpose reasoning into effective and verifiable actions under physical constraints such as limited reaction time, mechanical limits, unpredictable environment changes, and irreversible consequences. Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy. On top of the Embodied System 2 and the evaluation framework, we envision a research roadmap toward sustained autonomy: the ability to perform work safely and reliably with progressively broader responsibility, from executing individual primitives to fulfilling standing roles.",
+      "upvotes": 136,
+      "authors": [
+        "Grid Robotics",
+        "Qingfeng Lan",
+        "Duo Li"
+      ],
+      "authorCount": 13,
+      "organization": {
+        "_id": "6afd38334c5940b843d5ffbc",
+        "name": "grid-robotics",
+        "fullname": "Grid Robotics",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6524d665ab1416594149e07e/WnJr-kvQj44G2qbPb-FqS.png"
+      },
+      "publishedAt": "2026-11-13T00:00:00.000Z",
+      "featuredOn": "2026-11-16"
+    },
+    {
       "arxiv": "2611.12806",
       "url": "https://arxiv.org/abs/2611.12806",
       "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
       "abstract": "Tactile sensing is an indispensable modality for contact-rich dexterous manipulation, a capability that hints at the ultimate frontiers of embodied intelligence. However, commercially available tactile sensors are still at a relatively early stage of development, with each type of sensor offering irreplaceable strengths alongside its own drawbacks. A key challenge is thus to free tactile understanding from sensor-specific physics, so that embodied models can effectively leverage heterogeneous tactile data. To this end, we develop LingBot-Touch, a tactile foundation model characterized by the following properties. (i) Our model yields a unified representation across different tactile sensors (i.e., piezoresistive, magnetic, and visuotactile sensors), and is easily extensible to new sensor types. (ii) The resulting tactile tokens are plug-and-play: they can be seamlessly integrated into policy models across paradigms, from diffusion policy to vision-language-action (VLA) models such as π_{0.5} and LingBot-VLA, consistently enhancing manipulation dexterity. (iii) Extensive experiments, spanning simulation and real-robot deployments across multiple hardware platforms, demonstrate that our tactile representation substantially benefits complex manipulation tasks while maintaining strong computational efficiency. We believe the findings in this work demonstrate the potential of leveraging cross-sensor data to scale tactile learning, and offer encouraging insights for the design of future hardware and embodied models.",
-      "upvotes": 108,
+      "upvotes": 109,
       "authors": [
         "Bing Han",
         "Yichuan Peng",
@@ -128,7 +128,7 @@
       "url": "https://arxiv.org/abs/2611.21072",
       "title": "Sage S2.1 Flash Technical Report",
       "abstract": "We introduce Sage S1.5 Flash, a 320-billion-parameter general-purpose mixture-of-experts model designed to reason over scientific evidence and act in interactive environments. Sage Sci-Perception uses dedicated encoders for molecular graphs and biological sequences and represents spectra as ordered patches of measurements. Modality-specific projectors map these representations into the input space of a shared backbone, which processes them alongside text and images. To develop the model's agent capabilities, we construct verifiable environments for tool use, search, and coding, as well as specialized workflows involving machine learning experiments and scientific software. Task completion is checked against execution results, changes in environment state, or submitted artifacts. We evaluate Sage S1.5 Flash on 33 benchmarks across seven domains. In the primary comparison against five baselines, it ranks first on OfficeQA Pro (72.2), MLE-bench Lite (90.3 HumanRank), Harvey LAB, and SpreadsheetBench~2, and second on OSWorld-Verified (85.2), WebArena-Verified (67.6), and DeepResearch Bench~II (54.2). These results show particular strengths in using documentary evidence, producing verifiable workbooks, and carrying out machine learning tasks, alongside competitive performance in desktop and browser workflows that require the model to act on visual feedback.",
-      "upvotes": 97,
+      "upvotes": 98,
       "authors": [
         "Kun Cai",
         "Haodong Chen",
@@ -149,7 +149,7 @@
       "url": "https://arxiv.org/abs/2611.17621",
       "title": "AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs",
       "abstract": "Kernel optimization is essential for efficient large language model (LLM) training and inference on Ascend NPUs. Existing Ascend kernel benchmarks primarily focus on kernel generation, with less emphasis on the ability of agents to optimize existing implementations under input configurations drawn from real workloads. To address this requirement, we introduce AscendGYM, a benchmark whose initial suite comprises 48 kernels across three difficulty levels. Each kernel is paired with test cases whose data types and tensor shapes are collected from real-world training and inference tasks. Consequently, performance improvements on AscendGYM map directly to the corresponding workloads. In terms of usability, two evaluation modes are supported in AscendGYM: model evaluation and model-harness evaluation. The kernel optimization capabilities of both trained models and custom agents are allowed to be measured. It provides a complete execution environment that closely reproduces how Ascend kernels are invoked in practical pipelines. For model evaluation, it additionally includes a built-in harness equipped with search orchestration and experience accumulation. Finally, we propose a new metric, the Speedup-Token Score (STS), which quantifies performance gains relative to token cost. By jointly considering speedup and cost, STS enables the assessment of practical kernel optimization capability of a model or harness under an acceptable budget. AscendGYM is available at https://github.com/SLAI-AITP/AscendGYM.",
-      "upvotes": 92,
+      "upvotes": 93,
       "authors": [
         "AI Training Platform Team",
         "Bingwei Zhang",
@@ -170,7 +170,7 @@
       "url": "https://arxiv.org/abs/2611.21003",
       "title": "K2-Horizon: A Frontier Fleet of Open Source Language Models",
       "abstract": "We present K2-Horizon, a fleet of six fully open language models, from a 0.9B dense model to a 375B-A23B MoE, built for general-purpose reasoning and agentic work across math and science, software engineering, deep research, office automation, and beyond. The models lead or are competitive with strong open models of their size on agentic and coding benchmarks. On the modeling side, to strengthen reasoning, we introduce Mixture-of-Value Attention (MoVA), applying MoE to attention value projections, and softplus attention gating, a more flexible, theoretically motivated gate. Our 36B-A4B model uses both and nearly matches a 32B dense model trained on the same data, with one-seventh the active parameters. We also introduce Uno, lossless diffusion adapters that speed up decoding by up to 2.2x without a separate draft model. Our release follows the LLM360 definition of open source for transparency and reproducibility: the full development history, including intermediate checkpoints from every training stage, pre-training data, training logs, and all training, evaluation, and infrastructure code, notably our production-scale xLLM framework for dense and MoE training and the RL360 reinforcement-learning stack. Beyond the data itself, we release and document in detail every pipeline that built it, the part of model development that open releases most rarely disclose. These pipelines produced roughly 10T synthetic pre-training tokens, showing that synthetic data can be a major ingredient of pre-training at scale. Four of the models share one 22T-token pre-training corpus and recipe, revealing consistent scaling behavior and enabling controlled studies of scale and sparsity. All artifacts are available at https://ifm.ai/k2/",
-      "upvotes": 88,
+      "upvotes": 89,
       "authors": [
         "K2 Team",
         "Zhengzhong Liu",
@@ -212,7 +212,7 @@
       "url": "https://arxiv.org/abs/2611.19937",
       "title": "AllocFlow: End-to-End Portfolio Trading Action Generation from Raw Market Data",
       "abstract": "Real-world portfolio management requires converting noisy market observations into coordinated, simultaneous allocations across multiple assets under shared capital constraints. Advances in forecasting models and alpha discovery help identify opportunities. However, traditional pipelines often decouple signal forecasting from portfolio construction, potentially misaligning learning with allocation and execution objectives. We present AllocFlow, an end-to-end flow-matching framework that directly generates joint portfolio allocations from raw multi-asset market histories. To capture dependencies among portfolio positions, AllocFlow employs a cross-asset flow Transformer conditioned on temporal market representations to generate continuous, signed position weights across all instruments jointly. To address the sample inefficiency and instability of learning continuous allocation policies from scratch, we establish a two-stage training scheme: strategy-supervised imitation shapes a structured distribution of candidate portfolios, followed by group-relative reinforcement learning (RL) that refines joint decisions using portfolio-level financial rewards and a frozen policy reference. On hourly cryptocurrency perpetual futures, RL refinement raises the annualized net return of the imitation policy from 27.79% to 51.38% and its Calmar ratio from 0.955 to 4.043, surpassing the teacher strategy on every metric, and AllocFlow reaches a Calmar ratio of 4.90 on six further months of unseen 2026 data without retraining.",
-      "upvotes": 72,
+      "upvotes": 73,
       "authors": [
         "Annan Wang",
         "Yuchen Xie",
@@ -233,7 +233,7 @@
       "url": "https://arxiv.org/abs/2611.15777",
       "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
       "abstract": "System One models promise fast, general-purpose decision-making without lengthy token generation. However, understanding their capability spectrum and decision reliability requires more than aggregate performance on current benchmarks. Existing evaluations often provide limited insight into the breadth of model capabilities and the reliability of their decisions. We introduce SO-Arena, a benchmark characterizing the capability spectrum and decision reliability of System One models across 11 domains and five capability families. For the capability spectrum, SO-Arena offers evidence-grounded evaluation through reliable sources and manual verification of reference labels against model-visible inputs; fine-grained capability assessment through domain-specific difficulty criteria; and realistic interactive evaluation, where models iteratively execute actions in sandboxes. Reasoning-intensive tasks further enable system one-two comparison. Beyond accuracy, SO-Arena assesses decision reliability through two complementary measures: decision stability under controlled option-set changes and missing-answer recognition when no valid option is available. Evaluations across 21 models reveal that the benefits of scaling and additional reasoning vary substantially across domains. More importantly, strong overall performance does not necessarily imply reliable decision-making: the best-performing System One model ranks only seventh in reliability. Together, these findings highlight the need to characterize capability spectrum and decision reliability as complementary dimensions, providing a systematic view of the strengths and limitations of System One models.",
-      "upvotes": 72,
+      "upvotes": 73,
       "authors": [
         "Lichen Li",
         "Ziping Dong",
@@ -271,6 +271,27 @@
       "featuredOn": "2026-11-09"
     },
     {
+      "arxiv": "2611.06043",
+      "url": "https://arxiv.org/abs/2611.06043",
+      "title": "Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription",
+      "abstract": "Streaming speech recognition is increasingly consumed by machines, such as translators and voice agents, that act on each token as it appears. A token that is later revised costs wasted work or a wrong action. In this work, we present Confucius4-R2T2 (short for Real Real-Time Transcription), a stable-prefix streaming ASR model that never modifies its earlier output while maintaining high accuracy and low latency. R2T2 is obtained by post-training Qwen3-ASR-1.7B on 1,500 hours of Chinese and English audio while freezing its pre-trained audio encoder and projector. The adaptation is based on the concept of Longest Stable Prefix (LSP), a new notion that we introduce in this work. We prove that LSP is monotone under the prefix order, consistent with the full-audio output, and maximal among labels that equal a whole earlier output. Learning from LSP labels converts a full-context model into a stable-prefix streaming one without any architectural change. Extensive evaluations show that R2T2 brings streaming recognition close to the base model's full-context quality while delivering stable text with low emission lag. Its gains extend beyond the post-training languages, demonstrating a practical path from full-context ASR to stable streaming. We open-source the model weights and code at https://huggingface.co/netease-youdao/Confucius4-R2T2 and https://github.com/netease-youdao/Confucius4-R2T2.",
+      "upvotes": 71,
+      "authors": [
+        "Daniel Huang",
+        "Qi He",
+        "Shaoxiong Duan"
+      ],
+      "authorCount": 6,
+      "organization": {
+        "_id": "659841108982abaa5c6d03bb",
+        "name": "netease-youdao",
+        "fullname": "Netease Youdao",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/63aa90473453852ef5458cd3/MT47gbYG6X_YnyQ2MR_DM.png"
+      },
+      "publishedAt": "2026-11-04T06:46:50.000Z",
+      "featuredOn": "2026-11-09"
+    },
+    {
       "arxiv": "2611.08264",
       "url": "https://arxiv.org/abs/2611.08264",
       "title": "SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes",
@@ -289,27 +310,6 @@
         "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5e1058e9fcf41d740b69966d/7G1xjlxwCdMEmKcxNR0n5.png"
       },
       "publishedAt": "2026-11-05T16:37:29.000Z",
-      "featuredOn": "2026-11-09"
-    },
-    {
-      "arxiv": "2611.06043",
-      "url": "https://arxiv.org/abs/2611.06043",
-      "title": "Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription",
-      "abstract": "Streaming speech recognition is increasingly consumed by machines, such as translators and voice agents, that act on each token as it appears. A token that is later revised costs wasted work or a wrong action. In this work, we present Confucius4-R2T2 (short for Real Real-Time Transcription), a stable-prefix streaming ASR model that never modifies its earlier output while maintaining high accuracy and low latency. R2T2 is obtained by post-training Qwen3-ASR-1.7B on 1,500 hours of Chinese and English audio while freezing its pre-trained audio encoder and projector. The adaptation is based on the concept of Longest Stable Prefix (LSP), a new notion that we introduce in this work. We prove that LSP is monotone under the prefix order, consistent with the full-audio output, and maximal among labels that equal a whole earlier output. Learning from LSP labels converts a full-context model into a stable-prefix streaming one without any architectural change. Extensive evaluations show that R2T2 brings streaming recognition close to the base model's full-context quality while delivering stable text with low emission lag. Its gains extend beyond the post-training languages, demonstrating a practical path from full-context ASR to stable streaming. We open-source the model weights and code at https://huggingface.co/netease-youdao/Confucius4-R2T2 and https://github.com/netease-youdao/Confucius4-R2T2.",
-      "upvotes": 70,
-      "authors": [
-        "Daniel Huang",
-        "Qi He",
-        "Shaoxiong Duan"
-      ],
-      "authorCount": 6,
-      "organization": {
-        "_id": "659841108982abaa5c6d03bb",
-        "name": "netease-youdao",
-        "fullname": "Netease Youdao",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/63aa90473453852ef5458cd3/MT47gbYG6X_YnyQ2MR_DM.png"
-      },
-      "publishedAt": "2026-11-04T06:46:50.000Z",
       "featuredOn": "2026-11-09"
     },
     {
@@ -334,6 +334,27 @@
       "featuredOn": "2026-11-11"
     },
     {
+      "arxiv": "2611.14848",
+      "url": "https://arxiv.org/abs/2611.14848",
+      "title": "Tideway: Phase-Aware Tiered Memory Management for MoE Inference on Consumer Devices",
+      "abstract": "Large language model (LLM) agents are rapidly becoming a dominant paradigm for AI applications. Recently, there is a growing demand to deploy large-scale Mixture-of-Experts (MoE) models locally on consumer PCs to balance data privacy, API costs, and inference efficiency. However, unlike datacenter servers with abundant DRAM, consumer devices are tightly constrained in both GPU VRAM and host RAM, forcing massive MoE weights to spill across VRAM, host RAM, and SSD. Under such spilling, we observe that existing systems fail to fully utilize this memory hierarchy, treating the tiers as independent caches and thrashing in inference. We present TIDEWAY, a system for efficient inference of large MoE models on memory-constrained consumer devices. Our core insight is to manage host RAM and GPU VRAM as a unified memory pool. Within this pool, TIDEWAY couples phase-aware memory layouts, which adapt to the distinct access patterns of prefill and decode, with an execution engine that optimizes CUDA Graph execution under expert paging. Our evaluations on representative consumer hardware with frontier MoE models demonstrate that TIDEWAY significantly outperforms state-of-the-art systems. On average, TIDEWAY achieves speedups of 1.97x in end-to-end latency and 2.40x in Time-to-First-Token (TTFT), along with 1.61x higher decode throughput against the fastest baseline. Our source code is publicly available at https://github.com/Afterglow231/Tideway .",
+      "upvotes": 66,
+      "authors": [
+        "Yifei Wang",
+        "Tsun-yu Yang",
+        "Yechen Xu"
+      ],
+      "authorCount": 10,
+      "organization": {
+        "_id": "693046d8083b2f4164718000",
+        "name": "DukeUniversity",
+        "fullname": "Duke University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/68e396f2b5bb631e9b2fac9a/NkJVTayAUcmhckCZ_3AMG.png"
+      },
+      "publishedAt": "2026-11-10T00:00:00.000Z",
+      "featuredOn": "2026-11-19"
+    },
+    {
       "arxiv": "2611.12762",
       "url": "https://arxiv.org/abs/2611.12762",
       "title": "Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery",
@@ -353,6 +374,42 @@
       },
       "publishedAt": "2026-11-09T00:00:00.000Z",
       "featuredOn": "2026-11-10"
+    },
+    {
+      "arxiv": "2611.22055",
+      "url": "https://arxiv.org/abs/2611.22055",
+      "title": "Weight-Space Programming Doesn't Need Transformers",
+      "abstract": "Standard neural architectures such as the Transformer were chosen because they train well with gradient descent and run fast on GPUs. In weight-space programming, a large language model (LLM) writes target weights by hand without gradient-based training, so those reasons no longer apply. Should we keep the Transformer? Given minimal guidance, ten labeled examples, and a sandbox, mainly on multiple-choice questions, we task three frontier LLMs with either generating the weights of a fixed architecture or designing the architecture themselves. When free to design, all three compile plain-text facts into a sparse table queried by a fixed procedure, reaching up to 54.4% test accuracy. An LLM-designed model achieves higher test accuracy than the most accurate released Transformer that the same LLM wrote while using about 1,800x fewer parameters. Without gradients, they choose a table, in which the LLM can state what each weight means and can find and rewrite a wrong one. Each wrong answer points to one row, and removing a row changes about one other answer. From this, we propose an associative-memory-based model up to 17x faster on GPUs than a same-sized Transformer. We also test pretrained weights, other benchmarks, and tasks where models generate answers. Pretrained LLMs remain more accurate; the claim concerns which structure to build when writing weights.",
+      "upvotes": 59,
+      "authors": [
+        "Hyunjong Ok",
+        "Jaeho Lee"
+      ],
+      "authorCount": 2,
+      "organization": {
+        "_id": "62459012e1b9dab15a3e6674",
+        "name": "POSTECH",
+        "fullname": "Pohang University of Science and Technology",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1648726022705-62458f43d5895bdf34ee7d56.jpeg"
+      },
+      "publishedAt": "2026-11-17T00:00:00.000Z",
+      "featuredOn": "2026-11-18"
+    },
+    {
+      "arxiv": "2611.12068",
+      "url": "https://arxiv.org/abs/2611.12068",
+      "title": "MIRIX-2.0: Multi-Agent Memory System",
+      "abstract": "Long-term memory lets LLM agents personalize, stay consistent, and reuse what worked before. Parametric memories need training, consolidation can lose details for good, and keeping every record leaves a growing store to search. We present MIRIX-2.0, a multi-agent memory system designed to be practical, accurate, and efficient at once. It is the most accurate of the compared systems on four of five QA benchmarks. It reaches 91.4% on LoCoMo and 72.6% on LongMemEval-S, where it leads the strongest baseline by 14.3 points, and with AutoDream disabled it gains 31.0 and 22.0 points over HyperMem on single-hop and multi-hop document QA. As procedural memory, it yields the highest mean success among the compared memory methods on ALFWorld and WebShop and reaches 49.2% on MetaClaw-Bench, against 44.0% for MetaClaw's skill library. Six typed memory agents keep complete records as the system of record, and a provenance hypergraph indexes episodic and semantic records with n-ary frames that cite their rows. Retrieval runs under explicit budgets, so the evidence a question inspects does not grow with the history. AutoDream merges duplicate anchors outside the write path without rewriting any record, and it distills task sessions into skills. With AutoDream disabled, MIRIX-2.0 answers faster than HyperMem on all five timed benchmarks. It needs no fine-tuning, runs with closed and open models, and its code is public.",
+      "upvotes": 56,
+      "authors": [
+        "Wei-Chieh Huang",
+        "Weizhi Zhang",
+        "Jiayan Nan"
+      ],
+      "authorCount": 5,
+      "organization": null,
+      "publishedAt": "2026-11-09T00:00:00.000Z",
+      "featuredOn": "2026-11-16"
     },
     {
       "arxiv": "2611.14815",
@@ -395,42 +452,6 @@
       },
       "publishedAt": "2026-11-09T00:00:00.000Z",
       "featuredOn": "2026-11-10"
-    },
-    {
-      "arxiv": "2611.22055",
-      "url": "https://arxiv.org/abs/2611.22055",
-      "title": "Weight-Space Programming Doesn't Need Transformers",
-      "abstract": "Standard neural architectures such as the Transformer were chosen because they train well with gradient descent and run fast on GPUs. In weight-space programming, a large language model (LLM) writes target weights by hand without gradient-based training, so those reasons no longer apply. Should we keep the Transformer? Given minimal guidance, ten labeled examples, and a sandbox, mainly on multiple-choice questions, we task three frontier LLMs with either generating the weights of a fixed architecture or designing the architecture themselves. When free to design, all three compile plain-text facts into a sparse table queried by a fixed procedure, reaching up to 54.4% test accuracy. An LLM-designed model achieves higher test accuracy than the most accurate released Transformer that the same LLM wrote while using about 1,800x fewer parameters. Without gradients, they choose a table, in which the LLM can state what each weight means and can find and rewrite a wrong one. Each wrong answer points to one row, and removing a row changes about one other answer. From this, we propose an associative-memory-based model up to 17x faster on GPUs than a same-sized Transformer. We also test pretrained weights, other benchmarks, and tasks where models generate answers. Pretrained LLMs remain more accurate; the claim concerns which structure to build when writing weights.",
-      "upvotes": 55,
-      "authors": [
-        "Hyunjong Ok",
-        "Jaeho Lee"
-      ],
-      "authorCount": 2,
-      "organization": {
-        "_id": "62459012e1b9dab15a3e6674",
-        "name": "POSTECH",
-        "fullname": "Pohang University of Science and Technology",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1648726022705-62458f43d5895bdf34ee7d56.jpeg"
-      },
-      "publishedAt": "2026-11-17T00:00:00.000Z",
-      "featuredOn": "2026-11-18"
-    },
-    {
-      "arxiv": "2611.12068",
-      "url": "https://arxiv.org/abs/2611.12068",
-      "title": "MIRIX-2.0: Multi-Agent Memory System",
-      "abstract": "Long-term memory lets LLM agents personalize, stay consistent, and reuse what worked before. Parametric memories need training, consolidation can lose details for good, and keeping every record leaves a growing store to search. We present MIRIX-2.0, a multi-agent memory system designed to be practical, accurate, and efficient at once. It is the most accurate of the compared systems on four of five QA benchmarks. It reaches 91.4% on LoCoMo and 72.6% on LongMemEval-S, where it leads the strongest baseline by 14.3 points, and with AutoDream disabled it gains 31.0 and 22.0 points over HyperMem on single-hop and multi-hop document QA. As procedural memory, it yields the highest mean success among the compared memory methods on ALFWorld and WebShop and reaches 49.2% on MetaClaw-Bench, against 44.0% for MetaClaw's skill library. Six typed memory agents keep complete records as the system of record, and a provenance hypergraph indexes episodic and semantic records with n-ary frames that cite their rows. Retrieval runs under explicit budgets, so the evidence a question inspects does not grow with the history. AutoDream merges duplicate anchors outside the write path without rewriting any record, and it distills task sessions into skills. With AutoDream disabled, MIRIX-2.0 answers faster than HyperMem on all five timed benchmarks. It needs no fine-tuning, runs with closed and open models, and its code is public.",
-      "upvotes": 55,
-      "authors": [
-        "Wei-Chieh Huang",
-        "Weizhi Zhang",
-        "Jiayan Nan"
-      ],
-      "authorCount": 5,
-      "organization": null,
-      "publishedAt": "2026-11-09T00:00:00.000Z",
-      "featuredOn": "2026-11-16"
     },
     {
       "arxiv": "2611.12885",
@@ -500,7 +521,7 @@
       "url": "https://arxiv.org/abs/2611.20218",
       "title": "SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations",
       "abstract": "A coding agent working within a software organization must establish what to build, collaborate with colleagues, and verify what it delivers. We introduce SWE-CoWork, a benchmark comprising 101 development assignments across 101 real repositories, 11 programming languages, and 12 application domains. Each assignment places an agent in a simulated engineering organization with 26 colleagues who have distinct responsibilities, bounded knowledge, and controlled collaboration behavior. Starting from a brief handoff, agents must recover requirements distributed across colleagues and workplace records, reconcile conflicting evidence, and implement changes evaluated by private executable tests. We evaluate eleven models and find a substantial gap between partial implementation and complete task delivery. The two leading models satisfy approximately 63% of fail-to-pass (F2P) tests but complete fewer than 8% of assignments. Providing complete requirements upfront improves F2P by approximately 16 percentage points for Seed Evolving and GPT-6 Astra, yet leaves complete task success unchanged. Requirement-level trajectory analysis reveals failures throughout the delivery process: Claude-Opus-5.5 directs a mean of 93% of first questions about queried cards to their accountable owners across runs but obtains only 64% of colleague-held requirements. Deferred questions go unfollowed, implementations remain incomplete even after requirements are acquired, and 31% of requirements reported as completed fail their tests. These findings highlight sustained requirement tracking, from clarification through implementation, verification, and handoff, as a key challenge for reliable autonomous software engineering.",
-      "upvotes": 51,
+      "upvotes": 52,
       "authors": [
         "Xinping Lei",
         "Minghao Liu",
@@ -515,6 +536,27 @@
       },
       "publishedAt": "2026-11-15T00:00:00.000Z",
       "featuredOn": "2026-11-17"
+    },
+    {
+      "arxiv": "2611.21373",
+      "url": "https://arxiv.org/abs/2611.21373",
+      "title": "WeVisForensics: Self-Evolving Agent for Omni AI-Generated Video Detection",
+      "abstract": "Recent advances in video generation call for reliable detection grounded in explicit forensic evidence. However, current methods primarily depend on single-pass chain-of-thought reasoning that overlooks brief or localized artifacts, or on predefined multi-agent workflows that offer limited flexibility in selecting relevant inspections. Even with adaptive investigation, optimizing the investigation policy alone does not directly improve the forensic capabilities of fixed experts. We introduce WeVisForensics, an agentic framework in which a main investigator agent coordinates a self-evolving library of forensic inspector sub-agents spanning visual and audio cues. The investigator learns which artifact type to examine, over which window, and when to conclude, and these interactions provide shared feedback for both levels of agents. Our dual-timescale policy optimization strategy, DTPO, closes this loop through fast reinforcement learning of the investigator and slower refinement of the inspectors, guided by annotated artifact intervals, to report subtle artifacts they once dismissed. Furthermore, we curate ForenCue-30K, combining role-specific forensic annotations and interaction trajectories to supervise individual inspections and their coordination, with an accompanying reinforcement-learning pool. Experiments show that WeVisForensics averages 95.2% detection accuracy across in-domain, out-of-domain and agentic benchmarks, 9.0% above the strongest prior detector, while grounding its verdicts in localized evidence.",
+      "upvotes": 50,
+      "authors": [
+        "Yipeng Du",
+        "Yuxi Li",
+        "Ying Zhang"
+      ],
+      "authorCount": 7,
+      "organization": {
+        "_id": "66543b6e420092799d2f625c",
+        "name": "tencent",
+        "fullname": "Tencent",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/Lp3m-XLpjQGwBItlvn69q.png"
+      },
+      "publishedAt": "2026-11-16T00:00:00.000Z",
+      "featuredOn": "2026-11-20"
     },
     {
       "arxiv": "2610.40394",
@@ -536,6 +578,22 @@
       },
       "publishedAt": "2026-10-29T00:00:00.000Z",
       "featuredOn": "2026-11-12"
+    },
+    {
+      "arxiv": "2611.19800",
+      "url": "https://arxiv.org/abs/2611.19800",
+      "title": "Multi-Branch Transformer",
+      "abstract": "Transformer language models are commonly scaled by making their blocks wider or stacking them deeper. In this work, we explore a complementary path: branching, the parallel composition of full Transformer blocks. We introduce the Multi-Branch Transformer (MBT), which processes the input through shared initial layers, executes independently parameterized branches of sequential blocks in parallel, and fuses their outputs before shared final layers. At comparable training compute, we study three MBT variants: Wide-Shallow preserves block width, Narrow-Deep preserves sequential depth, and Balanced interpolates between them. In controlled pretraining experiments at four mixture-of-experts scales (0.8B to 2.1B total parameters), 2-branch Wide-Shallow MBTs consistently outperform sequential Transformers under matched parameter and training-compute budgets. Balanced MBTs improve further and retain comparable quality as the number of branches increases. To improve inference efficiency at long contexts, we introduce Joint-KV, which constructs a shared KV cache from branch representations at each depth. Our final recipe combines Balanced MBTs with Joint-KV, supported by an inference engine that exploits branch grouping and shared-cache reuse. Fitted scaling curves indicate that standard Transformers require up to 1.26x as much training body compute to match our final models' validation loss. These models reduce full-model KV-cache storage by up to 34% and deliver up to 51.4% higher decoding throughput on a single H200 GPU. Ablation studies show that branching yields gains beyond changes in width and depth, enables an effective KV-sharing strategy (Joint-KV), remains robust across fusion functions, and performs best in the middle layers. These findings show that branching offers a practical path for scaling language models toward both better modeling quality and faster inference.",
+      "upvotes": 47,
+      "authors": [
+        "Gaotang Li",
+        "Lingjie Chen",
+        "Chunyuan Deng"
+      ],
+      "authorCount": 9,
+      "organization": null,
+      "publishedAt": "2026-11-15T00:00:00.000Z",
+      "featuredOn": "2026-11-18"
     },
     {
       "arxiv": "2611.15131",
@@ -563,7 +621,7 @@
       "url": "https://arxiv.org/abs/2611.13004",
       "title": "G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation",
       "abstract": "Discrete autoregressive models offer a scalable framework for image generation. However, they face a fundamental trade-off: long token sequences preserve representation quality but slow generation, while aggressive spatial compression reduces representation capacity. Based on product quantization, we show that, under a fixed nominal information budget, group size should scale quadratically with the per-axis spatial compression factor. Building on this principle, we propose GSTAR, a spatial--group co-scaling framework that enables \\(32\\times\\) and even effective \\(64\\times\\) compression while preserving strong reconstruction, understanding, and generation performance. Since larger groups introduce intra-group dependencies that must be modeled efficiently, we analyze their impact on inference latency and generation quality and introduce a semi-autoregressive decoder that combines parallel feature computation with lightweight causal modeling. With these designs, our highly compressed models perform competitively with leading models across five representative text-to-image benchmarks (GenEval, DPG-Bench, PRISM, LongText-Bench, and Qwen-Image-Bench). At \\(1024\\times1024\\) resolution, our model delivers a \\(20\\times\\) speedup over prior discrete autoregressive models, generating each image in 2.5 seconds on a single NVIDIA H200. Together, these results show that highly compressed discrete representations can enable high-quality autoregressive generation at low latency.",
-      "upvotes": 46,
+      "upvotes": 47,
       "authors": [
         "Xu Huang",
         "Ye Huang",
@@ -580,27 +638,32 @@
       "featuredOn": "2026-11-13"
     },
     {
-      "arxiv": "2611.19800",
-      "url": "https://arxiv.org/abs/2611.19800",
-      "title": "Multi-Branch Transformer",
-      "abstract": "Transformer language models are commonly scaled by making their blocks wider or stacking them deeper. In this work, we explore a complementary path: branching, the parallel composition of full Transformer blocks. We introduce the Multi-Branch Transformer (MBT), which processes the input through shared initial layers, executes independently parameterized branches of sequential blocks in parallel, and fuses their outputs before shared final layers. At comparable training compute, we study three MBT variants: Wide-Shallow preserves block width, Narrow-Deep preserves sequential depth, and Balanced interpolates between them. In controlled pretraining experiments at four mixture-of-experts scales (0.8B to 2.1B total parameters), 2-branch Wide-Shallow MBTs consistently outperform sequential Transformers under matched parameter and training-compute budgets. Balanced MBTs improve further and retain comparable quality as the number of branches increases. To improve inference efficiency at long contexts, we introduce Joint-KV, which constructs a shared KV cache from branch representations at each depth. Our final recipe combines Balanced MBTs with Joint-KV, supported by an inference engine that exploits branch grouping and shared-cache reuse. Fitted scaling curves indicate that standard Transformers require up to 1.26x as much training body compute to match our final models' validation loss. These models reduce full-model KV-cache storage by up to 34% and deliver up to 51.4% higher decoding throughput on a single H200 GPU. Ablation studies show that branching yields gains beyond changes in width and depth, enables an effective KV-sharing strategy (Joint-KV), remains robust across fusion functions, and performs best in the middle layers. These findings show that branching offers a practical path for scaling language models toward both better modeling quality and faster inference.",
-      "upvotes": 44,
+      "arxiv": "2611.26444",
+      "url": "https://arxiv.org/abs/2611.26444",
+      "title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
+      "abstract": "Embodied intelligence aims to let robots perform complex physical tasks with human-like adaptability and reliability, which requires three complementary capabilities: history-based cognitive reasoning, precise and timely physical execution, and the composition of reasoning and execution through environmental feedback. Yet existing benchmarks either evaluate reasoning and execution within the same tasks or assess them separately without their composition, so they reveal little about whether a failure comes from reasoning, execution, or their composition. We introduce Mind2Act World, a diagnostic benchmark of 30 simulated manipulation tasks from five real-world application domains. Each task has three difficulty levels and two scene settings (Clean and Random), yielding 180 configurations. The tasks form three views: Mind tests decisions based on past observations, Act tests precise and timely execution, and Mind2Act combines both in closed-loop tasks where action outcomes guide later decisions. Comparing the three views shows whether a system lacks a capability or fails to compose capabilities it already has. A diagnosis harness further attributes the failed episodes of three representative systems to Mind, Act, or their composition and summarizes each system in a profile card. Our evaluation of multimodal agents, vision-language-action models (VLAs), and world-action models (WAMs) shows that competence in a single view does not carry over to Mind2Act tasks. Even the strongest agent succeeds in 52.7% of Mind and 39.0% of Act episodes but in only 12.0% of Mind2Act episodes. The strongest agent retains task state but struggles with sustained contact, whereas end-to-end policies execute practiced motions but retain little task state. These findings point to composing reasoning and execution through environmental feedback as the main open problem.",
+      "upvotes": 46,
       "authors": [
-        "Gaotang Li",
-        "Lingjie Chen",
-        "Chunyuan Deng"
+        "Yuzhi Huang",
+        "Jie Wu",
+        "Fanding Huang"
       ],
-      "authorCount": 9,
-      "organization": null,
-      "publishedAt": "2026-11-15T00:00:00.000Z",
-      "featuredOn": "2026-11-18"
+      "authorCount": 43,
+      "organization": {
+        "_id": "6afd89ce69ef8398d430ce24",
+        "name": "Mind2Act-World",
+        "fullname": "Mind2Act-World",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6ad1b7dd5e2996562085e701/Jygf_X5jwz5OER2RvD5_M.png"
+      },
+      "publishedAt": "2026-11-19T00:00:00.000Z",
+      "featuredOn": "2026-11-20"
     },
     {
       "arxiv": "2611.07222",
       "url": "https://arxiv.org/abs/2611.07222",
       "title": "SPILLWAY: Separating Target Admission from Sanitization to Defend Tool-Using Agents against Prompt Injection",
       "abstract": "Tool-using agents act on email, files, and payments, so an instruction hidden in a web page or a shared document can make an agent send data or money to an attacker. Many runtime defenses put a language model on the decision that lets an action through, so the decision depends on a model that may read the attacker's text and adds model calls to every step. Provenance defenses keep the model off the final check but need a model to plan or route each task first. Where an action goes can instead be read from the tools' typed returns: an email's sender or a payment's account arrives in a typed field, while injected instructions arrive as free text. SPILLWAY turns this observation into a deterministic floor with no per-task plan. The check admits a call when each target value that appears in tool output but not in the user's task was returned by a read-only tool in a typed field or is covered by a fixed delegation rule. A deterministic sanitizer removes instruction-like regions its fixed rules match before the model reads them and retains the removed spans as evidence, and a local judge may restore a refused call, never one whose target lies in the removed text. Across three backbones, and seven task suites on one of them, no standard templated injection redirects an action to an attacker's target under SPILLWAY, at the highest observed mean utility and composite scores (NRP, ERS) of the defenses we run under that attack. A forged chat template also produces a raw zero, and mean in-scope attack success under a released reinforcement-learning attacker is .007. SPILLWAY reaches this floor with no defense-triggered backbone re-run and almost no added model call. As personal AI agents act on users' email, files, and payments, SPILLWAY gives them an auditable refusal floor on where their actions go that keeps them useful and holds across backbones.",
-      "upvotes": 44,
+      "upvotes": 46,
       "authors": [
         "Woosang Lim",
         "Yeseul Chang",
@@ -617,27 +680,11 @@
       "featuredOn": "2026-11-17"
     },
     {
-      "arxiv": "2611.08175",
-      "url": "https://arxiv.org/abs/2611.08175",
-      "title": "PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?",
-      "abstract": "Automating printed circuit board (PCB) routing requires coordinating board-level connectivity decisions with geometric execution under strict design rules. Although recent agents can interact with native routing tools, reliable routing on complex boards remains challenging. We present PCBRouteAgent, a multimodal PCB routing agent inspired by how human engineers coordinate global strategy with local execution. A Global Routing Planner combines board images and structured electrical and geometric information to specify connection topology, routing order, corridors, and layer transitions. A Detailed Routing Executor realizes these guides through KiCad's native routing engine and performs bounded local recovery. Unresolved failures are returned as structured feedback, enabling targeted guide revisions while preserving accepted routes. We evaluate PCBRouteAgent on 247 synthetic and real-world boards from four PCBWorld-Bench test splits. It achieves clean-pass rates of 100%, 94.9%, 100%, and 40% on D2, D3-A, D3-B, and D3-C, respectively. On the three real-world subsets, PCBRouteAgent outperforms the best evaluated baseline in clean-pass rate by 13.9, 36, and 10 percentage points, respectively.",
-      "upvotes": 44,
-      "authors": [
-        "Yue Zhang",
-        "Jilei Sun",
-        "Liqiang Jing"
-      ],
-      "authorCount": 5,
-      "organization": null,
-      "publishedAt": "2026-11-05T15:31:15.000Z",
-      "featuredOn": "2026-11-09"
-    },
-    {
       "arxiv": "2611.21099",
       "url": "https://arxiv.org/abs/2611.21099",
       "title": "ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models",
       "abstract": "Frontier multimodal models can now control robots zero-shot from images, yet many manipulation tasks depend on contact forces that images cannot show. Bringing force to an API-only frozen model raises two challenges. First, contact evolves much faster than an API model can decide, so the system must close the loop on force beneath the model. Second, a frozen model cannot interpret raw force streams, so force must be returned in a form the model can reason about. Therefore, we present ForceHarness, a harness that lets frozen models use force without demonstrations or finetuning. After calibrating hand force from a wrist sensor or joint torques alone, ForceHarness addresses the first challenge with self-terminating force primitives that regulate force on their own and return at a contact event. To address the second challenge, a physics translation layer turns each force trace into physical quantities with uncertainty as the tool result. To evaluate ForceHarness against expert force controllers and learned policies under identical conditions, we also build HiddenPhys, a seven-task MuJoCo benchmark with hidden physical variables. On a real arm without a wrist force sensor, ForceHarness raises the zero-shot success rate of GPT-6 Astra from 3.3% to 90.0%. In simulation, it adds 17.5 percentage points on the public ForceBench suite and 34.3 percentage points on HiddenPhys, surpassing force-aware policies trained on demonstrations on both benchmarks and matching hand-written expert controllers on HiddenPhys. Ablations further show that smaller models make significantly better decisions when given physical quantities rather than raw force values.",
-      "upvotes": 43,
+      "upvotes": 45,
       "authors": [
         "Ke Sun",
         "Kevin Yuchen Ma",
@@ -652,6 +699,22 @@
       },
       "publishedAt": "2026-11-16T00:00:00.000Z",
       "featuredOn": "2026-11-18"
+    },
+    {
+      "arxiv": "2611.08175",
+      "url": "https://arxiv.org/abs/2611.08175",
+      "title": "PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?",
+      "abstract": "Automating printed circuit board (PCB) routing requires coordinating board-level connectivity decisions with geometric execution under strict design rules. Although recent agents can interact with native routing tools, reliable routing on complex boards remains challenging. We present PCBRouteAgent, a multimodal PCB routing agent inspired by how human engineers coordinate global strategy with local execution. A Global Routing Planner combines board images and structured electrical and geometric information to specify connection topology, routing order, corridors, and layer transitions. A Detailed Routing Executor realizes these guides through KiCad's native routing engine and performs bounded local recovery. Unresolved failures are returned as structured feedback, enabling targeted guide revisions while preserving accepted routes. We evaluate PCBRouteAgent on 247 synthetic and real-world boards from four PCBWorld-Bench test splits. It achieves clean-pass rates of 100%, 94.9%, 100%, and 40% on D2, D3-A, D3-B, and D3-C, respectively. On the three real-world subsets, PCBRouteAgent outperforms the best evaluated baseline in clean-pass rate by 13.9, 36, and 10 percentage points, respectively.",
+      "upvotes": 44,
+      "authors": [
+        "Yue Zhang",
+        "Jilei Sun",
+        "Liqiang Jing"
+      ],
+      "authorCount": 5,
+      "organization": null,
+      "publishedAt": "2026-11-05T15:31:15.000Z",
+      "featuredOn": "2026-11-09"
     },
     {
       "arxiv": "2611.18482",
@@ -696,6 +759,26 @@
       "featuredOn": "2026-11-13"
     },
     {
+      "arxiv": "2611.26590",
+      "url": "https://arxiv.org/abs/2611.26590",
+      "title": "Probing the \"Conscious\" Mind: Selective Access and Global Workspace in Vision-Language Models",
+      "abstract": "Vision-language models (VLMs) integrate visual and textual information, but their outputs do not reveal internal concept representations. Global workspace theory (GWT) proposes that information is selected from parallel brain processes, integrated in a shared workspace, and made available to specialised processes. We introduce the Multimodal Concept Lens (MC-Lens), a multimodal Jacobian lens, to study these functions in VLM concept processing. Its vision encoder and language decoder lenses map intermediate states to a shared semantic space defined by the decoder's output vocabulary to compare concept accessibility across modalities. MC-Lens supports internal concept interventions to examine the role of accessed concepts in downstream computation. (i) Accessibility and selective access. Multimodal concept information is readable in intermediate states and selectively accessible as tasks require. We extend \"readout carriers\" from one name token to a token set to better capture and express concept information and support counterfactual experiments. (ii) Concepts in downstream computation. Counterfactual experiments show that accessed concept information participates in downstream computation and reasoning. (iii) Development of cross-modal alignment and selective access. We develop two J-space metrics tracking the development of cross-modal concept alignment more clearly than hidden state cosine in controlled VLM training. The experiment also shows that reliable selective access develops later than concept accessibility. (iv) Shared functions across models. Across VLM families and sizes, we find shared patterns of concept accessibility, query-dependent selectivity and cross-task intervention effects despite differences in internal organisation. These findings offer an experimental basis to study GWT in multimodal artificial systems and how it can guide cross-modal alignment improvements.",
+      "upvotes": 41,
+      "authors": [
+        "Jiahao Huang",
+        "Jun Wang"
+      ],
+      "authorCount": 2,
+      "organization": {
+        "_id": "6464cc20860abf030496e986",
+        "name": "UniversityCollegeLondon",
+        "fullname": "University College London",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6464cadff072e09adec1c372/OszOYithNLCeeNuMIjaoI.png"
+      },
+      "publishedAt": "2026-11-19T00:00:00.000Z",
+      "featuredOn": "2026-11-20"
+    },
+    {
       "arxiv": "2611.15844",
       "url": "https://arxiv.org/abs/2611.15844",
       "title": "Open Vision Banana: A Fully Open Recipe for Generative Visual Perception",
@@ -736,90 +819,6 @@
       },
       "publishedAt": "2026-11-09T00:00:00.000Z",
       "featuredOn": "2026-11-10"
-    },
-    {
-      "arxiv": "2611.21607",
-      "url": "https://arxiv.org/abs/2611.21607",
-      "title": "ScaleVLA: Scaling Vision-Language-Action Models to 552 Billion Parameters",
-      "abstract": "Frontier Vision-Language Models (VLMs) such as GPT-6 Astra have demonstrated remarkable capabilities in robot control, suggesting that broad pretraining provides knowledge valuable for physical action. Yet most Vision-Language-Action (VLA) policies still rely on much smaller VLM backbones, leaving this potential largely untapped. We ask whether frontier-scale representations can provide a stronger foundation for robot learning. We introduce ScaleVLA, which connects a 552B DeepSeek-V4.1-Flash backbone to a trainable action DiT, and systematically compare VLMs from 2B to 552B under a shared training setup. We evaluate three fundamental capabilities of robot foundation models. In sample efficiency, just 10 demonstrations outperform a 2B backbone trained with 50 (87.8% vs. 85.6%). In generalization, LIBERO-PRO success reaches 45.1%, compared with at most 31.3% for smaller backbones. In precise manipulation, real-world charger insertion improves from 4/10 to 9/10 successes, with gains concentrated in contact-sensitive alignment. Despite its scale, ScaleVLA achieves 216 ms median latency per action chunk. Our findings suggest that frontier VLMs can serve not only as reasoning agents, but also as powerful representational foundations for efficient and generalizable robot policies.",
-      "upvotes": 39,
-      "authors": [
-        "Ruixi Yu",
-        "Dairu Liu",
-        "Xuchuan Chen"
-      ],
-      "authorCount": 12,
-      "organization": {
-        "_id": "6842da337b70d258bfb51b79",
-        "name": "GalaxyGeneralRobotics",
-        "fullname": "galbot",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6842d3b4297a588f54e85f84/q9PZ3SXbzzluHhhMjLD-3.jpeg"
-      },
-      "publishedAt": "2026-11-16T00:00:00.000Z",
-      "featuredOn": "2026-11-17"
-    },
-    {
-      "arxiv": "2611.04720",
-      "url": "https://arxiv.org/abs/2611.04720",
-      "title": "OneTrans-GSR: A Generative Slate Ranking Paradigm Unifying Reranking and Mix-Ranking with One Autoregressive Transformer",
-      "abstract": "Industrial recommender systems allocate substantial computation to pointwise candidate scoring, yet separate reranking and mix-ranking stages still assemble the final exposure slate using hand-crafted rules and specialized low-capacity models. Mix-ranking combines product cards, short videos, livestreams, and advertising cards supplied by distinct upstream business channels. Although these rules and models encode valuable domain knowledge, they are inherently limited in leveraging additional data and computation. They constrain the combinatorial space of candidate slates and determine objective trade-offs through manual tuning. To enable scalable and effective slate generation, we reformulate reranking and mix-ranking as a unified learning problem whose performance can improve with computation. Specifically, we instantiate this formulation across the reranking and mix-ranking stages and propose OneTrans-GSR, a single decoder-only policy that extends our deployed OneTrans backbone to generate the exposure slate end-to-end. During training, a reward model evaluates complete slates and guides reinforcement learning toward slate-level and long-term objectives. During decoding, business constraints are explicitly enforced. Offline evaluation shows that slate quality consistently improves as reward-model and policy compute increase. Deployed in a large-scale industrial recommendation system, OneTrans-GSR mixes heterogeneous content types within a unified slate. In online A/B tests, it improves GMV/u by 2.63%, advertiser value by 2.06%, and repurchase rate by 2.03%, while reducing end-to-end latency across the reranking and mix-ranking stages by 13%. These results mark a paradigm shift in slate generation: moving beyond human-engineered heuristics toward a general learned policy creates a scalable path for further algorithmic optimization and compute-driven improvement.",
-      "upvotes": 39,
-      "authors": [
-        "Feng Cheng",
-        "Yu-Hsuan Huang",
-        "Fengyi Wang"
-      ],
-      "authorCount": 16,
-      "organization": {
-        "_id": "653b817d32c97d0655575872",
-        "name": "ByteDance",
-        "fullname": "ByteDance",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
-      },
-      "publishedAt": "2026-11-03T00:00:00.000Z",
-      "featuredOn": "2026-11-09"
-    },
-    {
-      "arxiv": "2611.26444",
-      "url": "https://arxiv.org/abs/2611.26444",
-      "title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
-      "abstract": "Embodied intelligence aims to let robots perform complex physical tasks with human-like adaptability and reliability, which requires three complementary capabilities: history-based cognitive reasoning, precise and timely physical execution, and the composition of reasoning and execution through environmental feedback. Yet existing benchmarks either evaluate reasoning and execution within the same tasks or assess them separately without their composition, so they reveal little about whether a failure comes from reasoning, execution, or their composition. We introduce Mind2Act World, a diagnostic benchmark of 30 simulated manipulation tasks from five real-world application domains. Each task has three difficulty levels and two scene settings (Clean and Random), yielding 180 configurations. The tasks form three views: Mind tests decisions based on past observations, Act tests precise and timely execution, and Mind2Act combines both in closed-loop tasks where action outcomes guide later decisions. Comparing the three views shows whether a system lacks a capability or fails to compose capabilities it already has. A diagnosis harness further attributes the failed episodes of three representative systems to Mind, Act, or their composition and summarizes each system in a profile card. Our evaluation of multimodal agents, vision-language-action models (VLAs), and world-action models (WAMs) shows that competence in a single view does not carry over to Mind2Act tasks. Even the strongest agent succeeds in 52.7% of Mind and 39.0% of Act episodes but in only 12.0% of Mind2Act episodes. The strongest agent retains task state but struggles with sustained contact, whereas end-to-end policies execute practiced motions but retain little task state. These findings point to composing reasoning and execution through environmental feedback as the main open problem.",
-      "upvotes": 38,
-      "authors": [
-        "Yuzhi Huang",
-        "Jie Wu",
-        "Fanding Huang"
-      ],
-      "authorCount": 43,
-      "organization": {
-        "_id": "6afd89ce69ef8398d430ce24",
-        "name": "Mind2Act-World",
-        "fullname": "Mind2Act-World",
-        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6ad1b7dd5e2996562085e701/Jygf_X5jwz5OER2RvD5_M.png"
-      },
-      "publishedAt": "2026-11-19T00:00:00.000Z",
-      "featuredOn": "2026-11-20"
-    },
-    {
-      "arxiv": "2611.21366",
-      "url": "https://arxiv.org/abs/2611.21366",
-      "title": "ALIVE: Making Streaming Video Models Interactive",
-      "abstract": "Streaming video LLMs can continuously observe the world, yet often handle user requests in isolation. We introduce ALIVE, an interactive streaming video model supporting proactive monitoring, streaming task coordination, and feedback-seeking interaction. We construct ALIVE-SFT-288K and ALIVE-RL-3K for two-stage training. Contrastive supervised fine-tuning teaches when and how to respond, while reinforcement learning with Behavior-Aligned Credit Assignment (BACA) combines trajectory-level and local advantages to refine decisions, responses, and silence across multi-turn interactions. We also introduce FSI-Bench to evaluate feedback seeking and subsequent task completion. ALIVE achieves the highest overall scores among the compared models on four public benchmarks and FSI-Bench, demonstrating strong streaming understanding and interactive capabilities.",
-      "upvotes": 38,
-      "authors": [
-        "Jinzhao Li",
-        "Yuan Xu",
-        "Jinxuan Wu"
-      ],
-      "authorCount": 16,
-      "organization": {
-        "_id": "628735cbc83a2d6ab8d14a66",
-        "name": "Tsinghua",
-        "fullname": "Tsinghua University",
-        "avatar": "https://www.gravatar.com/avatar/6c5c1441e3283e7543342e59277ea219?d=retro&size=100"
-      },
-      "publishedAt": "2026-11-16T00:00:00.000Z",
-      "featuredOn": "2026-11-19"
     }
   ]
 }
